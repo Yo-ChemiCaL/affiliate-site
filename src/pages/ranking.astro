@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import ProductCard from '../components/ProductCard.astro';
 import type { Product } from '../components/ProductCard.astro';
 import { url } from '../lib/url';
+import { toCategorySlug } from '../lib/category';
 import productsData from '../data/products.json';
 
 const products = productsData as Product[];
@@ -74,7 +75,7 @@ const categoryRankings = categories.map((cat) => ({
         {categoryRankings.map(({ name, products: items }) => (
           <div class="category-rank-block">
             <h3 class="category-rank-title">
-              <a href={url(`/category/${encodeURIComponent(name)}/`)}>{name}</a>
+              <a href={url(`/category/${(products.find(p => p.category === name) as any)?.categorySlug ?? toCategorySlug(name)}/`)}>{name}</a>
             </h3>
             <ol class="category-rank-list">
               {items.map((product, i) => (
