@@ -1,17 +1,19 @@
-/** 日本語カテゴリ名 → 英語スラッグ マッピング */
+/**
+ * 購買行動シーン別カテゴリ マッピング（Phase1）
+ *
+ * 分類軸: 商品種類ではなく「利用シーン（いつ・どこで使うか）」
+ *   work-from-home : 在宅ワーク・デスク環境・照明・集中
+ *   commute        : 通勤・外出・車内
+ *   travel         : 旅行・長距離移動
+ *   charging       : 充電・バッテリー補充
+ *   consumables    : 低単価の日用消耗品
+ */
 export const CATEGORY_SLUG_MAP: Record<string, string> = {
-  'オーディオ': 'audio',
-  'スマホアクセサリー': 'smartphone-accessories',
-  'カー用品': 'car-accessories',
-  'スマートホーム': 'smart-home',
-  '家電': 'appliances',
-  'PCアクセサリー': 'pc-accessories',
-  '花粉症・アレルギー対策': 'allergy',
-  '新生活・引越し準備': 'new-life',
-  'UV・日焼け対策': 'uv-care',
-  'モバイルバッテリー・外出ガジェット': 'mobile-gadgets',
-  'デスク環境・生産性': 'desk-productivity',
-  '節電ガジェット': 'energy-saving',
+  'テレワーク・在宅': 'work-from-home',
+  '通勤・外出':       'commute',
+  '旅行・移動':       'travel',
+  '充電・電源':       'charging',
+  '日用消耗品':       'consumables',
 };
 
 /** 英語スラッグ → 日本語カテゴリ名 逆引き */
@@ -20,7 +22,7 @@ export const SLUG_CATEGORY_MAP: Record<string, string> = Object.fromEntries(
 );
 
 export function toCategorySlug(name: string): string {
-  return CATEGORY_SLUG_MAP[name] ?? name.toLowerCase().replace(/\s+/g, '-');
+  return CATEGORY_SLUG_MAP[name] ?? name.toLowerCase().replace(/[\s・]+/g, '-');
 }
 
 export function fromCategorySlug(slug: string): string {
