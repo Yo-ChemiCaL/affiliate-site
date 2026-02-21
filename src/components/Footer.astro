@@ -1,0 +1,64 @@
+---
+import { url } from '../lib/url';
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p class="footer-note">
+      当サイトはAmazon.co.jpアソシエイト・プログラムおよびA8.netのアフィリエイトプログラムに参加しています。<br />
+      商品のレビューや紹介を通じて手数料を受け取る場合があります。
+    </p>
+    <nav class="footer-nav" aria-label="フッターナビ">
+      <a href={url('/privacy/')}>プライバシーポリシー</a>
+      <a href={url('/disclaimer/')}>免責事項</a>
+      <a href={url('/contact/')}>お問い合わせ</a>
+    </nav>
+    <p class="copyright">&copy; {year} おすすめ商品レビュー All rights reserved.</p>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background-color: var(--color-secondary);
+    color: rgba(255,255,255,0.7);
+    margin-top: auto;
+    padding: 32px 0 16px;
+  }
+
+  .footer-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    text-align: center;
+  }
+
+  .footer-note {
+    font-size: 0.78rem;
+    line-height: 1.7;
+    max-width: 640px;
+    color: rgba(255,255,255,0.5);
+  }
+
+  .footer-nav {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .footer-nav a {
+    color: rgba(255,255,255,0.75);
+    font-size: 0.85rem;
+  }
+
+  .footer-nav a:hover {
+    color: var(--color-accent);
+  }
+
+  .copyright {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.4);
+  }
+</style>

@@ -1,0 +1,421 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import JsonLd from '../../components/JsonLd.astro';
+import type { Product } from '../../components/ProductCard.astro';
+import { url } from '../../lib/url';
+import productsData from '../../data/products.json';
+
+export async function getStaticPaths() {
+  return (productsData as Product[]).map((product) => ({
+    params: { slug: product.slug },
+    props: { product },
+  }));
+}
+
+interface Props {
+  product: Product;
+}
+
+const { product } = Astro.props;
+const stars = '★'.repeat(Math.round(product.rating)) + '☆'.repeat(5 - Math.round(product.rating));
+const discount = product.originalPrice && product.price
+  ? Math.round((1 - product.price / product.originalPrice) * 100)
+  : null;
+const formattedDate = new Date(product.publishedAt).toLocaleDateString('ja-JP', {
+  year: 'numeric', month: 'long', day: 'numeric'
+});
+const updatedDate = product.updatedAt
+  ? new Date(product.updatedAt).toLocaleDateString('ja-JP', { year: 'numeric', month: 'long', day: 'numeric' })
+  : null;
+
+const pageUrl = new URL(url(`/products/${product.slug}/`), Astro.site).href;
+const categoryUrl = new URL(url(`/category/${product.category}/`), Astro.site).href;
+const siteUrl = Astro.site?.toString() ?? '/';
+---
+
+<BaseLayout
+  title={`${product.title}レビュー・口コミ | おすすめ商品レビュー`}
+  description={`${product.title}の詳細レビュー。${product.description}評価${product.rating}点。`}
+  ogImage={product.image}
+  ogType="product"
+>
+  <Fragment slot="head">
+    <JsonLd
+      type="Product"
+      name={product.title}
+      description={product.description}
+      image={product.image}
+      brand={product.category}
+      price={product.price}
+      currency="JPY"
+      availability={product.price ? 'InStock' : 'OutOfStock'}
+      url={pageUrl}
+    />
+    <JsonLd
+      type="Breadcrumb"
+      items={[
+        { name: 'ホーム', url: siteUrl },
+        { name: product.category, url: categoryUrl },
+        { name: product.title, url: pageUrl },
+      ]}
+    />
+  </Fragment>
+
+  <div class="container product-page">
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb" aria-label="パンくずリスト">
+      <ol>
+        <li><a href={url('/')}>ホーム</a></li>
+        <li><a href={url(`/category/${product.category}/`)}>{product.category}</a></li>
+        <li aria-current="page">{product.title}</li>
+      </ol>
+    </nav>
+
+    <article class="product-detail">
+      <!-- Main Content -->
+      <div class="product-main">
+        <div class="product-gallery">
+          <img
+            src={product.image}
+            alt={product.title}
+            width="600"
+            height="400"
+            loading="eager"
+          />
+          {product.featured && <span class="badge-featured">注目商品</span>}
+        </div>
+
+        <div class="product-info">
+          <span class="product-category">{product.category}</span>
+          <h1 class="product-title">{product.title}</h1>
+
+          <div class="product-rating">
+            <span class="stars">{stars}</span>
+            <span class="rating-value">{product.rating}</span>
+            <span class="rating-count">({product.reviewCount.toLocaleString()}件のレビュー)</span>
+          </div>
+
+          {product.price && (
+            <div class="product-price">
+              {product.originalPrice && (
+                <>
+                  <span class="original-price">¥{product.originalPrice.toLocaleString()}</span>
+                  {discount && <span class="discount-badge">{discount}%OFF</span>}
+                </>
+              )}
+              <span class="current-price">¥{product.price.toLocaleString()}<small>(税込)</small></span>
+            </div>
+          )}
+
+          <p class="product-description">{product.description}</p>
+
+          <div class="product-tags">
+            {product.tags.map((tag) => (
+              <span class="tag">#{tag}</span>
+            ))}
+          </div>
+
+          <!-- CTA Buttons -->
+          <div class="product-cta">
+            {product.amazonUrl && (
+              <a
+                href={product.amazonUrl}
+                class="btn-affiliate btn-amazon btn-lg"
+                target="_blank"
+                rel="noopener noreferrer nofollow"
+              >
+                <span>🛒</span> Amazonで最安値を確認する
+              </a>
+            )}
+            {product.a8Url && (
+              <a
+                href={product.a8Url}
+                class="btn-affiliate btn-a8 btn-lg"
+                target="_blank"
+                rel="noopener noreferrer nofollow"
+              >
+                <span>🏷️</span> 公式サイトで購入する
+              </a>
+            )}
+          </div>
+
+          <p class="affiliate-note">
+            ※ リンクはアフィリエイトリンクです。購入時にサイト運営者が報酬を受け取る場合があります。
+          </p>
+
+          <div class="product-meta">
+            <time datetime={product.publishedAt}>公開: {formattedDate}</time>
+            {updatedDate && <time datetime={product.updatedAt!}>更新: {updatedDate}</time>}
+          </div>
+        </div>
+      </div>
+
+      <!-- Review Section -->
+      <section class="review-section">
+        <h2>レビュー・詳細評価</h2>
+        <div class="review-criteria">
+          <div class="criteria-item">
+            <span class="criteria-label">コストパフォーマンス</span>
+            <div class="criteria-bar">
+              <div class="criteria-fill" style={`width: ${product.rating / 5 * 100}%`}></div>
+            </div>
+            <span class="criteria-score">{product.rating}</span>
+          </div>
+          <div class="criteria-item">
+            <span class="criteria-label">使いやすさ</span>
+            <div class="criteria-bar">
+              <div class="criteria-fill" style={`width: ${Math.min(product.rating + 0.2, 5) / 5 * 100}%`}></div>
+            </div>
+            <span class="criteria-score">{Math.min(product.rating + 0.2, 5).toFixed(1)}</span>
+          </div>
+          <div class="criteria-item">
+            <span class="criteria-label">品質・耐久性</span>
+            <div class="criteria-bar">
+              <div class="criteria-fill" style={`width: ${Math.max(product.rating - 0.3, 1) / 5 * 100}%`}></div>
+            </div>
+            <span class="criteria-score">{Math.max(product.rating - 0.3, 1).toFixed(1)}</span>
+          </div>
+        </div>
+      </section>
+    </article>
+  </div>
+</BaseLayout>
+
+<style>
+  .product-page {
+    padding-top: 24px;
+    padding-bottom: 48px;
+  }
+
+  .breadcrumb ol {
+    display: flex;
+    list-style: none;
+    gap: 8px;
+    font-size: 0.82rem;
+    color: var(--color-text-muted);
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+  }
+
+  .breadcrumb li:not(:last-child)::after {
+    content: '›';
+    margin-left: 8px;
+    color: var(--color-border);
+  }
+
+  .breadcrumb a {
+    color: var(--color-primary);
+  }
+
+  .product-main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+    margin-bottom: 48px;
+  }
+
+  .product-gallery {
+    position: relative;
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+  }
+
+  .product-gallery img {
+    width: 100%;
+    aspect-ratio: 3/2;
+    object-fit: cover;
+  }
+
+  .badge-featured {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background-color: var(--color-primary);
+    color: #fff;
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 700;
+  }
+
+  .product-category {
+    display: inline-block;
+    font-size: 0.78rem;
+    color: var(--color-primary);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 8px;
+  }
+
+  .product-title {
+    font-size: 1.5rem;
+    font-weight: 900;
+    line-height: 1.3;
+    margin-bottom: 16px;
+  }
+
+  .product-rating {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+
+  .stars {
+    color: var(--color-accent);
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+  }
+
+  .rating-value {
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+
+  .rating-count {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+  }
+
+  .product-price {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+  }
+
+  .original-price {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    text-decoration: line-through;
+  }
+
+  .discount-badge {
+    background-color: #e63946;
+    color: #fff;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 700;
+  }
+
+  .current-price {
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: #e63946;
+  }
+
+  .current-price small {
+    font-size: 0.65em;
+    color: var(--color-text-muted);
+    font-weight: normal;
+  }
+
+  .product-description {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin-bottom: 16px;
+  }
+
+  .product-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 24px;
+  }
+
+  .tag {
+    font-size: 0.78rem;
+    color: var(--color-text-muted);
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-border);
+    padding: 3px 10px;
+    border-radius: 12px;
+  }
+
+  .product-cta {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+
+  .btn-lg {
+    padding: 16px 24px;
+    font-size: 1rem;
+  }
+
+  .affiliate-note {
+    font-size: 0.72rem;
+    color: var(--color-text-muted);
+    margin-bottom: 16px;
+  }
+
+  .product-meta {
+    display: flex;
+    gap: 16px;
+    font-size: 0.78rem;
+    color: var(--color-text-muted);
+  }
+
+  .review-section {
+    border-top: 2px solid var(--color-border);
+    padding-top: 32px;
+  }
+
+  .review-section h2 {
+    font-size: 1.2rem;
+    font-weight: 800;
+    margin-bottom: 24px;
+  }
+
+  .review-criteria {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 480px;
+  }
+
+  .criteria-item {
+    display: grid;
+    grid-template-columns: 140px 1fr 48px;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .criteria-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+
+  .criteria-bar {
+    height: 8px;
+    background-color: var(--color-border);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .criteria-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+    border-radius: 4px;
+  }
+
+  .criteria-score {
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-align: right;
+    color: var(--color-primary);
+  }
+
+  @media (max-width: 768px) {
+    .product-main {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+  }
+</style>

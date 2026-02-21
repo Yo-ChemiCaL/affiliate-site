@@ -1,0 +1,112 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    # 毎日 JST 9:00 (UTC 0:00) に自動更新
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+    inputs:
+      skip_fetch:
+        description: '商品データ取得をスキップ'
+        required: false
+        default: 'false'
+        type: boolean
+
+# GitHub Pages への書き込みを許可
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+# 同時実行を1つに制限
+concurrency:
+  group: 'pages'
+  cancel-in-progress: false
+
+jobs:
+  build-and-deploy:
+    name: Build and Deploy
+    runs-on: ubuntu-latest
+
+    steps:
+      # ======================================================
+      # 1. リポジトリをチェックアウト
+      # ======================================================
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # ======================================================
+      # 2. Node.js セットアップ
+      # ======================================================
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      # ======================================================
+      # 3. 依存パッケージインストール
+      # ======================================================
+      - name: Install dependencies
+        run: npm ci
+
+      # ======================================================
+      # 4. 商品データ取得 (スケジュール実行時)
+      # ======================================================
+      - name: Fetch product data
+        if: ${{ github.event.inputs.skip_fetch != 'true' && github.event_name == 'schedule' }}
+        env:
+          AMAZON_ACCESS_KEY: ${{ secrets.AMAZON_ACCESS_KEY }}
+          AMAZON_SECRET_KEY: ${{ secrets.AMAZON_SECRET_KEY }}
+          AMAZON_PARTNER_TAG: ${{ secrets.AMAZON_PARTNER_TAG }}
+          A8_FEED_URL: ${{ secrets.A8_FEED_URL }}
+        run: |
+          node scripts/fetch-products.js --merge
+          echo "商品データ取得完了"
+
+      # ======================================================
+      # 5. 商品データが更新されていればコミット
+      # ======================================================
+      - name: Commit updated product data
+        if: ${{ github.event_name == 'schedule' }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add src/data/products.json
+          git diff --staged --quiet || git commit -m "chore: 商品データ自動更新 $(date +'%Y-%m-%d')"
+          git push
+
+      # ======================================================
+      # 6. Astro ビルド
+      # ======================================================
+      - name: Build Astro site
+        run: npm run build
+        env:
+          # ビルド時のサイトURL (astro.config.mjs の site と一致させる)
+          SITE_URL: ${{ vars.SITE_URL || 'https://your-affiliate-site.com' }}
+
+      # ======================================================
+      # 7. GitHub Pages にデプロイ
+      # ======================================================
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./dist
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+      # ======================================================
+      # 8. デプロイ完了通知 (オプション)
+      # ======================================================
+      - name: Notify deployment
+        if: success()
+        run: |
+          echo "✅ デプロイ完了: ${{ steps.deployment.outputs.page_url }}"

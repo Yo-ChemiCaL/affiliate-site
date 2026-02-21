@@ -1,0 +1,84 @@
+---
+interface ProductJsonLd {
+  type: 'Product';
+  name: string;
+  description: string;
+  image: string;
+  sku?: string;
+  brand?: string;
+  price?: number;
+  currency?: string;
+  availability?: 'InStock' | 'OutOfStock' | 'PreOrder';
+  url?: string;
+}
+
+interface BreadcrumbItem {
+  name: string;
+  url: string;
+}
+
+interface BreadcrumbJsonLd {
+  type: 'Breadcrumb';
+  items: BreadcrumbItem[];
+}
+
+interface WebSiteJsonLd {
+  type: 'WebSite';
+  name: string;
+  url: string;
+  description?: string;
+}
+
+type Props = ProductJsonLd | BreadcrumbJsonLd | WebSiteJsonLd;
+
+const data = Astro.props;
+
+let jsonLd: Record<string, unknown> = {};
+
+if (data.type === 'Product') {
+  jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: data.name,
+    description: data.description,
+    image: data.image,
+    ...(data.sku && { sku: data.sku }),
+    ...(data.brand && { brand: { '@type': 'Brand', name: data.brand } }),
+    ...(data.price !== undefined && {
+      offers: {
+        '@type': 'Offer',
+        price: data.price,
+        priceCurrency: data.currency ?? 'JPY',
+        availability: `https://schema.org/${data.availability ?? 'InStock'}`,
+        url: data.url,
+      },
+    }),
+  };
+} else if (data.type === 'Breadcrumb') {
+  jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: data.items.map((item, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: item.name,
+      item: item.url,
+    })),
+  };
+} else if (data.type === 'WebSite') {
+  jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: data.name,
+    url: data.url,
+    ...(data.description && { description: data.description }),
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: `${data.url}/search?q={search_term_string}`,
+      'query-input': 'required name=search_term_string',
+    },
+  };
+}
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />

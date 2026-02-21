@@ -1,0 +1,62 @@
+---
+import SEOHead from '../components/SEOHead.astro';
+import JsonLd from '../components/JsonLd.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  ogImage?: string;
+  ogType?: 'website' | 'article' | 'product';
+  noindex?: boolean;
+  jsonLd?: Record<string, unknown>;
+}
+
+const {
+  title,
+  description,
+  canonical,
+  ogImage,
+  ogType = 'website',
+  noindex = false,
+} = Astro.props;
+
+const siteUrl = Astro.site?.toString() ?? '';
+---
+
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <link rel="alternate" type="application/rss+xml" title="おすすめ商品レビュー RSS" href="/rss.xml" />
+
+    <SEOHead
+      title={title}
+      description={description}
+      canonical={canonical}
+      ogImage={ogImage}
+      ogType={ogType}
+      noindex={noindex}
+    />
+    <JsonLd
+      type="WebSite"
+      name="おすすめ商品レビュー"
+      url={siteUrl}
+      description="Amazon・A8.netアフィリエイトおすすめ商品を厳選紹介"
+    />
+    <slot name="head" />
+  </head>
+  <body>
+    <Header />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

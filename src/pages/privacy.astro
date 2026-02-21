@@ -1,0 +1,119 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="プライバシーポリシー | おすすめ商品レビュー"
+  description="おすすめ商品レビューのプライバシーポリシーページです。"
+  noindex={false}
+>
+  <div class="container static-page">
+    <h1>プライバシーポリシー</h1>
+    <p class="updated">最終更新日: 2026年2月22日</p>
+
+    <section>
+      <h2>1. 個人情報の収集について</h2>
+      <p>
+        当サイト「おすすめ商品レビュー」（以下「当サイト」）では、お問い合わせフォームのご利用時に
+        お名前・メールアドレス等の個人情報をお預かりする場合があります。
+        取得した個人情報はお問い合わせへの回答のみに使用し、第三者への提供は行いません。
+      </p>
+    </section>
+
+    <section>
+      <h2>2. アクセス解析ツールについて</h2>
+      <p>
+        当サイトではGoogleアナリティクスを使用しています。
+        Googleアナリティクスはトラフィックデータの収集のためCookieを使用しています。
+        このトラフィックデータは匿名で収集されており、個人を特定するものではありません。
+        この機能はCookieを無効にすることで収集を拒否することができます。
+      </p>
+      <p>
+        詳しくは<a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">
+          Googleのプライバシーポリシー
+        </a>をご確認ください。
+      </p>
+    </section>
+
+    <section>
+      <h2>3. アフィリエイトプログラムについて</h2>
+      <p>
+        当サイトは、Amazon.co.jpを宣伝しリンクすることによってサイトが紹介料を獲得できる手段を提供することを目的に設定された
+        アフィリエイトプログラム「Amazonアソシエイト・プログラム」の参加者です。
+      </p>
+      <p>
+        また、A8.netのアフィリエイトプログラムにも参加しており、紹介料を受け取る場合があります。
+        商品の評価・選定にアフィリエイト収益は影響しておりません。
+      </p>
+    </section>
+
+    <section>
+      <h2>4. 広告の配信について</h2>
+      <p>
+        当サイトでは第三者配信の広告サービスを利用する場合があります。
+        このような広告配信事業者はユーザーの興味に応じた広告を表示するため、
+        Cookieを使用することがあります。
+      </p>
+    </section>
+
+    <section>
+      <h2>5. プライバシーポリシーの変更について</h2>
+      <p>
+        当サイトは、必要に応じてプライバシーポリシーを変更することがあります。
+        変更後のプライバシーポリシーは当ページに掲載した時点で効力を生じます。
+      </p>
+    </section>
+
+    <section>
+      <h2>6. お問い合わせ</h2>
+      <p>
+        プライバシーポリシーに関するお問い合わせは、
+        <a href="/affiliate-site/contact/">お問い合わせページ</a>よりご連絡ください。
+      </p>
+    </section>
+  </div>
+</BaseLayout>
+
+<style>
+  .static-page {
+    max-width: 760px;
+    padding-top: 40px;
+    padding-bottom: 64px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+    font-weight: 900;
+    margin-bottom: 8px;
+  }
+
+  .updated {
+    font-size: 0.82rem;
+    color: var(--color-text-muted);
+    margin-bottom: 40px;
+  }
+
+  section {
+    margin-bottom: 32px;
+  }
+
+  h2 {
+    font-size: 1.1rem;
+    font-weight: 800;
+    margin-bottom: 12px;
+    padding-left: 12px;
+    border-left: 4px solid var(--color-primary);
+  }
+
+  p {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: var(--color-text);
+    margin-bottom: 12px;
+  }
+
+  a {
+    color: var(--color-primary);
+    text-decoration: underline;
+  }
+</style>

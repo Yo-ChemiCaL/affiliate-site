@@ -1,0 +1,71 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="お問い合わせ | おすすめ商品レビュー"
+  description="おすすめ商品レビューへのお問い合わせページです。"
+>
+  <div class="container static-page">
+    <h1>お問い合わせ</h1>
+    <p class="lead">
+      ご質問・ご要望・掲載に関するお問い合わせは下記フォームよりお送りください。
+      通常3営業日以内にご返信いたします。
+    </p>
+
+    <!-- Google Forms 埋め込み用プレースホルダー -->
+    <!-- TODO: Google Forms でフォームを作成し、iframe の src を差し替えてください -->
+    <div class="form-placeholder">
+      <p>📋 お問い合わせフォームを準備中です。</p>
+      <p>現在はメールにてお問い合わせください。</p>
+    </div>
+
+    <!--
+    <iframe
+      src="https://docs.google.com/forms/d/e/YOUR_FORM_ID/viewform?embedded=true"
+      width="100%"
+      height="600"
+      frameborder="0"
+      marginheight="0"
+      marginwidth="0"
+      title="お問い合わせフォーム"
+    >
+      読み込んでいます…
+    </iframe>
+    -->
+  </div>
+</BaseLayout>
+
+<style>
+  .static-page {
+    max-width: 760px;
+    padding-top: 40px;
+    padding-bottom: 64px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+    font-weight: 900;
+    margin-bottom: 16px;
+  }
+
+  .lead {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: var(--color-text-muted);
+    margin-bottom: 32px;
+  }
+
+  .form-placeholder {
+    border: 2px dashed var(--color-border);
+    border-radius: var(--radius);
+    padding: 48px 24px;
+    text-align: center;
+    color: var(--color-text-muted);
+  }
+
+  .form-placeholder p {
+    font-size: 1rem;
+    line-height: 2;
+  }
+</style>
