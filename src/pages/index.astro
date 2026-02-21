@@ -85,13 +85,8 @@ const bestArticles = bestFiles.map((f) => f.default).slice(0, 3);
                   <li class="qp-caution">⚠️ {(p as any).caution}</li>
                 </ul>
                 {p.price && <p class="qp-price">¥{p.price.toLocaleString()}</p>}
-                <a
-                  href={p.amazonUrl}
-                  class="btn-affiliate btn-amazon btn-qp-cta"
-                  target="_blank"
-                  rel="noopener noreferrer nofollow"
-                >
-                  Amazonで価格を見る →
+                <a href={url(`/pick/${(p as any).pickSlug}/`)} class="btn-qp-pick">
+                  今すぐ選ぶ →
                 </a>
               </div>
             </div>
@@ -317,6 +312,19 @@ const bestArticles = bestFiles.map((f) => f.default).slice(0, 3);
     font-size: 0.88rem;
     margin-top: auto;
   }
+  .btn-qp-pick {
+    display: block;
+    text-align: center;
+    padding: 11px 10px;
+    font-size: 0.88rem;
+    font-weight: 700;
+    background: var(--color-primary);
+    color: #fff;
+    border-radius: var(--radius);
+    margin-top: auto;
+    transition: all var(--transition);
+  }
+  .btn-qp-pick:hover { background: var(--color-primary-dark); transform: translateY(-1px); color: #fff; }
 
   /* ── 比較入口バナー ──────────────────────────────────────────────── */
   .compare-entry-banner {
