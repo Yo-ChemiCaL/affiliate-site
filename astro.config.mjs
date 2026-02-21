@@ -4,8 +4,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://yo-chemical.github.io',
-  base: '/affiliate-site',
+  site: 'https://mono-lab.uk',
   integrations: [
     sitemap({
       filter: (page) => !page.includes('/draft/'),

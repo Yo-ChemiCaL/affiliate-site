@@ -1,14 +1,11 @@
 /**
- * GitHub Pages のサブパス（/affiliate-site/）に対応したURLヘルパー
- * BASE_URL は astro.config.mjs の base 設定から自動注入される
+ * 内部リンクをベースパス付きで返すURLヘルパー
+ * base設定なし（独自ドメイン）の場合は BASE_URL = '/' のため
+ * url('/products/foo/') → '/products/foo/' となる
  */
 
-const base = import.meta.env.BASE_URL.replace(/\/$/, ''); // 末尾スラッシュ除去
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
-/**
- * 内部リンクをベースパス付きで返す
- * @example url('/products/foo/') → '/affiliate-site/products/foo/'
- */
 export function url(path: string): string {
   if (!path.startsWith('/')) return path;
   return `${base}${path}`;
