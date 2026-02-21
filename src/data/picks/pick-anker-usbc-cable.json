@@ -1,0 +1,14 @@
+{
+  "slug": "pick-anker-usbc-cable",
+  "title": "断線しないUSB-Cケーブルはこれだけでいい",
+  "productSlug": "anker-usbc-cable-180cm",
+  "targetUser": "安いUSBケーブルをすぐ断線させてしまう、充電ケーブルに毎年お金をかけたくない方",
+  "reasons": [
+    "ナイロン編込み設計で2万回以上の屈曲テストをクリア、断線しにくく長期間使える",
+    "60W急速充電対応でノートPC・iPad・スマホを1本でカバー、ケーブルの本数を減らせる",
+    "¥1,190の最安水準で高品質なケーブル、1〜2年使えれば使い捨て品より圧倒的にコスパが良い"
+  ],
+  "caution": "USB 2.0のため映像出力（DisplayPort Alt Mode）と高速データ転送（USB 3.0以上）には非対応です。充電・基本的なデータ転送専用とご理解ください。",
+  "alternatives": ["best-consumables-usb-cables-2026"],
+  "publishedAt": "2026-02-22"
+}

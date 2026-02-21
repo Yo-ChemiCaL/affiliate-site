@@ -1,0 +1,97 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { url } from '../lib/url';
+---
+
+<BaseLayout
+  title="編集方針 | mono-lab"
+  description="mono-labの収益モデル・アフィリエイト開示・AI利用方針・免責範囲を説明します。"
+>
+  <div class="container page-content">
+    <h1 class="page-title">編集方針（Editorial Policy）</h1>
+    <p class="page-lead">このページでは、mono-lab の収益モデル・掲載基準・AI利用方針・免責範囲を説明します。</p>
+
+    <section class="ep-section">
+      <h2>1. 収益モデル</h2>
+      <p>当サイトは以下のアフィリエイトプログラムに参加しています。</p>
+      <ul>
+        <li><strong>Amazonアソシエイト・プログラム：</strong>Amazon.co.jp の商品リンクを経由して購入が発生した場合、サイト運営者が手数料を受け取ります。</li>
+        <li><strong>A8.net（予定）：</strong>一部商品については A8.net を通じたアフィリエイトリンクを設置する場合があります。</li>
+      </ul>
+      <p>手数料はご購入者の追加負担なしにサイト運営者へ支払われます。</p>
+    </section>
+
+    <section class="ep-section">
+      <h2>2. ランキング・掲載への影響</h2>
+      <ul>
+        <li>アフィリエイト報酬率はランキング順位・推薦内容に<strong>影響を与えません</strong>。</li>
+        <li>特定ブランドや販売者からの依頼・金銭的対価による掲載は行っていません（2026年2月時点）。</li>
+        <li>掲載基準は <a href={url('/methodology/')}>選定基準（Methodology）</a> に公開しています。</li>
+      </ul>
+    </section>
+
+    <section class="ep-section">
+      <h2>3. PR表記・広告表示</h2>
+      <p>アフィリエイトリンクを含む商品紹介ページには、ページ内または各リンク周辺に「アフィリエイトリンク」「PR」等の表示を行います。</p>
+      <p>ページ下部のフッターにも包括的なアフィリエイト開示を記載しています。</p>
+    </section>
+
+    <section class="ep-section">
+      <h2>4. AI利用方針</h2>
+      <ul>
+        <li>商品候補のリストアップ補助・文章校正に AI ツールを利用する場合があります。</li>
+        <li>最終的な掲載判断・価格確認・レビュー内容の評価は人間（サイト運営者）が行います。</li>
+        <li>AI が生成した内容をそのまま掲載することはなく、必ず編集・確認プロセスを経ます。</li>
+        <li>商品スペック・価格・評価に誤りがある場合はお問い合わせよりご連絡ください。</li>
+      </ul>
+    </section>
+
+    <section class="ep-section">
+      <h2>5. 免責・責任範囲</h2>
+      <ul>
+        <li>掲載価格・仕様・在庫状況は変動します。購入前に必ず Amazon の最新情報をご確認ください。</li>
+        <li>当サイトの情報に基づく購入・行動の結果について、サイト運営者は責任を負いません。</li>
+        <li>医療・健康・安全に関する効果の断定的表現は使用しません。</li>
+        <li>第三者サイト（Amazon 等）の内容・サービス変更についての責任はサイト運営者が負うものではありません。</li>
+      </ul>
+    </section>
+
+    <section class="ep-section">
+      <h2>6. 誤情報・ご意見</h2>
+      <p>掲載内容に誤りや改善提案がある場合は <a href={url('/contact/')}>お問い合わせ</a> よりご連絡ください。確認のうえ速やかに対応します。</p>
+    </section>
+
+    <div class="policy-link-box">
+      <p>商品の選定基準・スコア計算式については <a href={url('/methodology/')}>選定基準（Methodology）</a> をご覧ください。</p>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .page-content { padding: 40px 0 64px; max-width: 760px; margin: 0 auto; }
+  .page-title { font-size: 1.8rem; font-weight: 900; margin-bottom: 12px; }
+  .page-lead { color: var(--color-text-muted); font-size: 0.95rem; margin-bottom: 40px; line-height: 1.7; }
+
+  .ep-section { margin-bottom: 36px; }
+  .ep-section h2 {
+    font-size: 1.05rem;
+    font-weight: 800;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--color-border);
+    margin-bottom: 14px;
+  }
+  .ep-section p { font-size: 0.9rem; line-height: 1.8; margin-bottom: 10px; }
+  .ep-section ul { padding-left: 1.4em; display: flex; flex-direction: column; gap: 6px; }
+  .ep-section li { font-size: 0.9rem; line-height: 1.7; }
+  .ep-section a { color: var(--color-primary); font-weight: 600; }
+
+  .policy-link-box {
+    margin-top: 40px;
+    padding: 16px 20px;
+    background: #fff4ef;
+    border-left: 4px solid var(--color-primary);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    font-size: 0.9rem;
+  }
+  .policy-link-box a { font-weight: 700; color: var(--color-primary); }
+</style>

@@ -1,0 +1,57 @@
+{
+  "slug": "best-charging-compact-charger-2026",
+  "title": "おすすめコンパクト充電器 2026 GaN・USB-C対応",
+  "description": "GaN採用の小型USB-C充電器をノートPC向け・スマホ専用・コスパで比較。旅行にも使える薄型モデルを厳選。",
+  "category": "充電・電源",
+  "categorySlug": "charging",
+  "publishedAt": "2026-02-22",
+  "updatedAt": "2026-02-22",
+  "conclusion": "ノートPC・iPadを急速充電したいなら **Anker 521 Charger 45W**、スマホだけなら **PowerPort III Nano 20W** でコスパ最優先が正解です。",
+  "topPicks": [
+    { "rank": 1, "label": "ノートPC対応・急速充電", "productSlug": "anker-521-charger-45w", "pickSlug": "pick-anker-521-charger" },
+    { "rank": 2, "label": "スマホ専用コスパ最強", "productSlug": "anker-powerport-iii-nano-20w", "pickSlug": "pick-anker-powerport-nano-20w" },
+    { "rank": 3, "label": "バッテリー内蔵で1台2役", "productSlug": "anker-733-powerbank-10k", "pickSlug": "pick-anker-733-powerbank" }
+  ],
+  "comparison": [
+    {
+      "productSlug": "anker-521-charger-45w",
+      "priceRange": "¥1,790",
+      "strength": "45W GaN・折りたたみプラグ・コンパクト",
+      "weakness": "USB-Cポート1口のみ",
+      "recommended": "MacBook Air・iPad・スマホを1台充電",
+      "rating": 4.4
+    },
+    {
+      "productSlug": "anker-powerport-iii-nano-20w",
+      "priceRange": "¥1,490",
+      "strength": "¥1,490の低価格・iPhoneを最速充電",
+      "weakness": "ノートPC充電不可",
+      "recommended": "スマホの毎日充電を速くしたい",
+      "rating": 4.5
+    },
+    {
+      "productSlug": "anker-733-powerbank-10k",
+      "priceRange": "¥9,990",
+      "strength": "充電器＋バッテリー一体型",
+      "weakness": "価格高め・重量あり",
+      "recommended": "充電器とバッテリーを1つに統合したい",
+      "rating": 4.3
+    }
+  ],
+  "faq": [
+    {
+      "q": "GaN充電器は従来品と何が違う？",
+      "a": "GaN（窒化ガリウム）採用で同じ出力でも小型・軽量化できます。発熱が少なく効率が高いのが特徴です。"
+    },
+    {
+      "q": "45Wでどのデバイスが充電できる？",
+      "a": "MacBook Air（USB-C電源アダプタ30W相当）、iPad Pro、ほとんどのスマホに対応。ただし高出力ケーブルが必要です。"
+    },
+    {
+      "q": "プラグ折りたたみの充電器は旅行で使える？",
+      "a": "国内旅行は問題なし。海外は変換プラグが別途必要です。海外対応モデルを確認してください。"
+    }
+  ],
+  "relatedBest": ["best-charging-mobile-battery-2026", "best-charging-usecase-2026"],
+  "relatedPicks": ["pick-anker-521-charger", "pick-anker-powerport-nano-20w"]
+}

@@ -9,30 +9,24 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <div class="container static-page">
     <h1>お問い合わせ</h1>
     <p class="lead">
-      ご質問・ご要望・掲載に関するお問い合わせは下記フォームよりお送りください。
+      掲載内容の誤り・改善提案・その他ご質問は、以下のメールアドレスまでご連絡ください。<br />
       通常3営業日以内にご返信いたします。
     </p>
 
-    <!-- Google Forms 埋め込み用プレースホルダー -->
-    <!-- TODO: Google Forms でフォームを作成し、iframe の src を差し替えてください -->
-    <div class="form-placeholder">
-      <p>📋 お問い合わせフォームを準備中です。</p>
-      <p>現在はメールにてお問い合わせください。</p>
+    <div class="contact-box">
+      <p class="contact-label">メールアドレス</p>
+      <p class="contact-email">contact [at] mono-lab.uk</p>
+      <p class="contact-note">※ [at] を @ に置き換えてご利用ください。</p>
     </div>
 
-    <!--
-    <iframe
-      src="https://docs.google.com/forms/d/e/YOUR_FORM_ID/viewform?embedded=true"
-      width="100%"
-      height="600"
-      frameborder="0"
-      marginheight="0"
-      marginwidth="0"
-      title="お問い合わせフォーム"
-    >
-      読み込んでいます…
-    </iframe>
-    -->
+    <div class="contact-items">
+      <h2>お問い合わせ例</h2>
+      <ul>
+        <li>掲載商品の情報に誤りがある</li>
+        <li>比較・掲載の基準についての質問</li>
+        <li>サイト全般のご意見・ご要望</li>
+      </ul>
+    </div>
   </div>
 </BaseLayout>
 
@@ -56,16 +50,49 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     margin-bottom: 32px;
   }
 
-  .form-placeholder {
-    border: 2px dashed var(--color-border);
-    border-radius: var(--radius);
-    padding: 48px 24px;
-    text-align: center;
+  .contact-box {
+    background: #fff4ef;
+    border-left: 4px solid var(--color-primary);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    padding: 20px 24px;
+    margin-bottom: 32px;
+  }
+
+  .contact-label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--color-text-muted);
+    margin-bottom: 6px;
+  }
+
+  .contact-email {
+    font-size: 1.1rem;
+    font-weight: 700;
+    font-family: monospace;
+    margin-bottom: 8px;
+  }
+
+  .contact-note {
+    font-size: 0.78rem;
     color: var(--color-text-muted);
   }
 
-  .form-placeholder p {
+  .contact-items h2 {
     font-size: 1rem;
-    line-height: 2;
+    font-weight: 800;
+    margin-bottom: 12px;
+  }
+
+  .contact-items ul {
+    padding-left: 1.4em;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .contact-items li {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: var(--color-text-muted);
   }
 </style>

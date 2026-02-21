@@ -1,0 +1,57 @@
+{
+  "slug": "best-travel-charging-2026",
+  "title": "旅行・出張 充電グッズおすすめ 2026 コンパクト・一体型",
+  "description": "旅行・出張の荷物を減らしながらデバイスをしっかり充電できる製品を比較。充電器一体型・薄型バッテリー・コンパクト充電器の3軸で厳選。",
+  "category": "旅行・移動便利",
+  "categorySlug": "travel-utility",
+  "publishedAt": "2026-02-22",
+  "updatedAt": "2026-02-22",
+  "conclusion": "荷物を最小化するなら **Anker 733** の一体型が最強。コスパ重視で充電器とバッテリーを分けるなら **511 Charger + PowerCore Slim** の組み合わせが実用的です。",
+  "topPicks": [
+    { "rank": 1, "label": "充電器＋バッテリー一体型", "productSlug": "anker-733-powerbank-10k", "pickSlug": "pick-anker-733-powerbank" },
+    { "rank": 2, "label": "旅行用コンパクト充電器", "productSlug": "anker-511-charger-30w", "pickSlug": "pick-anker-511-charger" },
+    { "rank": 3, "label": "薄型・軽量バッテリー", "productSlug": "anker-powercore-slim-10000", "pickSlug": "pick-anker-powercore-slim" }
+  ],
+  "comparison": [
+    {
+      "productSlug": "anker-733-powerbank-10k",
+      "priceRange": "¥9,990",
+      "strength": "充電器一体型・65W・コンセント直差し",
+      "weakness": "価格高め・重量200g",
+      "recommended": "荷物を最小化して旅行したい",
+      "rating": 4.3
+    },
+    {
+      "productSlug": "anker-511-charger-30w",
+      "priceRange": "¥2,490",
+      "strength": "折りたたみプラグ・30W・軽量コンパクト",
+      "weakness": "1ポートのみ",
+      "recommended": "ホテルでスマホを素早く充電したい",
+      "rating": 4.5
+    },
+    {
+      "productSlug": "anker-powercore-slim-10000",
+      "priceRange": "¥2,990",
+      "strength": "薄型・軽量・機内持ち込み可",
+      "weakness": "急速充電非対応",
+      "recommended": "移動中の充電切れをなくしたい",
+      "rating": 4.5
+    }
+  ],
+  "faq": [
+    {
+      "q": "旅行に必要な充電グッズは最低何個？",
+      "a": "最低限は「充電器1個＋ケーブル1本」。バッテリーは長時間移動や充電できない環境がある場合に追加するのが目安です。"
+    },
+    {
+      "q": "Anker 733 は海外でも使える？",
+      "a": "100-240V対応のため、変換プラグを追加すれば海外でも使用可能です。コンセント形状は国によって異なります。"
+    },
+    {
+      "q": "飛行機内でモバイルバッテリーは使える？",
+      "a": "使用は可能ですが充電は機内ルールによります。10000mAh（37Wh）は機内持ち込みOKです。"
+    }
+  ],
+  "relatedBest": ["best-travel-packing-2026", "best-charging-mobile-battery-2026"],
+  "relatedPicks": ["pick-anker-733-powerbank", "pick-anker-511-charger", "pick-anker-powercore-slim"]
+}

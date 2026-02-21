@@ -1,0 +1,57 @@
+{
+  "slug": "best-charging-mobile-battery-2026",
+  "title": "おすすめモバイルバッテリー 2026 容量・携帯性で比較",
+  "description": "通勤・外出・旅行で使えるモバイルバッテリーを容量・薄さ・充電速度で比較。口コミ評価の高い3製品を厳選。",
+  "category": "充電・電源",
+  "categorySlug": "charging",
+  "publishedAt": "2026-02-22",
+  "updatedAt": "2026-02-22",
+  "conclusion": "毎日の通勤ならスリムな **Anker PowerCore Slim 10000** が最適。2台同時充電なら **PowerCore 335**、充電器一体型で旅行にも使いたいなら **Anker 733** がおすすめです。",
+  "topPicks": [
+    { "rank": 1, "label": "薄型・軽量 総合1位", "productSlug": "anker-powercore-slim-10000", "pickSlug": "pick-anker-powercore-slim" },
+    { "rank": 2, "label": "2台同時充電", "productSlug": "anker-powercore-335-10000", "pickSlug": "pick-anker-powercore-335" },
+    { "rank": 3, "label": "旅行・出張の相棒", "productSlug": "anker-733-powerbank-10k", "pickSlug": "pick-anker-733-powerbank" }
+  ],
+  "comparison": [
+    {
+      "productSlug": "anker-powercore-slim-10000",
+      "priceRange": "¥2,990",
+      "strength": "薄型15mm・USB-C入力・軽量",
+      "weakness": "PD急速充電非対応",
+      "recommended": "毎日の通勤・軽い外出",
+      "rating": 4.5
+    },
+    {
+      "productSlug": "anker-powercore-335-10000",
+      "priceRange": "¥3,290",
+      "strength": "USB-A 2ポート同時充電",
+      "weakness": "USB-C出力非対応",
+      "recommended": "複数デバイスを同時充電したい",
+      "rating": 4.3
+    },
+    {
+      "productSlug": "anker-733-powerbank-10k",
+      "priceRange": "¥9,990",
+      "strength": "充電器一体型・65W出力",
+      "weakness": "価格高め・重量200g",
+      "recommended": "旅行・出張で荷物を減らしたい",
+      "rating": 4.3
+    }
+  ],
+  "faq": [
+    {
+      "q": "10000mAhはスマホ何回分？",
+      "a": "iPhone 15（約3,349mAh）なら約2.5回、Android（4000〜5000mAh）なら約1.5〜2回の目安です（充電ロス考慮）。"
+    },
+    {
+      "q": "飛行機持ち込みは問題ない？",
+      "a": "10000mAh＝約37Whで100Wh以下のため機内持ち込み可能です。20000mAh（74Wh）も可ですが確認推奨。"
+    },
+    {
+      "q": "急速充電に対応しているか？",
+      "a": "PowerCore Slim 10000は急速充電非対応。急速充電が必要ならAnker 733（65W）を選びましょう。"
+    }
+  ],
+  "relatedBest": ["best-charging-compact-charger-2026", "best-travel-charging-2026"],
+  "relatedPicks": ["pick-anker-powercore-slim", "pick-anker-powercore-335", "pick-anker-733-powerbank"]
+}

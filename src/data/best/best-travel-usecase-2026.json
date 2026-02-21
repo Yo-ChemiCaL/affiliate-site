@@ -1,0 +1,57 @@
+{
+  "slug": "best-travel-usecase-2026",
+  "title": "旅行・移動 用途別おすすめ 2026 国内・海外・出張",
+  "description": "国内旅行・海外旅行・日帰り出張の3シーン別に最適なグッズを1つずつ厳選。旅行の目的から逆算して最短で選べるガイド。",
+  "category": "旅行・移動便利",
+  "categorySlug": "travel-utility",
+  "publishedAt": "2026-02-22",
+  "updatedAt": "2026-02-22",
+  "conclusion": "旅のスタイルで選ぶのが正解。**国内旅行**はパッキングキューブで快適に、**出張**は充電器一体型バッテリーで荷物削減、**移動が長い旅**はコンパクト充電器＋薄型バッテリーで対応。",
+  "topPicks": [
+    { "rank": 1, "label": "国内旅行・パッキング効率化", "productSlug": "eagle-creek-packing-cube-set", "pickSlug": "pick-eagle-creek-packing-cube" },
+    { "rank": 2, "label": "ビジネス出張・荷物最小化", "productSlug": "anker-733-powerbank-10k", "pickSlug": "pick-anker-733-powerbank" },
+    { "rank": 3, "label": "日帰り・長時間移動の電欠防止", "productSlug": "anker-511-charger-30w", "pickSlug": "pick-anker-511-charger" }
+  ],
+  "comparison": [
+    {
+      "productSlug": "eagle-creek-packing-cube-set",
+      "priceRange": "¥3,980",
+      "strength": "3サイズで衣類分類・透明メッシュ",
+      "weakness": "防水なし",
+      "recommended": "旅行の荷造りをもっと楽にしたい",
+      "rating": 4.4
+    },
+    {
+      "productSlug": "anker-733-powerbank-10k",
+      "priceRange": "¥9,990",
+      "strength": "充電器一体型・65Wで荷物を1つ削減",
+      "weakness": "価格高め",
+      "recommended": "出張で充電器とバッテリーを統合したい",
+      "rating": 4.3
+    },
+    {
+      "productSlug": "anker-511-charger-30w",
+      "priceRange": "¥2,490",
+      "strength": "折りたたみ・軽量・30W急速",
+      "weakness": "1ポートのみ",
+      "recommended": "泊まりなし・日帰り移動でスマホだけ充電",
+      "rating": 4.5
+    }
+  ],
+  "faq": [
+    {
+      "q": "出張に必要な最低限の充電グッズは？",
+      "a": "充電器1個＋ケーブル1本が最低限。1泊2日ならモバイルバッテリーは不要なケースも多いです。2日以上ならバッテリーも追加を検討。"
+    },
+    {
+      "q": "海外旅行で使える充電器は？",
+      "a": "Anker 511 Charger (30W) と 733 Power Bank はいずれも100-240V対応。変換プラグを追加すれば海外でも使えます。"
+    },
+    {
+      "q": "パッキングキューブはどのブランドがいい？",
+      "a": "Eagle Creek は軽量さと耐久性のバランスが良く、旅行用品の中では定番ブランドの一つです。圧縮が目的なら別途「圧縮パッキングキューブ」を探すのがおすすめです。"
+    }
+  ],
+  "relatedBest": ["best-travel-charging-2026", "best-travel-packing-2026"],
+  "relatedPicks": ["pick-eagle-creek-packing-cube", "pick-anker-733-powerbank", "pick-anker-511-charger"]
+}

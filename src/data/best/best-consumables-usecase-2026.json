@@ -1,0 +1,57 @@
+{
+  "slug": "best-consumables-usecase-2026",
+  "title": "デバイス消耗品 用途別おすすめ 2026",
+  "description": "「スマホ充電ケーブル・iPhone充電・電池補充」の3シーン別に最適な消耗品を厳選。安くて長持ちするものを選ぶコツを紹介。",
+  "category": "日用消耗品",
+  "categorySlug": "consumables",
+  "publishedAt": "2026-02-22",
+  "updatedAt": "2026-02-22",
+  "conclusion": "消耗品の選択は「安さより耐久性」が長期コスパの鍵。**Android充電**は USB-Cケーブル、**iPhone充電**は MFi認証ケーブル、**電池交換**は eneloop pro が各シーン最適解です。",
+  "topPicks": [
+    { "rank": 1, "label": "Android・Mac USB-Cデイリーケーブル", "productSlug": "anker-usbc-cable-180cm", "pickSlug": "pick-anker-usbc-cable" },
+    { "rank": 2, "label": "iPhone急速充電ケーブル", "productSlug": "anker-powerline-usbc-lightning", "pickSlug": "pick-anker-usbc-lightning" },
+    { "rank": 3, "label": "ワイヤレスデバイスの電池補充", "productSlug": "panasonic-eneloop-pro-4pack", "pickSlug": "pick-panasonic-eneloop-pro" }
+  ],
+  "comparison": [
+    {
+      "productSlug": "anker-usbc-cable-180cm",
+      "priceRange": "¥1,190",
+      "strength": "60W・ナイロン耐久・コスパ",
+      "weakness": "映像出力非対応",
+      "recommended": "USB-Cデバイスのデイリー充電",
+      "rating": 4.5
+    },
+    {
+      "productSlug": "anker-powerline-usbc-lightning",
+      "priceRange": "¥1,990",
+      "strength": "MFi認証・18W急速充電",
+      "weakness": "Lightning側のみ",
+      "recommended": "iPhone・iPadの急速充電",
+      "rating": 4.5
+    },
+    {
+      "productSlug": "panasonic-eneloop-pro-4pack",
+      "priceRange": "¥2,380",
+      "strength": "大容量2500mAh・500回繰り返し",
+      "weakness": "事前に充電器が必要",
+      "recommended": "ワイヤレスマウス・リモコンの電池を繰り返し使う",
+      "rating": 4.7
+    }
+  ],
+  "faq": [
+    {
+      "q": "消耗品の交換目安はどれくらい？",
+      "a": "USBケーブルは1〜2年、充電池は5〜7年（または500回充電）が交換目安の参考値です。品質の高い製品を選ぶと交換頻度を下げられます。"
+    },
+    {
+      "q": "ケーブルは家と職場で分ける必要がある？",
+      "a": "分けるのが理想ですが、1.8mの長いケーブルを1本デスクに置いておくだけで十分なケースも多いです。"
+    },
+    {
+      "q": "充電池と使い捨て電池どちらが得？",
+      "a": "eneloop pro 4本¥2,380で500回使えると仮定すると、1回あたり約0.5円。使い捨て単3（1本30〜50円）と比べ、数十回で元が取れる計算です。"
+    }
+  ],
+  "relatedBest": ["best-consumables-usb-cables-2026", "best-consumables-batteries-2026"],
+  "relatedPicks": ["pick-anker-usbc-cable", "pick-anker-usbc-lightning", "pick-panasonic-eneloop-pro"]
+}

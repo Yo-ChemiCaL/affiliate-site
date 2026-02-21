@@ -188,6 +188,10 @@ const comparisonProducts = (article.comparison ?? []).map((c: any) => ({
         <a href={url('/best/')} class="related-link">比較記事一覧へ</a>
       </div>
     </section>
+
+    <p class="policy-footnote">
+      掲載基準について：<a href={url('/methodology/')}>選定基準</a> ／ <a href={url('/editorial-policy/')}>編集方針</a>
+    </p>
   </div>
 </BaseLayout>
 
@@ -261,6 +265,9 @@ const comparisonProducts = (article.comparison ?? []).map((c: any) => ({
   .related-link:hover { border-color: var(--color-primary); color: var(--color-primary); }
   .pick-link { border-color: var(--color-primary); color: var(--color-primary); }
   .pick-link:hover { background: var(--color-primary); color: #fff; }
+
+  .policy-footnote { font-size: 0.78rem; color: var(--color-text-muted); margin-top: 32px; text-align: center; }
+  .policy-footnote a { color: var(--color-primary); }
 
   @media (max-width: 640px) {
     .pick-inner { flex-direction: column; }

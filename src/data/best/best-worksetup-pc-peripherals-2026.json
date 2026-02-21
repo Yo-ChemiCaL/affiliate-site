@@ -1,0 +1,57 @@
+{
+  "slug": "best-worksetup-pc-peripherals-2026",
+  "title": "テレワーク PC周辺機器おすすめ 2026 マウス・キーボード・ハブ",
+  "description": "在宅勤務の作業効率を上げるPC周辺機器を使いやすさ・コスパで比較。マウス・キーボード・USB-Cハブの3本柱を厳選。",
+  "category": "デスク・PC環境",
+  "categorySlug": "work-setup",
+  "publishedAt": "2026-02-22",
+  "updatedAt": "2026-02-22",
+  "conclusion": "マウスは **MX Master 3S**、キーボードは **MX Keys**、ポート不足解消は **Anker 7-in-1 ハブ** が各カテゴリ最高峰の組み合わせです。",
+  "topPicks": [
+    { "rank": 1, "label": "マウス生産性最高峰", "productSlug": "logicool-mx-master-3s", "pickSlug": "pick-logicool-mx-master-3s" },
+    { "rank": 2, "label": "タイピング品質向上", "productSlug": "logicool-mx-keys", "pickSlug": "pick-logicool-mx-keys" },
+    { "rank": 3, "label": "ポート不足を一括解決", "productSlug": "anker-usb-hub-7in1", "pickSlug": "pick-anker-usb-hub-7in1" }
+  ],
+  "comparison": [
+    {
+      "productSlug": "logicool-mx-master-3s",
+      "priceRange": "¥14,850",
+      "strength": "電磁気スクロール・静音・Mac/Win両対応",
+      "weakness": "141g・価格高め",
+      "recommended": "毎日長時間PCを使うビジネスパーソン",
+      "rating": 4.7
+    },
+    {
+      "productSlug": "logicool-mx-keys",
+      "priceRange": "¥16,940",
+      "strength": "バックライト・3台マルチ・静音打鍵",
+      "weakness": "テンキーレスなし・重量810g",
+      "recommended": "長時間タイピングで疲れを減らしたい",
+      "rating": 4.6
+    },
+    {
+      "productSlug": "anker-usb-hub-7in1",
+      "priceRange": "¥4,590",
+      "strength": "HDMI/USB-A/SD/PD対応・持ち運び可",
+      "weakness": "4K60fps非対応",
+      "recommended": "MacBook等のポート不足をまとめて解決",
+      "rating": 4.3
+    }
+  ],
+  "faq": [
+    {
+      "q": "MX Master 3SとMX Keysを組み合わせるメリットは？",
+      "a": "どちらもLogicool Flowに対応しており、マウス・キーボードをMac/Windowsで同時操作できます。ワークフロー効率が大きく向上します。"
+    },
+    {
+      "q": "USB-Cハブは必要か？",
+      "a": "MacBook AirやSurface Proはポートが少なく、モニター・外付けHDD・充電を同時接続するにはハブが必須です。"
+    },
+    {
+      "q": "マウス・キーボードはBluetoothと専用レシーバーどちらが良い？",
+      "a": "Unifyingレシーバーは遅延が少なく安定。Bluetoothはレシーバー不要で持ち運びに便利。MX Master 3Sは両対応です。"
+    }
+  ],
+  "relatedBest": ["best-worksetup-desk-environment-2026", "best-worksetup-usecase-2026"],
+  "relatedPicks": ["pick-logicool-mx-master-3s", "pick-logicool-mx-keys", "pick-anker-usb-hub-7in1"]
+}

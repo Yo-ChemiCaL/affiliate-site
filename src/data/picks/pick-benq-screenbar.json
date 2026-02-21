@@ -1,0 +1,14 @@
+{
+  "slug": "pick-benq-screenbar",
+  "title": "デスクの手元照明で目の疲れを解消するモニターライトはこれ",
+  "productSlug": "benq-screenbar",
+  "targetUser": "夜間・暗い部屋でのPC作業で目が疲れる、デスクに置くライトを探している在宅ワーカー",
+  "reasons": [
+    "モニター上部に固定するため画面への映り込みがゼロ、グレア問題が完全に解消される",
+    "USB給電のためコンセント不要、自動輝度センサーが周囲の明るさに合わせて調光",
+    "モニターを交換しても付け替えられる汎用性の高い設計、長く使えるコスパ"
+  ],
+  "caution": "直線型モニターのみ対応。湾曲（曲面）モニターには「BenQ ScreenBar Halo」が別途必要です。リモコンなし、本体タッチ操作のみです。",
+  "alternatives": ["best-worksetup-desk-environment-2026"],
+  "publishedAt": "2026-02-22"
+}

@@ -1,0 +1,57 @@
+{
+  "slug": "best-consumables-usb-cables-2026",
+  "title": "おすすめUSBケーブル 2026 USB-C・Lightning対応",
+  "description": "断線しにくい・急速充電対応・MFi認証取得のUSBケーブルをAndroid向け・iPhone向けで比較。毎日使う消耗品を賢く選ぶ。",
+  "category": "日用消耗品",
+  "categorySlug": "consumables",
+  "publishedAt": "2026-02-22",
+  "updatedAt": "2026-02-22",
+  "conclusion": "**Android・iPad・MacBook**向けには Anker 544 USB-C、**iPhone**向けには Anker PowerLine II USB-C to Lightning が断線耐久性とコスパで最優秀です。",
+  "topPicks": [
+    { "rank": 1, "label": "USB-C万能ケーブル", "productSlug": "anker-usbc-cable-180cm", "pickSlug": "pick-anker-usbc-cable" },
+    { "rank": 2, "label": "iPhone急速充電", "productSlug": "anker-powerline-usbc-lightning", "pickSlug": "pick-anker-usbc-lightning" },
+    { "rank": 3, "label": "ケーブル不要・バッテリー一体型", "productSlug": "anker-powercore-slim-10000", "pickSlug": "pick-anker-powercore-slim" }
+  ],
+  "comparison": [
+    {
+      "productSlug": "anker-usbc-cable-180cm",
+      "priceRange": "¥1,190",
+      "strength": "60W急速充電・ナイロン耐久・コスパ最強",
+      "weakness": "映像出力非対応（USB 2.0）",
+      "recommended": "Android・iPad・MacBookの毎日充電",
+      "rating": 4.5
+    },
+    {
+      "productSlug": "anker-powerline-usbc-lightning",
+      "priceRange": "¥1,990",
+      "strength": "MFi認証・18W急速充電・断線しにくい",
+      "weakness": "USB-C側が必要",
+      "recommended": "iPhoneをUSB-C充電器から急速充電",
+      "rating": 4.5
+    },
+    {
+      "productSlug": "anker-powercore-slim-10000",
+      "priceRange": "¥2,990",
+      "strength": "ケーブル不要の外出充電",
+      "weakness": "急速充電非対応",
+      "recommended": "外出時のケーブル本数を減らしたい",
+      "rating": 4.5
+    }
+  ],
+  "faq": [
+    {
+      "q": "USB-Cケーブルは何Wのものを選べばいい？",
+      "a": "スマホなら18〜45W、iPad Proなら45W、MacBook Airなら45〜65W対応ケーブルが目安です。ケーブルと充電器の低い方の出力が適用されます。"
+    },
+    {
+      "q": "MFi認証とは？",
+      "a": "Apple公認のケーブル認証です。非認証品はiOS更新後に使えなくなることがあります。iPhoneには認証品を選ぶのが無難です。"
+    },
+    {
+      "q": "ケーブルはどれくらいで断線する？",
+      "a": "安価なケーブルは3〜6ヶ月で断線することも。Anker Nylonシリーズは2万回以上の曲げ試験をクリアしており1〜2年使えるのが目安です。"
+    }
+  ],
+  "relatedBest": ["best-consumables-batteries-2026", "best-charging-compact-charger-2026"],
+  "relatedPicks": ["pick-anker-usbc-cable", "pick-anker-usbc-lightning"]
+}

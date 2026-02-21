@@ -8,17 +8,27 @@ import productsData from '../../data/products.json';
 
 export async function getStaticPaths() {
   const products = productsData as Product[];
-  // 英語slugで一意なカテゴリ一覧
   const slugSet = new Set(products.map((p) => (p as any).categorySlug ?? toCategorySlug(p.category)));
 
-  return [...slugSet].map((slug) => ({
-    params: { name: slug },
-    props: {
-      categorySlug: slug,
-      categoryName: fromCategorySlug(slug),
-      products: products.filter((p) => ((p as any).categorySlug ?? toCategorySlug(p.category)) === slug),
-    },
-  }));
+  const paths: { params: { name: string }; props: { categorySlug: string; categoryName: string; products: Product[] } }[] = [];
+
+  for (const slug of slugSet) {
+    const categoryName = fromCategorySlug(slug);
+    const categoryProducts = products.filter(
+      (p) => ((p as any).categorySlug ?? toCategorySlug(p.category)) === slug
+    );
+    const props = { categorySlug: slug, categoryName, products: categoryProducts };
+
+    // 英語slug: /category/work-from-home/
+    paths.push({ params: { name: slug }, props });
+
+    // 日本語名: /category/テレワーク・在宅/ （URLエンコード経由でも解決される）
+    if (categoryName && categoryName !== slug) {
+      paths.push({ params: { name: categoryName }, props });
+    }
+  }
+
+  return paths;
 }
 
 interface Props {

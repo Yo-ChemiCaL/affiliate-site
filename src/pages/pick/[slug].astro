@@ -126,6 +126,10 @@ const discount = product.originalPrice && product.price
       </a>
       <a href={url('/best/')} class="btn-back">他の比較記事を見る</a>
     </div>
+
+    <p class="policy-footnote">
+      掲載基準について：<a href={url('/methodology/')}>選定基準</a> ／ <a href={url('/editorial-policy/')}>編集方針</a>
+    </p>
   </div>
 </BaseLayout>
 
@@ -180,6 +184,9 @@ const discount = product.originalPrice && product.price
   .bottom-cta-title { font-size: 1rem; font-weight: 800; }
   .btn-cta { max-width: 360px; }
   .btn-back { font-size: 0.82rem; color: var(--color-text-muted); text-decoration: underline; }
+
+  .policy-footnote { font-size: 0.78rem; color: var(--color-text-muted); margin-top: 24px; text-align: center; }
+  .policy-footnote a { color: var(--color-primary); }
 
   @media (max-width: 768px) {
     .pick-layout { grid-template-columns: 1fr; }

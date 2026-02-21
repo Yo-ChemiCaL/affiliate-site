@@ -14,6 +14,8 @@ export const CATEGORY_SLUG_MAP: Record<string, string> = {
   '旅行・移動':       'travel',
   '充電・電源':       'charging',
   '日用消耗品':       'consumables',
+  'デスク・PC環境':   'work-setup',
+  '旅行・移動便利':   'travel-utility',
 };
 
 /** 英語スラッグ → 日本語カテゴリ名 逆引き */

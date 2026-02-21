@@ -1,0 +1,14 @@
+{
+  "slug": "pick-anker-usbc-lightning",
+  "title": "iPhoneを急速充電できるMFi認証ケーブルはこれだけでいい",
+  "productSlug": "anker-powerline-usbc-lightning",
+  "targetUser": "iPhoneをUSB-C充電器・MacBookから急速充電したい、純正より安くて丈夫なケーブルを探している方",
+  "reasons": [
+    "Apple MFi認証取得で動作保証、iOS更新後も使えなくなるリスクがない",
+    "18W急速充電対応でiPhoneの充電時間を大幅短縮、USB-C充電器と組み合わせて即使える",
+    "ダブルブレイドナイロン設計で純正品より断線しにくく、長期間のコスパが優れている"
+  ],
+  "caution": "USB-C側が必要なため、USB-A充電器（旧型）には直接接続できません。USB-C搭載の充電器・PCが必要です。",
+  "alternatives": ["best-consumables-usb-cables-2026"],
+  "publishedAt": "2026-02-22"
+}

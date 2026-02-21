@@ -1,0 +1,14 @@
+{
+  "slug": "pick-anker-usb-hub-7in1",
+  "title": "MacBookのポート不足をまとめて解決するUSBハブはこれ",
+  "productSlug": "anker-usb-hub-7in1",
+  "targetUser": "MacBook・Surface のUSB-Cポートが足りなく、外付けモニターや周辺機器が接続できない方",
+  "reasons": [
+    "HDMI・USB-A×2・USB-C・SD/microSD・PD充電の7機能を1本のケーブルで接続",
+    "持ち運び可能なコンパクトサイズで、自宅と外出先の両方で使い回せる",
+    "¥4,590で7ポート対応、バラバラに買うより大幅にコスト削減できる"
+  ],
+  "caution": "HDMI出力は4K30fpsまでの対応です。4K60fps・HDR出力が必要な場合は上位ハブが必要です。PD充電はハブ経由で最大85Wです。",
+  "alternatives": ["best-worksetup-pc-peripherals-2026"],
+  "publishedAt": "2026-02-22"
+}
