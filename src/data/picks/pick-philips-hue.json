@@ -1,0 +1,14 @@
+{
+  "slug": "pick-philips-hue",
+  "title": "照明を変えるだけで部屋が別世界になる——Hueスターターセット",
+  "productSlug": "philips-hue-starter-kit",
+  "targetUser": "スマートホームを照明から始めたい方・Alexa/Google Homeをすでに持っている方",
+  "reasons": [
+    "アプリで色温度・明るさを自由に変更——朝は爽やかな白、夜は温かいオレンジに自動切替",
+    "Alexa・Google Home・Apple HomeKitすべてに対応、既存スマートスピーカーをそのまま活用",
+    "スターターセットでブリッジ込み——追加購入なしですぐ使える"
+  ],
+  "caution": "電球4個＋ブリッジのセット価格のため初期投資が必要です。電球を増やすほど追加費用がかかる点は念頭に置いてください。",
+  "alternatives": ["best-smart-home-2026"],
+  "publishedAt": "2026-02-12"
+}

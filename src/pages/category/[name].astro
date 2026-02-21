@@ -3,42 +3,53 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import ProductCard from '../../components/ProductCard.astro';
 import type { Product } from '../../components/ProductCard.astro';
 import { url } from '../../lib/url';
+import { fromCategorySlug, toCategorySlug } from '../../lib/category';
 import productsData from '../../data/products.json';
 
 export async function getStaticPaths() {
   const products = productsData as Product[];
-  const categories = [...new Set(products.map((p) => p.category))];
+  // 英語slugで一意なカテゴリ一覧
+  const slugSet = new Set(products.map((p) => (p as any).categorySlug ?? toCategorySlug(p.category)));
 
-  return categories.map((name) => ({
-    params: { name: encodeURIComponent(name) },
+  return [...slugSet].map((slug) => ({
+    params: { name: slug },
     props: {
-      categoryName: name,
-      products: products.filter((p) => p.category === name),
+      categorySlug: slug,
+      categoryName: fromCategorySlug(slug),
+      products: products.filter((p) => ((p as any).categorySlug ?? toCategorySlug(p.category)) === slug),
     },
   }));
 }
 
 interface Props {
+  categorySlug: string;
   categoryName: string;
   products: Product[];
 }
 
-const { categoryName, products } = Astro.props;
-const allCategories = [...new Set((productsData as Product[]).map((p) => p.category))];
+const { categorySlug, categoryName, products } = Astro.props;
+const allProducts = productsData as Product[];
+const allSlugs = [...new Set(allProducts.map((p) => (p as any).categorySlug ?? toCategorySlug(p.category)))];
 const sorted = [...products].sort(
   (a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
 );
+
+// このカテゴリに関連するbest記事を探す
+const bestFiles = await Astro.glob('../../data/best/*.json');
+const relatedBest = bestFiles
+  .map((f) => f.default)
+  .filter((b) => b.categorySlug === categorySlug);
 ---
 
 <BaseLayout
-  title={`${categoryName}のおすすめ商品一覧 | おすすめ商品レビュー`}
-  description={`${categoryName}カテゴリのおすすめ商品${products.length}件を厳選紹介。コスパ・品質で選んだ商品をAmazonでお得に購入できます。`}
+  title={`${categoryName}のおすすめ商品一覧 | mono-lab`}
+  description={`${categoryName}カテゴリのおすすめ商品${products.length}件を厳選紹介。比較・ランキングも掲載。`}
 >
   <div class="container page-content">
-    <!-- Breadcrumb -->
     <nav class="breadcrumb" aria-label="パンくずリスト">
       <ol>
         <li><a href={url('/')}>ホーム</a></li>
+        <li><a href={url('/category/')}>カテゴリ</a></li>
         <li aria-current="page">{categoryName}</li>
       </ol>
     </nav>
@@ -48,12 +59,25 @@ const sorted = [...products].sort(
       <p class="page-count">{products.length}件の商品</p>
     </div>
 
-    <!-- 他カテゴリへのリンク -->
+    <!-- 関連best記事 -->
+    {relatedBest.length > 0 && (
+      <div class="related-best">
+        <p class="related-label">📊 比較記事から選ぶ</p>
+        {relatedBest.map((b) => (
+          <a href={url(`/best/${b.slug}/`)} class="best-link-card">
+            <span class="best-link-title">{b.title}</span>
+            <span class="best-link-cta">比較表を見る →</span>
+          </a>
+        ))}
+      </div>
+    )}
+
+    <!-- 他カテゴリ -->
     <div class="other-categories">
       <span class="other-label">他のカテゴリ:</span>
-      {allCategories.filter((c) => c !== categoryName).map((cat) => (
-        <a href={url(`/category/${encodeURIComponent(cat)}/`)} class="category-chip">
-          {cat}
+      {allSlugs.filter((s) => s !== categorySlug).map((slug) => (
+        <a href={url(`/category/${slug}/`)} class="category-chip">
+          {fromCategorySlug(slug)}
         </a>
       ))}
     </div>
@@ -61,9 +85,7 @@ const sorted = [...products].sort(
     <!-- 商品一覧 -->
     {sorted.length > 0 ? (
       <div class="product-grid">
-        {sorted.map((product) => (
-          <ProductCard product={product} />
-        ))}
+        {sorted.map((product) => <ProductCard product={product} />)}
       </div>
     ) : (
       <div class="empty-state">
@@ -71,97 +93,43 @@ const sorted = [...products].sort(
         <a href={url('/')} class="btn-back">トップページへ戻る</a>
       </div>
     )}
+
+    <!-- 下部導線 -->
+    <div class="bottom-nav">
+      <a href={url('/best/')} class="nav-btn">📊 比較記事一覧</a>
+      <a href={url('/pick/')} class="nav-btn">⚡ 即決ガイド一覧</a>
+      <a href={url('/')} class="nav-btn">🏠 ホームへ</a>
+    </div>
   </div>
 </BaseLayout>
 
 <style>
-  .page-content {
-    padding-top: 24px;
-    padding-bottom: 48px;
-  }
+  .page-content { padding-top: 24px; padding-bottom: 48px; }
 
-  .breadcrumb ol {
-    display: flex;
-    list-style: none;
-    gap: 8px;
-    font-size: 0.82rem;
-    color: var(--color-text-muted);
-    flex-wrap: wrap;
-    margin-bottom: 24px;
-  }
+  .breadcrumb ol { display: flex; list-style: none; gap: 8px; font-size: 0.82rem; color: var(--color-text-muted); flex-wrap: wrap; margin-bottom: 24px; }
+  .breadcrumb li:not(:last-child)::after { content: '›'; margin-left: 8px; color: var(--color-border); }
+  .breadcrumb a { color: var(--color-primary); }
 
-  .breadcrumb li:not(:last-child)::after {
-    content: '›';
-    margin-left: 8px;
-    color: var(--color-border);
-  }
+  .page-header { display: flex; align-items: baseline; gap: 16px; margin-bottom: 20px; padding-bottom: 16px; border-bottom: 3px solid var(--color-primary); }
+  .page-title { font-size: 1.6rem; font-weight: 900; }
+  .page-count { font-size: 0.9rem; color: var(--color-text-muted); }
 
-  .breadcrumb a {
-    color: var(--color-primary);
-  }
+  .related-best { margin-bottom: 20px; }
+  .related-label { font-size: 0.82rem; font-weight: 700; color: var(--color-text-muted); margin-bottom: 8px; }
+  .best-link-card { display: flex; justify-content: space-between; align-items: center; background: #fffbf0; border: 2px solid var(--color-accent); border-radius: var(--radius); padding: 14px 18px; margin-bottom: 8px; transition: all var(--transition); }
+  .best-link-card:hover { background: var(--color-accent); color: #333; }
+  .best-link-title { font-size: 0.9rem; font-weight: 700; color: var(--color-text); }
+  .best-link-cta { font-size: 0.82rem; font-weight: 700; color: var(--color-primary); white-space: nowrap; }
 
-  .page-header {
-    display: flex;
-    align-items: baseline;
-    gap: 16px;
-    margin-bottom: 20px;
-    padding-bottom: 16px;
-    border-bottom: 3px solid var(--color-primary);
-  }
+  .other-categories { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
+  .other-label { font-size: 0.82rem; color: var(--color-text-muted); font-weight: 600; }
+  .category-chip { display: inline-block; padding: 4px 12px; background-color: var(--color-bg); border: 1px solid var(--color-border); border-radius: 16px; font-size: 0.8rem; color: var(--color-text); transition: all var(--transition); }
+  .category-chip:hover { border-color: var(--color-primary); color: var(--color-primary); }
 
-  .page-title {
-    font-size: 1.6rem;
-    font-weight: 900;
-  }
+  .empty-state { text-align: center; padding: 64px 0; color: var(--color-text-muted); }
+  .btn-back { display: inline-block; margin-top: 16px; padding: 10px 24px; background-color: var(--color-primary); color: #fff; border-radius: var(--radius); font-weight: 700; }
 
-  .page-count {
-    font-size: 0.9rem;
-    color: var(--color-text-muted);
-  }
-
-  .other-categories {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 24px;
-  }
-
-  .other-label {
-    font-size: 0.82rem;
-    color: var(--color-text-muted);
-    font-weight: 600;
-  }
-
-  .category-chip {
-    display: inline-block;
-    padding: 4px 12px;
-    background-color: var(--color-bg);
-    border: 1px solid var(--color-border);
-    border-radius: 16px;
-    font-size: 0.8rem;
-    color: var(--color-text);
-    transition: all var(--transition);
-  }
-
-  .category-chip:hover {
-    border-color: var(--color-primary);
-    color: var(--color-primary);
-  }
-
-  .empty-state {
-    text-align: center;
-    padding: 64px 0;
-    color: var(--color-text-muted);
-  }
-
-  .btn-back {
-    display: inline-block;
-    margin-top: 16px;
-    padding: 10px 24px;
-    background-color: var(--color-primary);
-    color: #fff;
-    border-radius: var(--radius);
-    font-weight: 700;
-  }
+  .bottom-nav { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--color-border); }
+  .nav-btn { padding: 10px 18px; border: 2px solid var(--color-border); border-radius: var(--radius); font-size: 0.85rem; font-weight: 600; color: var(--color-text); transition: all var(--transition); }
+  .nav-btn:hover { border-color: var(--color-primary); color: var(--color-primary); }
 </style>

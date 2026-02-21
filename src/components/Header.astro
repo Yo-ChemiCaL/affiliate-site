@@ -3,9 +3,10 @@ import { url } from '../lib/url';
 
 const navLinks = [
   { label: 'ホーム', href: url('/') },
+  { label: '比較記事', href: url('/best/') },
+  { label: '即決ガイド', href: url('/pick/') },
   { label: 'カテゴリ', href: url('/category/') },
   { label: 'ランキング', href: url('/ranking/') },
-  { label: 'RSS', href: url('/rss.xml') },
 ];
 
 const currentPath = Astro.url.pathname;
@@ -15,13 +16,13 @@ const currentPath = Astro.url.pathname;
   <div class="container header-inner">
     <a href={url('/')} class="site-logo">
       <span class="logo-icon">★</span>
-      おすすめ商品レビュー
+      mono-lab
     </a>
     <nav class="site-nav" aria-label="メインナビゲーション">
       <ul>
         {navLinks.map((link) => (
           <li>
-            <a href={link.href} class={currentPath === link.href ? 'active' : ''}>
+            <a href={link.href} class={currentPath.startsWith(link.href) && link.href !== url('/') ? 'active' : currentPath === link.href ? 'active' : ''}>
               {link.label}
             </a>
           </li>
@@ -35,80 +36,19 @@ const currentPath = Astro.url.pathname;
 </header>
 
 <style>
-  .site-header {
-    background-color: var(--color-secondary);
-    color: #fff;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-  }
+  .site-header { background-color: var(--color-secondary); color: #fff; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 8px rgba(0,0,0,0.2); }
+  .header-inner { display: flex; align-items: center; justify-content: space-between; height: 60px; gap: 16px; }
+  .site-logo { display: flex; align-items: center; gap: 8px; color: #fff; font-size: 1.1rem; font-weight: 700; white-space: nowrap; }
+  .logo-icon { color: var(--color-accent); font-size: 1.3rem; }
+  .site-nav ul { display: flex; list-style: none; gap: 2px; }
+  .site-nav a { color: rgba(255,255,255,0.85); padding: 6px 10px; border-radius: 4px; font-size: 0.85rem; transition: background var(--transition), color var(--transition); }
+  .site-nav a:hover, .site-nav a.active { background-color: var(--color-primary); color: #fff; }
+  .nav-toggle { display: none; background: none; border: none; color: #fff; font-size: 1.5rem; cursor: pointer; padding: 4px 8px; }
 
-  .header-inner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 60px;
-    gap: 16px;
-  }
-
-  .site-logo {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    color: #fff;
-    font-size: 1.1rem;
-    font-weight: 700;
-    white-space: nowrap;
-  }
-
-  .logo-icon {
-    color: var(--color-accent);
-    font-size: 1.3rem;
-  }
-
-  .site-nav ul {
-    display: flex;
-    list-style: none;
-    gap: 4px;
-  }
-
-  .site-nav a {
-    color: rgba(255,255,255,0.85);
-    padding: 6px 12px;
-    border-radius: 4px;
-    font-size: 0.9rem;
-    transition: background var(--transition), color var(--transition);
-  }
-
-  .site-nav a:hover,
-  .site-nav a.active {
-    background-color: var(--color-primary);
-    color: #fff;
-  }
-
-  .nav-toggle {
-    display: none;
-    background: none;
-    border: none;
-    color: #fff;
-    font-size: 1.5rem;
-    cursor: pointer;
-    padding: 4px 8px;
-  }
-
-  @media (max-width: 640px) {
+  @media (max-width: 700px) {
     .nav-toggle { display: block; }
-    .site-nav {
-      display: none;
-      position: absolute;
-      top: 60px;
-      left: 0;
-      right: 0;
-      background-color: var(--color-secondary);
-      padding: 16px;
-    }
+    .site-nav { display: none; position: absolute; top: 60px; left: 0; right: 0; background-color: var(--color-secondary); padding: 16px; }
     .nav-open .site-nav { display: block; }
-    .site-nav ul { flex-direction: column; gap: 8px; }
+    .site-nav ul { flex-direction: column; gap: 4px; }
   }
 </style>

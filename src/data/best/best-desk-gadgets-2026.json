@@ -1,0 +1,39 @@
+{
+  "slug": "best-desk-gadgets-2026",
+  "title": "デスク環境・生産性ガジェット おすすめ比較2026",
+  "description": "テレワーク・在宅勤務の作業効率を上げるデスクガジェットを使いやすさ・コスパで比較。マウス・キーボード・周辺機器を厳選しました。",
+  "category": "デスク環境・生産性",
+  "categorySlug": "desk-productivity",
+  "publishedAt": "2026-02-15",
+  "updatedAt": "2026-02-22",
+  "conclusion": "デスク生産性向上の第一歩として **Logicool MX Master 3S** は圧倒的におすすめです。電磁気スクロールと多ボタンカスタマイズで作業効率が明確に上がります。Mac・Windowsどちらでも使えるため長く愛用できます。",
+  "topPicks": [
+    { "rank": 1, "label": "生産性向上マウス最高峰", "productSlug": "logicool-mx-master-3s", "pickSlug": "pick-logicool-mx-master-3s" }
+  ],
+  "comparison": [
+    {
+      "productSlug": "logicool-mx-master-3s",
+      "priceRange": "¥14,850",
+      "strength": "電磁気スクロール・多ボタン・Mac/Win両対応",
+      "weakness": "価格高め・重さ141g",
+      "recommended": "毎日PC作業をする社会人・クリエイター",
+      "rating": 4.7
+    }
+  ],
+  "faq": [
+    {
+      "q": "MX Master 3SとMX Master 3の違いは？",
+      "a": "3Sはクリック音が約90%静音化され、センサー精度が8000DPIに向上しています。ガラス面でも動作するのが大きな違いです。"
+    },
+    {
+      "q": "MacとWindowsで同時に使える？",
+      "a": "Bluetooth経由で最大3台のデバイスを登録でき、ボタン一つで切り替えられます。Mac・Windows・iPadの組み合わせも可能です。"
+    },
+    {
+      "q": "充電はどのくらい持つ？",
+      "a": "フル充電で最大70日使用可能です。USB-Cで充電でき、充電しながらの使用もできます。"
+    }
+  ],
+  "relatedBest": ["best-mobile-battery-2026", "best-smart-home-2026"],
+  "relatedPicks": ["pick-logicool-mx-master-3s"]
+}

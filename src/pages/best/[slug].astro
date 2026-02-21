@@ -1,0 +1,270 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { url } from '../../lib/url';
+import productsData from '../../data/products.json';
+
+export async function getStaticPaths() {
+  const bestFiles = await Astro.glob('../../data/best/*.json');
+  return bestFiles.map((f) => ({
+    params: { slug: f.default.slug },
+    props: { article: f.default },
+  }));
+}
+
+const { article } = Astro.props;
+const allProducts = productsData;
+
+function getProduct(productSlug: string) {
+  return allProducts.find((p) => p.slug === productSlug);
+}
+
+const topProducts = (article.topPicks ?? []).map((pick: any) => ({
+  ...pick,
+  product: getProduct(pick.productSlug),
+}));
+
+const comparisonProducts = (article.comparison ?? []).map((c: any) => ({
+  ...c,
+  product: getProduct(c.productSlug),
+}));
+---
+
+<BaseLayout
+  title={`${article.title} | mono-lab`}
+  description={article.description}
+  ogType="article"
+>
+  <div class="container best-page">
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb">
+      <ol>
+        <li><a href={url('/')}>ホーム</a></li>
+        <li><a href={url('/best/')}>比較記事</a></li>
+        <li aria-current="page">{article.title}</li>
+      </ol>
+    </nav>
+
+    <header class="page-header">
+      <span class="category-label">{article.category}</span>
+      <h1>{article.title}</h1>
+      <p class="page-desc">{article.description}</p>
+    </header>
+
+    <!-- 結論 -->
+    <section class="section conclusion-section">
+      <h2 class="section-title">結論：これを選べば間違いない</h2>
+      <div class="conclusion-box">
+        <p>{article.conclusion}</p>
+      </div>
+
+      <!-- Top Picks -->
+      <div class="top-picks">
+        {topProducts.map((pick: any) => pick.product && (
+          <div class="top-pick-card">
+            <span class="pick-rank">#{pick.rank} {pick.label}</span>
+            <div class="pick-inner">
+              <img src={pick.product.image} alt={pick.product.title} width="120" height="80" loading="lazy" />
+              <div class="pick-info">
+                <p class="pick-title">{pick.product.title}</p>
+                <p class="pick-price">
+                  {pick.product.originalPrice && <s>¥{pick.product.originalPrice.toLocaleString()}</s>}
+                  <strong>¥{pick.product.price?.toLocaleString()}</strong>
+                </p>
+                <div class="pick-actions">
+                  <a href={pick.product.amazonUrl} class="btn-affiliate btn-amazon" target="_blank" rel="noopener noreferrer nofollow">
+                    Amazonで価格を見る
+                  </a>
+                  {pick.pickSlug && (
+                    <a href={url(`/pick/${pick.pickSlug}/`)} class="btn-sub">詳しく見る →</a>
+                  )}
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- 比較表 -->
+    {comparisonProducts.length > 0 && (
+      <section class="section">
+        <h2 class="section-title">比較表</h2>
+        <div class="comparison-table-wrap">
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th>商品</th>
+                <th>価格</th>
+                <th>強み</th>
+                <th>注意点</th>
+                <th>こんな人に</th>
+                <th>評価</th>
+              </tr>
+            </thead>
+            <tbody>
+              {comparisonProducts.map((c: any) => c.product && (
+                <tr>
+                  <td class="product-cell">
+                    <a href={url(`/products/${c.product.slug}/`)}>{c.product.title}</a>
+                  </td>
+                  <td class="price-cell">{c.priceRange}</td>
+                  <td>{c.strength}</td>
+                  <td class="weakness-cell">{c.weakness}</td>
+                  <td>{c.recommended}</td>
+                  <td class="rating-cell">★{c.rating}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+    )}
+
+    <!-- 個別セクション -->
+    <section class="section">
+      <h2 class="section-title">各商品の詳細</h2>
+      {comparisonProducts.map((c: any) => c.product && (
+        <div class="product-detail-card">
+          <div class="product-detail-head">
+            <img src={c.product.image} alt={c.product.title} width="160" height="110" loading="lazy" />
+            <div>
+              <h3>{c.product.title}</h3>
+              <p class="detail-target">
+                <strong>こんな人向け：</strong>{c.recommended}
+              </p>
+            </div>
+          </div>
+          <div class="pros-cons">
+            <div class="pros">
+              <p class="pros-cons-label pros-label">✅ 強み</p>
+              <p>{c.strength}</p>
+            </div>
+            <div class="cons">
+              <p class="pros-cons-label cons-label">⚠️ 注意点</p>
+              <p>{c.weakness}</p>
+            </div>
+          </div>
+          <div class="detail-cta">
+            <a href={c.product.amazonUrl} class="btn-affiliate btn-amazon" target="_blank" rel="noopener noreferrer nofollow">
+              Amazonで価格を見る
+            </a>
+            {c.product.pickSlug && (
+              <a href={url(`/pick/${c.product.pickSlug}/`)} class="btn-sub">即決ガイドを見る →</a>
+            )}
+          </div>
+        </div>
+      ))}
+    </section>
+
+    <!-- FAQ -->
+    {article.faq?.length > 0 && (
+      <section class="section">
+        <h2 class="section-title">よくある質問</h2>
+        <dl class="faq-list">
+          {article.faq.map((item: any) => (
+            <>
+              <dt class="faq-q">Q. {item.q}</dt>
+              <dd class="faq-a">A. {item.a}</dd>
+            </>
+          ))}
+        </dl>
+      </section>
+    )}
+
+    <!-- 関連リンク -->
+    <section class="section related-section">
+      <h2 class="section-title">次のステップ</h2>
+      <div class="related-links">
+        {article.relatedPicks?.map((slug: string) => (
+          <a href={url(`/pick/${slug}/`)} class="related-link pick-link">
+            即決ガイドを見る →
+          </a>
+        ))}
+        {article.relatedBest?.map((slug: string) => (
+          <a href={url(`/best/${slug}/`)} class="related-link best-link">
+            別の比較記事を見る →
+          </a>
+        ))}
+        <a href={url('/best/')} class="related-link">比較記事一覧へ</a>
+      </div>
+    </section>
+  </div>
+</BaseLayout>
+
+<style>
+  .best-page { padding: 24px 0 64px; max-width: 900px; margin: 0 auto; }
+
+  .breadcrumb ol { display: flex; list-style: none; gap: 8px; font-size: 0.8rem; color: var(--color-text-muted); flex-wrap: wrap; margin-bottom: 24px; }
+  .breadcrumb li:not(:last-child)::after { content: '›'; margin-left: 8px; }
+  .breadcrumb a { color: var(--color-primary); }
+
+  .page-header { margin-bottom: 40px; }
+  .category-label { font-size: 0.72rem; font-weight: 700; color: var(--color-primary); text-transform: uppercase; letter-spacing: 0.05em; }
+  .page-header h1 { font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 900; margin: 8px 0; line-height: 1.3; }
+  .page-desc { color: var(--color-text-muted); font-size: 0.95rem; line-height: 1.7; }
+
+  .section { margin-bottom: 48px; }
+  .section-title { font-size: 1.2rem; font-weight: 800; padding-bottom: 12px; border-bottom: 3px solid var(--color-primary); margin-bottom: 24px; }
+
+  /* 結論 */
+  .conclusion-box { background: #fffbf0; border-left: 4px solid var(--color-accent); padding: 20px 24px; border-radius: 0 var(--radius) var(--radius) 0; margin-bottom: 24px; line-height: 1.8; }
+
+  /* Top Picks */
+  .top-picks { display: flex; flex-direction: column; gap: 16px; }
+  .top-pick-card { background: var(--color-card); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
+  .pick-rank { display: block; background: var(--color-primary); color: #fff; font-size: 0.8rem; font-weight: 700; padding: 6px 16px; }
+  .pick-inner { display: flex; gap: 20px; padding: 16px; align-items: center; }
+  .pick-inner img { width: 120px; height: 80px; object-fit: cover; border-radius: 4px; flex-shrink: 0; }
+  .pick-title { font-size: 0.95rem; font-weight: 700; margin-bottom: 6px; }
+  .pick-price { margin-bottom: 12px; }
+  .pick-price s { font-size: 0.8rem; color: var(--color-text-muted); margin-right: 8px; }
+  .pick-price strong { font-size: 1.2rem; color: #e63946; }
+  .pick-actions { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+
+  /* 比較表 */
+  .comparison-table-wrap { overflow-x: auto; }
+  .comparison-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+  .comparison-table th { background: var(--color-secondary); color: #fff; padding: 10px 12px; text-align: left; white-space: nowrap; }
+  .comparison-table td { padding: 12px; border-bottom: 1px solid var(--color-border); vertical-align: top; }
+  .comparison-table tr:hover td { background: #fafafa; }
+  .product-cell a { font-weight: 700; color: var(--color-primary); }
+  .price-cell { font-weight: 700; white-space: nowrap; }
+  .weakness-cell { color: var(--color-text-muted); }
+  .rating-cell { color: var(--color-accent); font-weight: 700; white-space: nowrap; }
+
+  /* 個別セクション */
+  .product-detail-card { background: var(--color-card); border-radius: var(--radius); padding: 24px; box-shadow: var(--shadow); margin-bottom: 20px; }
+  .product-detail-head { display: flex; gap: 20px; align-items: flex-start; margin-bottom: 16px; }
+  .product-detail-head img { width: 160px; height: 110px; object-fit: cover; border-radius: 4px; flex-shrink: 0; }
+  .product-detail-head h3 { font-size: 1rem; font-weight: 800; margin-bottom: 8px; }
+  .detail-target { font-size: 0.85rem; color: var(--color-text-muted); }
+  .pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 20px; }
+  .pros, .cons { padding: 12px 16px; border-radius: var(--radius); font-size: 0.85rem; line-height: 1.6; }
+  .pros { background: #f0fdf4; }
+  .cons { background: #fffbf0; }
+  .pros-cons-label { font-weight: 700; margin-bottom: 4px; font-size: 0.8rem; }
+  .pros-label { color: #16a34a; }
+  .cons-label { color: #b45309; }
+  .detail-cta { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+
+  /* ボタン */
+  .btn-sub { font-size: 0.85rem; font-weight: 700; color: var(--color-primary); text-decoration: underline; }
+
+  /* FAQ */
+  .faq-list { display: flex; flex-direction: column; gap: 0; }
+  .faq-q { font-weight: 700; background: var(--color-bg); padding: 14px 16px; border-left: 4px solid var(--color-primary); margin-top: 12px; font-size: 0.95rem; }
+  .faq-a { padding: 14px 16px; border-left: 4px solid var(--color-border); background: var(--color-card); font-size: 0.9rem; line-height: 1.7; color: var(--color-text-muted); }
+
+  /* 関連 */
+  .related-links { display: flex; flex-wrap: wrap; gap: 12px; }
+  .related-link { padding: 10px 20px; border-radius: var(--radius); font-size: 0.88rem; font-weight: 700; border: 2px solid var(--color-border); color: var(--color-text); transition: all var(--transition); }
+  .related-link:hover { border-color: var(--color-primary); color: var(--color-primary); }
+  .pick-link { border-color: var(--color-primary); color: var(--color-primary); }
+  .pick-link:hover { background: var(--color-primary); color: #fff; }
+
+  @media (max-width: 640px) {
+    .pick-inner { flex-direction: column; }
+    .product-detail-head { flex-direction: column; }
+    .pros-cons { grid-template-columns: 1fr; }
+  }
+</style>

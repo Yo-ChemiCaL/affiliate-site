@@ -1,0 +1,74 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { url } from '../../lib/url';
+
+const bestFiles = await Astro.glob('../../data/best/*.json');
+const articles = bestFiles
+  .map((f) => f.default)
+  .sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime());
+---
+
+<BaseLayout
+  title="比較・ランキング記事一覧 | mono-lab"
+  description="モバイルバッテリー・スマートホーム・デスクガジェットなど、カテゴリ別おすすめ比較記事の一覧です。"
+>
+  <div class="container page-content">
+    <h1 class="page-title">比較・ランキング記事</h1>
+    <p class="page-desc">用途・予算から最適な商品を選べる比較記事をまとめました。</p>
+
+    <div class="article-list">
+      {articles.map((article) => (
+        <a href={url(`/best/${article.slug}/`)} class="article-card">
+          <div class="article-body">
+            <span class="article-category">{article.category}</span>
+            <h2 class="article-title">{article.title}</h2>
+            <p class="article-desc">{article.description}</p>
+          </div>
+          <span class="article-cta">比較を見る →</span>
+        </a>
+      ))}
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .page-content { padding: 40px 0 64px; }
+  .page-title { font-size: 1.8rem; font-weight: 900; margin-bottom: 8px; }
+  .page-desc { color: var(--color-text-muted); margin-bottom: 32px; }
+
+  .article-list { display: flex; flex-direction: column; gap: 16px; }
+
+  .article-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    background: var(--color-card);
+    border-radius: var(--radius);
+    padding: 24px;
+    box-shadow: var(--shadow);
+    transition: box-shadow var(--transition), transform var(--transition);
+    color: var(--color-text);
+  }
+  .article-card:hover { box-shadow: var(--shadow-hover); transform: translateY(-1px); }
+
+  .article-category {
+    display: inline-block;
+    font-size: 0.72rem; font-weight: 700;
+    color: var(--color-primary); text-transform: uppercase;
+    letter-spacing: 0.05em; margin-bottom: 6px;
+  }
+  .article-title { font-size: 1.05rem; font-weight: 800; margin-bottom: 6px; line-height: 1.4; }
+  .article-desc { font-size: 0.85rem; color: var(--color-text-muted); line-height: 1.5; }
+  .article-cta {
+    white-space: nowrap; font-size: 0.85rem; font-weight: 700;
+    color: var(--color-primary); padding: 8px 16px;
+    border: 2px solid var(--color-primary); border-radius: var(--radius);
+    transition: all var(--transition);
+  }
+  .article-card:hover .article-cta { background: var(--color-primary); color: #fff; }
+
+  @media (max-width: 600px) {
+    .article-card { flex-direction: column; align-items: flex-start; }
+  }
+</style>

@@ -3,186 +3,189 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import ProductCard from '../components/ProductCard.astro';
 import type { Product } from '../components/ProductCard.astro';
 import { url } from '../lib/url';
+import { toCategorySlug } from '../lib/category';
 import productsData from '../data/products.json';
 
 const products = productsData as Product[];
 const featuredProducts = products.filter((p) => p.featured);
-const latestProducts = [...products].sort(
-  (a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
-);
 
-const categories = [...new Set(products.map((p) => p.category))];
+// Quick Picks: pickSlugが設定されている商品から最大3つ
+const quickPickProducts = products
+  .filter((p) => (p as any).pickSlug)
+  .slice(0, 3);
+
+// Best記事
+const bestFiles = await Astro.glob('../data/best/*.json');
+const bestArticles = bestFiles.map((f) => f.default).slice(0, 3);
+
+// カテゴリ一覧（英語slug）
+const categoryMap = products.reduce<Record<string, { name: string; slug: string; count: number }>>((acc, p) => {
+  const slug = (p as any).categorySlug ?? toCategorySlug(p.category);
+  if (!acc[slug]) acc[slug] = { name: p.category, slug, count: 0 };
+  acc[slug].count++;
+  return acc;
+}, {});
+const categories = Object.values(categoryMap);
 ---
 
 <BaseLayout
-  title="おすすめ商品レビュー | Amazon・A8.netアフィリエイト厳選商品"
-  description="テレワーク・スマートホーム・ガジェットなどのおすすめ商品を厳選紹介。Amazon・公式サイトの最安値でお得に購入できます。"
+  title="mono-lab | おすすめ商品レビュー・比較"
+  description="Amazonおすすめ商品の比較・ランキング・即決ガイド。ガジェット・家電・スマートホームを厳選紹介。"
 >
   <!-- Hero -->
   <section class="hero">
     <div class="container">
-      <h1 class="hero-title">本当に良いものだけ紹介します</h1>
-      <p class="hero-subtitle">
-        Amazon・公式サイトで購入できる厳選おすすめ商品をレビュー。<br />
-        コスパ・品質・使いやすさで選びました。
-      </p>
-      <div class="hero-stats">
-        <div class="stat"><strong>{products.length}</strong><span>商品掲載中</span></div>
-        <div class="stat"><strong>{categories.length}</strong><span>カテゴリ</span></div>
-        <div class="stat"><strong>毎日</strong><span>更新</span></div>
+      <h1 class="hero-title">買って後悔しない選び方を<br />一緒に考えます</h1>
+      <p class="hero-subtitle">比較記事・即決ガイドで迷わず最適な1台へ</p>
+      <div class="hero-actions">
+        <a href={url('/best/')} class="btn-hero-primary">📊 比較記事を見る</a>
+        <a href={url('/pick/')} class="btn-hero-secondary">⚡ 即決ガイドを見る</a>
       </div>
     </div>
   </section>
 
-  <!-- Featured Products -->
-  {featuredProducts.length > 0 && (
-    <section class="section">
-      <div class="container">
-        <h2 class="section-title">
-          <span class="title-icon">★</span> 注目商品ピックアップ
-        </h2>
-        <div class="product-grid">
-          {featuredProducts.map((product) => (
-            <ProductCard product={product} />
-          ))}
-        </div>
-      </div>
-    </section>
-  )}
-
-  <!-- Category Filter -->
-  <section class="section section-categories">
+  <!-- Quick Picks（ファーストビュー直下） -->
+  <section class="section section-light">
     <div class="container">
-      <h2 class="section-title">カテゴリから探す</h2>
-      <div class="category-list">
-        {categories.map((cat) => (
-          <a href={url(`/category/${encodeURIComponent(cat)}/`)} class="category-badge">
-            {cat} ({products.filter((p) => p.category === cat).length})
+      <div class="section-head">
+        <h2 class="section-title">⚡ Quick Picks — 今すぐ決めたい方へ</h2>
+        <a href={url('/pick/')} class="see-all">すべて見る →</a>
+      </div>
+      <div class="quick-picks-grid">
+        {quickPickProducts.map((product) => {
+          const p = product as any;
+          const discount = p.originalPrice && p.price
+            ? Math.round((1 - p.price / p.originalPrice) * 100)
+            : null;
+          return (
+            <a href={url(`/pick/${p.pickSlug}/`)} class="quick-pick-card">
+              <div class="qp-image">
+                <img src={p.image} alt={p.title} loading="lazy" width="200" height="140" />
+                {discount && <span class="qp-discount">{discount}%OFF</span>}
+              </div>
+              <div class="qp-body">
+                <p class="qp-category">{p.category}</p>
+                <p class="qp-title">{p.title}</p>
+                {p.price && <p class="qp-price">¥{p.price.toLocaleString()}</p>}
+                <span class="qp-cta">即決ガイドを見る →</span>
+              </div>
+            </a>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+
+  <!-- Best 比較記事 -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2 class="section-title">📊 比較・ランキング記事</h2>
+        <a href={url('/best/')} class="see-all">すべて見る →</a>
+      </div>
+      <div class="best-list">
+        {bestArticles.map((article) => (
+          <a href={url(`/best/${article.slug}/`)} class="best-card">
+            <div class="best-card-body">
+              <span class="best-category">{article.category}</span>
+              <h3 class="best-title">{article.title}</h3>
+              <p class="best-desc">{article.description}</p>
+            </div>
+            <span class="best-link-btn">比較を見る →</span>
           </a>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- Latest Products -->
+  <!-- 注目商品 -->
+  {featuredProducts.length > 0 && (
+    <section class="section section-light">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title">★ 注目商品</h2>
+        </div>
+        <div class="product-grid">
+          {featuredProducts.map((product) => <ProductCard product={product} />)}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- カテゴリ -->
   <section class="section">
     <div class="container">
-      <h2 class="section-title">最新の商品レビュー</h2>
-      <div class="product-grid">
-        {latestProducts.map((product) => (
-          <ProductCard product={product} />
+      <div class="section-head">
+        <h2 class="section-title">カテゴリから探す</h2>
+        <a href={url('/category/')} class="see-all">一覧を見る →</a>
+      </div>
+      <div class="category-list">
+        {categories.map((cat) => (
+          <a href={url(`/category/${cat.slug}/`)} class="category-badge">
+            {cat.name} ({cat.count})
+          </a>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- Affiliate Disclosure -->
+  <!-- アフィリエイト表記 -->
   <div class="container">
     <p class="disclosure">
-      ※ 当サイトはAmazonアソシエイト・プログラムおよびA8.netアフィリエイトプログラムに参加しています。
-      商品リンクから購入いただいた場合、サイト運営者が報酬を受け取ることがあります。
+      ※ 当サイトはAmazonアソシエイト・プログラムに参加しています。商品リンクから購入いただいた場合、サイト運営者が報酬を受け取ることがあります。
     </p>
   </div>
 </BaseLayout>
 
 <style>
-  .hero {
-    background: linear-gradient(135deg, var(--color-secondary) 0%, #2d2d5e 100%);
-    color: #fff;
-    padding: 64px 0 48px;
-    text-align: center;
-  }
+  /* Hero */
+  .hero { background: linear-gradient(135deg, var(--color-secondary) 0%, #2d2d5e 100%); color: #fff; padding: 64px 0 56px; text-align: center; }
+  .hero-title { font-size: clamp(1.5rem, 4vw, 2.4rem); font-weight: 900; line-height: 1.3; margin-bottom: 12px; }
+  .hero-subtitle { color: rgba(255,255,255,0.75); margin-bottom: 32px; font-size: 1rem; }
+  .hero-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .btn-hero-primary { display: inline-block; padding: 14px 28px; background: var(--color-primary); color: #fff; border-radius: var(--radius); font-weight: 700; font-size: 1rem; transition: all var(--transition); }
+  .btn-hero-primary:hover { background: var(--color-primary-dark); transform: translateY(-1px); }
+  .btn-hero-secondary { display: inline-block; padding: 14px 28px; border: 2px solid rgba(255,255,255,0.6); color: #fff; border-radius: var(--radius); font-weight: 700; font-size: 1rem; transition: all var(--transition); }
+  .btn-hero-secondary:hover { border-color: #fff; background: rgba(255,255,255,0.1); }
 
-  .hero-title {
-    font-size: clamp(1.6rem, 4vw, 2.4rem);
-    font-weight: 900;
-    line-height: 1.3;
-    margin-bottom: 16px;
-  }
+  /* Section */
+  .section { padding: 48px 0; }
+  .section-light { background: #fff; }
+  .section-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px; }
+  .section-title { font-size: 1.3rem; font-weight: 800; }
+  .see-all { font-size: 0.85rem; font-weight: 700; color: var(--color-primary); }
 
-  .hero-subtitle {
-    font-size: 1rem;
-    color: rgba(255,255,255,0.8);
-    line-height: 1.7;
-    margin-bottom: 32px;
-  }
+  /* Quick Picks */
+  .quick-picks-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px; }
+  .quick-pick-card { background: var(--color-card); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; color: var(--color-text); transition: transform var(--transition), box-shadow var(--transition); border: 2px solid transparent; }
+  .quick-pick-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-hover); border-color: var(--color-primary); }
+  .qp-image { position: relative; aspect-ratio: 3/2; overflow: hidden; }
+  .qp-image img { width: 100%; height: 100%; object-fit: cover; }
+  .qp-discount { position: absolute; top: 8px; right: 8px; background: #e63946; color: #fff; font-size: 0.7rem; font-weight: 700; padding: 2px 7px; border-radius: 4px; }
+  .qp-body { padding: 12px; }
+  .qp-category { font-size: 0.68rem; color: var(--color-primary); font-weight: 700; text-transform: uppercase; margin-bottom: 4px; }
+  .qp-title { font-size: 0.85rem; font-weight: 700; line-height: 1.4; margin-bottom: 6px; }
+  .qp-price { font-size: 1rem; font-weight: 900; color: #e63946; margin-bottom: 8px; }
+  .qp-cta { font-size: 0.78rem; font-weight: 700; color: var(--color-primary); border-bottom: 1px solid currentColor; }
 
-  .hero-stats {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-  }
+  /* Best Cards */
+  .best-list { display: flex; flex-direction: column; gap: 12px; }
+  .best-card { display: flex; justify-content: space-between; align-items: center; gap: 16px; background: var(--color-card); border-radius: var(--radius); padding: 20px 24px; box-shadow: var(--shadow); color: var(--color-text); transition: box-shadow var(--transition), transform var(--transition); }
+  .best-card:hover { box-shadow: var(--shadow-hover); transform: translateY(-1px); }
+  .best-category { font-size: 0.7rem; color: var(--color-primary); font-weight: 700; text-transform: uppercase; display: block; margin-bottom: 4px; }
+  .best-title { font-size: 0.95rem; font-weight: 800; margin-bottom: 4px; line-height: 1.4; }
+  .best-desc { font-size: 0.8rem; color: var(--color-text-muted); line-height: 1.5; }
+  .best-link-btn { white-space: nowrap; font-size: 0.82rem; font-weight: 700; color: var(--color-primary); padding: 8px 14px; border: 2px solid var(--color-primary); border-radius: var(--radius); transition: all var(--transition); }
+  .best-card:hover .best-link-btn { background: var(--color-primary); color: #fff; }
 
-  .stat {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 4px;
-  }
+  /* Category */
+  .category-list { display: flex; flex-wrap: wrap; gap: 10px; }
+  .category-badge { display: inline-block; padding: 8px 16px; background-color: var(--color-bg); border: 2px solid var(--color-border); border-radius: 24px; font-size: 0.85rem; font-weight: 600; color: var(--color-text); transition: all var(--transition); }
+  .category-badge:hover { border-color: var(--color-primary); background-color: var(--color-primary); color: #fff; }
 
-  .stat strong {
-    font-size: 2rem;
-    font-weight: 900;
-    color: var(--color-accent);
-    line-height: 1;
-  }
+  .disclosure { font-size: 0.75rem; color: var(--color-text-muted); padding: 16px 0 32px; line-height: 1.6; }
 
-  .stat span {
-    font-size: 0.8rem;
-    color: rgba(255,255,255,0.7);
-  }
-
-  .section {
-    padding: 48px 0;
-  }
-
-  .section-categories {
-    background-color: #fff;
-  }
-
-  .section-title {
-    font-size: 1.4rem;
-    font-weight: 800;
-    margin-bottom: 24px;
-    padding-bottom: 12px;
-    border-bottom: 3px solid var(--color-primary);
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-
-  .title-icon {
-    color: var(--color-accent);
-  }
-
-  .category-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-  }
-
-  .category-badge {
-    display: inline-block;
-    padding: 8px 18px;
-    background-color: var(--color-bg);
-    border: 2px solid var(--color-border);
-    border-radius: 24px;
-    font-size: 0.88rem;
-    font-weight: 600;
-    color: var(--color-text);
-    transition: all var(--transition);
-  }
-
-  .category-badge:hover {
-    border-color: var(--color-primary);
-    background-color: var(--color-primary);
-    color: #fff;
-  }
-
-  .disclosure {
-    font-size: 0.75rem;
-    color: var(--color-text-muted);
-    padding: 16px 0 32px;
-    line-height: 1.6;
+  @media (max-width: 600px) {
+    .best-card { flex-direction: column; align-items: flex-start; }
   }
 </style>

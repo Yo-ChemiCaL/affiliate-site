@@ -1,0 +1,48 @@
+{
+  "slug": "best-mobile-battery-2026",
+  "title": "モバイルバッテリー おすすめ比較ランキング2026",
+  "description": "毎日の持ち運びに使えるモバイルバッテリーを容量・充電速度・携帯性で比較。口コミ評価の高い3製品を厳選しました。",
+  "category": "モバイルバッテリー・外出ガジェット",
+  "categorySlug": "mobile-gadgets",
+  "publishedAt": "2026-02-10",
+  "updatedAt": "2026-02-22",
+  "conclusion": "毎日の通勤・外出なら **Anker PowerCore Slim 10000** が最もバランスに優れています。薄型で持ち運びやすく、10000mAhでスマホ約2回分充電できます。急速充電が必要な場面が多い方には大容量モデルも検討してみてください。",
+  "topPicks": [
+    { "rank": 1, "label": "総合バランス最優秀", "productSlug": "anker-powercore-slim-10000", "pickSlug": "pick-anker-powercore-slim" },
+    { "rank": 2, "label": "持ち運び重視", "productSlug": "iottie-easy-one-touch-5", "pickSlug": "" }
+  ],
+  "comparison": [
+    {
+      "productSlug": "anker-powercore-slim-10000",
+      "priceRange": "¥2,990",
+      "strength": "薄型・軽量・USB-C対応",
+      "weakness": "急速充電非対応",
+      "recommended": "毎日の通勤・軽い外出",
+      "rating": 4.5
+    },
+    {
+      "productSlug": "iottie-easy-one-touch-5",
+      "priceRange": "¥3,280",
+      "strength": "車でも使いやすい・2WAY固定",
+      "weakness": "充電機能なし",
+      "recommended": "ドライブ・カーナビ代わり",
+      "rating": 4.1
+    }
+  ],
+  "faq": [
+    {
+      "q": "10000mAhでスマホは何回充電できる？",
+      "a": "iPhone 15（約3,349mAh）なら約2.5回、Android機（約4,000〜5,000mAh）なら約1.5〜2回充電できます。充電ロスを考慮した実測値です。"
+    },
+    {
+      "q": "飛行機への持ち込みはできる？",
+      "a": "100Wh以下（約27,000mAh以下）であれば機内持ち込み可能です。10000mAhは37Whのため問題ありません。"
+    },
+    {
+      "q": "USB-CとMicro-USBどちらが良い？",
+      "a": "最新スマホはUSB-Cが主流です。USB-C入出力対応のモデルを選ぶとケーブルを統一でき便利です。"
+    }
+  ],
+  "relatedBest": ["best-desk-gadgets-2026"],
+  "relatedPicks": ["pick-anker-powercore-slim"]
+}

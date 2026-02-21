@@ -29,8 +29,11 @@ const updatedDate = product.updatedAt
   : null;
 
 const pageUrl = new URL(url(`/products/${product.slug}/`), Astro.site).href;
-const categoryUrl = new URL(url(`/category/${product.category}/`), Astro.site).href;
+const categorySlug = (product as any).categorySlug ?? product.category;
+const categoryUrl = new URL(url(`/category/${categorySlug}/`), Astro.site).href;
 const siteUrl = Astro.site?.toString() ?? '/';
+const pickSlug = (product as any).pickSlug as string | undefined;
+const bestSlug = (product as any).bestSlug as string | undefined;
 ---
 
 <BaseLayout
@@ -66,7 +69,7 @@ const siteUrl = Astro.site?.toString() ?? '/';
     <nav class="breadcrumb" aria-label="パンくずリスト">
       <ol>
         <li><a href={url('/')}>ホーム</a></li>
-        <li><a href={url(`/category/${product.category}/`)}>{product.category}</a></li>
+        <li><a href={url(`/category/${categorySlug}/`)}>{product.category}</a></li>
         <li aria-current="page">{product.title}</li>
       </ol>
     </nav>
@@ -142,6 +145,25 @@ const siteUrl = Astro.site?.toString() ?? '/';
           <p class="affiliate-note">
             ※ リンクはアフィリエイトリンクです。購入時にサイト運営者が報酬を受け取る場合があります。
           </p>
+
+          <!-- 補助導線: pick / best へのリンク -->
+          {(pickSlug || bestSlug) && (
+            <div class="product-guide-links">
+              <p class="guide-label">まだ迷っていますか？</p>
+              <div class="guide-btns">
+                {pickSlug && (
+                  <a href={url(`/pick/${pickSlug}/`)} class="guide-btn guide-btn-pick">
+                    ⚡ 即決ガイドを見る →
+                  </a>
+                )}
+                {bestSlug && (
+                  <a href={url(`/best/${bestSlug}/`)} class="guide-btn guide-btn-best">
+                    📊 比較記事を見る →
+                  </a>
+                )}
+              </div>
+            </div>
+          )}
 
           <div class="product-meta">
             <time datetime={product.publishedAt}>公開: {formattedDate}</time>
@@ -352,8 +374,28 @@ const siteUrl = Astro.site?.toString() ?? '/';
   .affiliate-note {
     font-size: 0.72rem;
     color: var(--color-text-muted);
+    margin-bottom: 12px;
+  }
+
+  .product-guide-links {
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: 14px 16px;
     margin-bottom: 16px;
   }
+  .guide-label {
+    font-size: 0.78rem;
+    color: var(--color-text-muted);
+    margin-bottom: 10px;
+    font-weight: 600;
+  }
+  .guide-btns { display: flex; flex-wrap: wrap; gap: 8px; }
+  .guide-btn { font-size: 0.82rem; font-weight: 700; padding: 8px 16px; border-radius: 20px; border: 2px solid; transition: all var(--transition); }
+  .guide-btn-pick { color: var(--color-primary); border-color: var(--color-primary); }
+  .guide-btn-pick:hover { background: var(--color-primary); color: #fff; }
+  .guide-btn-best { color: var(--color-accent); border-color: var(--color-accent); }
+  .guide-btn-best:hover { background: var(--color-accent); color: #333; }
 
   .product-meta {
     display: flex;

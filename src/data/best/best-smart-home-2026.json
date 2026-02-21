@@ -1,0 +1,48 @@
+{
+  "slug": "best-smart-home-2026",
+  "title": "スマートホームガジェット おすすめ比較2026【節電にも】",
+  "description": "Alexa連携・節電・自動化に役立つスマートホームガジェットを価格帯・使いやすさで比較。初めてでも導入しやすい製品を厳選しました。",
+  "category": "スマートホーム",
+  "categorySlug": "smart-home",
+  "publishedAt": "2026-02-12",
+  "updatedAt": "2026-02-22",
+  "conclusion": "スマートホーム入門なら **Philips Hue スターターセット** が最も導入しやすくおすすめです。照明から始めると生活の変化を実感しやすく、Alexa連携で音声操作もすぐに使えます。掃除を自動化したい方は **Eufy RoboVac 11S** も合わせて検討してください。",
+  "topPicks": [
+    { "rank": 1, "label": "照明スマート化入門", "productSlug": "philips-hue-starter-kit", "pickSlug": "pick-philips-hue" },
+    { "rank": 2, "label": "掃除の完全自動化", "productSlug": "eufy-robovac-11s", "pickSlug": "pick-eufy-robovac" }
+  ],
+  "comparison": [
+    {
+      "productSlug": "philips-hue-starter-kit",
+      "priceRange": "¥12,800",
+      "strength": "設定簡単・Alexa完全対応・色調変更可",
+      "weakness": "初期費用やや高め",
+      "recommended": "照明から始めたいスマートホーム入門者",
+      "rating": 4.4
+    },
+    {
+      "productSlug": "eufy-robovac-11s",
+      "priceRange": "¥19,800",
+      "strength": "超薄型・静音・コスパ良好",
+      "weakness": "マッピング機能なし",
+      "recommended": "掃除の手間をなくしたい一人暮らし",
+      "rating": 4.2
+    }
+  ],
+  "faq": [
+    {
+      "q": "スマートホームはWi-Fiがないと使えない？",
+      "a": "多くの製品はWi-Fi（2.4GHz）が必要です。Philips HueはBluetooth単体でも動作しますが、Alexa連携にはブリッジとWi-Fiが必要です。"
+    },
+    {
+      "q": "電気代は節約できる？",
+      "a": "スマートプラグや調光照明を使えば不要な待機電力をカットできます。環境にもよりますが年間数百〜数千円の節約事例があります。"
+    },
+    {
+      "q": "賃貸でも設置できる？",
+      "a": "照明の交換や小型デバイスの設置は工事不要のため、賃貸でも問題なく導入できます。"
+    }
+  ],
+  "relatedBest": ["best-mobile-battery-2026"],
+  "relatedPicks": ["pick-philips-hue", "pick-eufy-robovac"]
+}
