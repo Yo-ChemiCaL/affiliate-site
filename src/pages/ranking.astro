@@ -1,14 +1,12 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import ProductCard from '../components/ProductCard.astro';
 import type { Product } from '../components/ProductCard.astro';
 import { url } from '../lib/url';
-import { toCategorySlug } from '../lib/category';
 import productsData from '../data/products.json';
 
 const products = productsData as Product[];
 
-// ランキング: 評価 × レビュー数 のスコアで順位付け
+// ランキングスコア: 評価 × log(レビュー数)
 const ranked = [...products]
   .map((p) => ({
     ...p,
@@ -16,87 +14,94 @@ const ranked = [...products]
   }))
   .sort((a, b) => b.score - a.score);
 
-// カテゴリ別ランキング
-const categories = [...new Set(products.map((p) => p.category))];
-const categoryRankings = categories.map((cat) => ({
-  name: cat,
-  products: ranked.filter((p) => p.category === cat).slice(0, 3),
+// カテゴリ情報をcategorySlugで集約（出現順を保持）
+const categoryMap = products.reduce<Record<string, { name: string; slug: string }>>((acc, p) => {
+  const slug = (p as any).categorySlug;
+  if (slug && !acc[slug]) acc[slug] = { name: p.category, slug };
+  return acc;
+}, {});
+
+// カテゴリ別ランキング（全商品をスコア順）
+const categoryRankings = Object.values(categoryMap).map(({ name, slug }) => ({
+  name,
+  slug,
+  products: ranked.filter((p) => (p as any).categorySlug === slug),
 }));
 ---
 
 <BaseLayout
-  title="おすすめランキング | mono-lab"
-  description="評価・レビュー数をもとに算出した総合ランキング。カテゴリ別ランキングも掲載。"
+  title="カテゴリ別ランキング | mono-lab"
+  description="評価・レビュー数をもとに算出したカテゴリ別おすすめランキング。充電・PC環境・消耗品・旅行グッズ別に掲載。"
 >
   <div class="container page-content">
-    <h1 class="page-title">おすすめランキング</h1>
-    <p class="page-desc">評価点数とレビュー数をもとに算出した総合スコア順です。</p>
+    <h1 class="page-title">カテゴリ別ランキング</h1>
+    <p class="page-desc">評価点数とレビュー数をもとに算出したカテゴリ別おすすめ順位です。</p>
 
-    <!-- 総合TOP10 -->
-    <section class="ranking-section">
-      <h2 class="section-title">総合ランキング TOP{Math.min(ranked.length, 10)}</h2>
-      <ol class="ranking-list">
-        {ranked.slice(0, 10).map((product, i) => {
-          const stars = '★'.repeat(Math.round(product.rating)) + '☆'.repeat(5 - Math.round(product.rating));
-          const medal = i === 0 ? '🥇' : i === 1 ? '🥈' : i === 2 ? '🥉' : `${i + 1}`;
-          return (
-            <li class="ranking-item">
-              <span class="rank-number">{medal}</span>
-              <div class="rank-thumb">
-                <img src={product.image} alt={product.title} loading="lazy" width="80" height="54" />
-              </div>
-              <div class="rank-info">
-                <span class="rank-category">{product.category}</span>
-                <a href={url(`/products/${product.slug}/`)} class="rank-title">{product.title}</a>
-                <div class="rank-meta">
-                  <span class="stars">{stars}</span>
-                  <span class="rating">{product.rating}</span>
-                  <span class="review-count">({product.reviewCount.toLocaleString()}件)</span>
-                  {product.price && <span class="price">¥{product.price.toLocaleString()}</span>}
-                </div>
-              </div>
-              <div class="rank-actions">
-                {i < 3 && (product as any).pickSlug && (
-                  <a href={url(`/pick/${(product as any).pickSlug}/`)} class="btn-pick-now">
-                    今すぐ選ぶ
-                  </a>
-                )}
-                {product.amazonUrl && (
-                  <a href={product.amazonUrl} class="btn-affiliate btn-amazon" target="_blank" rel="noopener noreferrer nofollow">
-                    Amazon
-                  </a>
-                )}
-              </div>
-            </li>
-          );
-        })}
-      </ol>
-    </section>
+    <!-- カテゴリジャンプナビ -->
+    <nav class="cat-nav" aria-label="カテゴリ一覧">
+      {categoryRankings.map(({ name, slug }) => (
+        <a href={`#${slug}`} class="cat-nav-link">{name}</a>
+      ))}
+    </nav>
 
     <!-- カテゴリ別ランキング -->
-    <section class="ranking-section">
-      <h2 class="section-title">カテゴリ別 TOP3</h2>
-      <div class="category-rankings">
-        {categoryRankings.map(({ name, products: items }) => (
-          <div class="category-rank-block">
-            <h3 class="category-rank-title">
-              <a href={url(`/category/${(products.find(p => p.category === name) as any)?.categorySlug ?? toCategorySlug(name)}/`)}>{name}</a>
-            </h3>
-            <ol class="category-rank-list">
-              {items.map((product, i) => (
-                <li class="category-rank-item">
-                  <span class="rank-badge rank-{i + 1}">{i + 1}</span>
-                  <a href={url(`/products/${product.slug}/`)} class="category-rank-name">
-                    {product.title}
-                  </a>
-                  <span class="category-rank-rating">★{product.rating}</span>
-                </li>
-              ))}
-            </ol>
-          </div>
-        ))}
-      </div>
-    </section>
+    {categoryRankings.map(({ name, slug, products: items }) => (
+      <section class="category-section" id={slug}>
+        <div class="category-section-head">
+          <h2 class="category-section-title">
+            <a href={url(`/category/${slug}/`)}>{name}</a>
+          </h2>
+          <a href={url(`/category/${slug}/`)} class="see-all-link">全商品を見る →</a>
+        </div>
+
+        <ol class="ranking-list">
+          {items.map((product, i) => {
+            const stars = '★'.repeat(Math.round(product.rating)) + '☆'.repeat(5 - Math.round(product.rating));
+            const medal = i === 0 ? '🥇' : i === 1 ? '🥈' : i === 2 ? '🥉' : null;
+            const discount = product.originalPrice && product.price
+              ? Math.round((1 - product.price / product.originalPrice) * 100)
+              : null;
+            return (
+              <li class="ranking-item">
+                <span class={`rank-number ${i < 3 ? `rank-top${i + 1}` : ''}`}>
+                  {medal ?? i + 1}
+                </span>
+                <div class="rank-info">
+                  <a href={url(`/products/${product.slug}/`)} class="rank-title">{product.title}</a>
+                  {(product as any).scene && (
+                    <span class="rank-scene">{(product as any).scene}</span>
+                  )}
+                  <div class="rank-meta">
+                    <span class="stars">{stars}</span>
+                    <span class="rating">{product.rating}</span>
+                    <span class="review-count">({product.reviewCount.toLocaleString()}件)</span>
+                    {product.price && <span class="price">¥{product.price.toLocaleString()}</span>}
+                    {discount && <span class="off-badge">{discount}%OFF</span>}
+                  </div>
+                </div>
+                <div class="rank-actions">
+                  {(product as any).pickSlug && (
+                    <a href={url(`/pick/${(product as any).pickSlug}/`)} class="btn-pick-now">
+                      今すぐ選ぶ
+                    </a>
+                  )}
+                  {product.amazonUrl && (
+                    <a
+                      href={product.amazonUrl}
+                      class="btn-affiliate btn-amazon"
+                      target="_blank"
+                      rel="noopener noreferrer nofollow"
+                    >
+                      Amazon
+                    </a>
+                  )}
+                </div>
+              </li>
+            );
+          })}
+        </ol>
+      </section>
+    ))}
   </div>
 </BaseLayout>
 
@@ -115,58 +120,115 @@ const categoryRankings = categories.map((cat) => ({
   .page-desc {
     color: var(--color-text-muted);
     font-size: 0.95rem;
-    margin-bottom: 40px;
+    margin-bottom: 28px;
   }
 
-  .ranking-section {
+  /* カテゴリジャンプナビ */
+  .cat-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 48px;
+    padding: 16px 20px;
+    background: var(--color-card);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+  }
+
+  .cat-nav-link {
+    display: inline-block;
+    padding: 6px 14px;
+    background: var(--color-bg);
+    border: 2px solid var(--color-border);
+    border-radius: 20px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--color-text);
+    transition: all var(--transition);
+  }
+
+  .cat-nav-link:hover {
+    border-color: var(--color-primary);
+    background: var(--color-primary);
+    color: #fff;
+  }
+
+  /* カテゴリセクション */
+  .category-section {
     margin-bottom: 56px;
+    scroll-margin-top: 80px;
   }
 
-  .section-title {
-    font-size: 1.3rem;
-    font-weight: 800;
-    margin-bottom: 20px;
+  .category-section-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
     padding-bottom: 12px;
     border-bottom: 3px solid var(--color-primary);
   }
 
-  /* 総合ランキングリスト */
+  .category-section-title {
+    font-size: 1.25rem;
+    font-weight: 800;
+  }
+
+  .category-section-title a {
+    color: var(--color-text);
+    transition: color var(--transition);
+  }
+
+  .category-section-title a:hover {
+    color: var(--color-primary);
+  }
+
+  .see-all-link {
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    white-space: nowrap;
+  }
+
+  /* ランキングリスト */
   .ranking-list {
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 10px;
   }
 
   .ranking-item {
     display: grid;
-    grid-template-columns: 48px 80px 1fr auto;
+    grid-template-columns: 48px 1fr auto;
     align-items: center;
     gap: 16px;
     background: var(--color-card);
     border-radius: var(--radius);
     padding: 16px;
     box-shadow: var(--shadow);
-    transition: box-shadow var(--transition);
+    border-left: 4px solid transparent;
+    transition: box-shadow var(--transition), border-color var(--transition);
   }
+
+  .ranking-item:nth-child(1) { border-left-color: #FFD700; }
+  .ranking-item:nth-child(2) { border-left-color: #C0C0C0; }
+  .ranking-item:nth-child(3) { border-left-color: #CD7F32; }
 
   .ranking-item:hover {
     box-shadow: var(--shadow-hover);
   }
 
   .rank-number {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     font-weight: 900;
     text-align: center;
     color: var(--color-text-muted);
+    line-height: 1;
   }
 
-  .rank-thumb img {
-    width: 80px;
-    height: 54px;
-    object-fit: cover;
-    border-radius: 4px;
-  }
+  .rank-top1 { font-size: 1.6rem; }
+  .rank-top2 { font-size: 1.5rem; }
+  .rank-top3 { font-size: 1.4rem; }
 
   .rank-info {
     display: flex;
@@ -175,25 +237,29 @@ const categoryRankings = categories.map((cat) => ({
     min-width: 0;
   }
 
-  .rank-category {
-    font-size: 0.7rem;
-    color: var(--color-primary);
-    font-weight: 700;
-    text-transform: uppercase;
-  }
-
   .rank-title {
     font-size: 0.95rem;
     font-weight: 700;
     color: var(--color-text);
     line-height: 1.4;
-    white-space: nowrap;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
     overflow: hidden;
-    text-overflow: ellipsis;
+    transition: color var(--transition);
   }
 
   .rank-title:hover {
     color: var(--color-primary);
+  }
+
+  .rank-scene {
+    font-size: 0.72rem;
+    color: var(--color-primary);
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .rank-meta {
@@ -205,7 +271,7 @@ const categoryRankings = categories.map((cat) => ({
 
   .stars {
     color: var(--color-accent);
-    font-size: 0.78rem;
+    font-size: 0.75rem;
   }
 
   .rating {
@@ -219,120 +285,56 @@ const categoryRankings = categories.map((cat) => ({
   }
 
   .price {
-    font-size: 0.88rem;
+    font-size: 0.9rem;
     font-weight: 700;
     color: #e63946;
-    margin-left: 4px;
   }
 
-  .rank-actions { display: flex; flex-direction: column; gap: 6px; }
-  .rank-actions .btn-affiliate {
-    padding: 8px 14px;
-    font-size: 0.8rem;
-    white-space: nowrap;
+  .off-badge {
+    font-size: 0.7rem;
+    font-weight: 700;
+    background: #e63946;
+    color: #fff;
+    padding: 2px 6px;
+    border-radius: 3px;
   }
+
+  .rank-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
   .btn-pick-now {
     display: inline-block;
     padding: 8px 14px;
     background: var(--color-primary);
     color: #fff;
     border-radius: var(--radius);
-    font-size: 0.8rem;
+    font-size: 0.78rem;
     font-weight: 700;
     white-space: nowrap;
     text-align: center;
     transition: all var(--transition);
   }
-  .btn-pick-now:hover { background: var(--color-primary-dark); color: #fff; transform: translateY(-1px); }
 
-  /* カテゴリ別ランキング */
-  .category-rankings {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 20px;
+  .btn-pick-now:hover {
+    background: var(--color-primary-dark);
+    transform: translateY(-1px);
+    color: #fff;
   }
 
-  .category-rank-block {
-    background: var(--color-card);
-    border-radius: var(--radius);
-    padding: 20px;
-    box-shadow: var(--shadow);
-  }
-
-  .category-rank-title {
-    font-size: 1rem;
-    font-weight: 800;
-    margin-bottom: 16px;
-    padding-bottom: 8px;
-    border-bottom: 2px solid var(--color-border);
-  }
-
-  .category-rank-title a {
-    color: var(--color-text);
-  }
-
-  .category-rank-title a:hover {
-    color: var(--color-primary);
-  }
-
-  .category-rank-list {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
-
-  .category-rank-item {
-    display: grid;
-    grid-template-columns: 24px 1fr auto;
-    align-items: center;
-    gap: 10px;
-  }
-
-  .rank-badge {
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    background: var(--color-border);
-    color: var(--color-text);
-    font-size: 0.75rem;
-    font-weight: 700;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-  }
-
-  .category-rank-item:nth-child(1) .rank-badge { background: #FFD700; color: #333; }
-  .category-rank-item:nth-child(2) .rank-badge { background: #C0C0C0; color: #333; }
-  .category-rank-item:nth-child(3) .rank-badge { background: #CD7F32; color: #fff; }
-
-  .category-rank-name {
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: var(--color-text);
-    line-height: 1.4;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
-
-  .category-rank-name:hover {
-    color: var(--color-primary);
-  }
-
-  .category-rank-rating {
-    font-size: 0.8rem;
-    font-weight: 700;
-    color: var(--color-accent);
+  .rank-actions .btn-affiliate {
+    padding: 8px 14px;
+    font-size: 0.78rem;
     white-space: nowrap;
   }
 
   @media (max-width: 640px) {
     .ranking-item {
-      grid-template-columns: 36px 60px 1fr;
+      grid-template-columns: 40px 1fr;
     }
     .rank-actions { display: none; }
+    .rank-number { font-size: 1.2rem; }
   }
 </style>
