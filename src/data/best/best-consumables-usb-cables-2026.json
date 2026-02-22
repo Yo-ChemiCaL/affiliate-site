@@ -6,7 +6,29 @@
   "categorySlug": "consumables",
   "publishedAt": "2026-02-22",
   "updatedAt": "2026-02-22",
-  "conclusion": "**Android・iPad・MacBook**向けには Anker 544 USB-C、**iPhone**向けには Anker PowerLine II USB-C to Lightning が断線耐久性とコスパで最優秀です。",
+  "conclusion": "Android・iPad・MacBook向けには Anker PowerLine III USB-C ケーブル、iPhone向けには Anker PowerLine II USB-C to Lightning が断線耐久性とコスパで最優秀です。",
+  "selectionCriteria": [
+    {
+      "title": "デバイスの充電口に合った端子を確認する",
+      "body": "USBケーブル選びの第一歩は「自分のデバイスの充電ポート」を確認することです。iPhone 14以前はLightning、iPhone 15以降はUSB-C。AndroidスマホはほぼUSB-C。iPad・MacBookもUSB-C。古いAnker製品・ゲームコントローラーはmicroUSBが残っていることもあります。接続する両端の端子を確認してから購入しましょう。",
+      "tip": "手元の充電器の口（USB-A / USB-C）も確認。ケーブルの両端が充電器・デバイスと合っているか"
+    },
+    {
+      "title": "急速充電には「対応W数」が重要",
+      "body": "ケーブルにも対応W数があり、充電器とケーブルの低い方の出力が実際の充電速度になります。スマホの急速充電（18W〜）、iPad Proの急速充電（30W〜）、MacBook Air（45〜65W）に合わせてケーブルのW数を選びましょう。低W数のケーブルを高出力充電器と組み合わせても、速度はケーブルの上限で頭打ちになります。",
+      "tip": "「とりあえず60W以上」のケーブルを選べばスマホからノートPCまでほぼカバーできる"
+    },
+    {
+      "title": "断線しにくさは「素材」と「屈曲回数」で判断する",
+      "body": "100円ショップのケーブルが半年で断線するのは、コネクタ付近の補強が弱いためです。断線しにくいケーブルを選ぶポイントは「ナイロン編込み（TPE素材より耐久性が高い）」「根元の補強（ストレインリリーフ）」「屈曲回数の保証（2万回以上が目安）」の3点。Ankerの上位ラインは2〜3万回の屈曲テストをクリアしており、1〜2年は安定して使えます。",
+      "tip": "毎日使うケーブルは「年間コスト」で考える。¥1,200×2年=¥600/年 vs ¥300×2回=¥600/年で同じ"
+    },
+    {
+      "title": "長さは用途に合わせて選ぶ",
+      "body": "ケーブルの長さは用途によって最適が変わります。デスク上での充電なら0.9〜1m、少し離れたコンセントからソファまで届かせたいなら1.8〜2m、ベッドサイドで寝ながら使うなら2〜3mが目安です。長すぎるケーブルは絡まりやすく、抵抗も増えて充電効率が下がることがあります。必要以上に長いものは避けましょう。",
+      "tip": "デスクでは1m、外出用は0.9m（カバンに収まりやすい）、ベッドサイドは1.8mが使いやすい"
+    }
+  ],
   "topPicks": [
     { "rank": 1, "label": "USB-C万能ケーブル", "productSlug": "anker-usbc-cable-180cm", "pickSlug": "pick-anker-usbc-cable" },
     { "rank": 2, "label": "iPhone急速充電", "productSlug": "anker-powerline-usbc-lightning", "pickSlug": "pick-anker-usbc-lightning" },
@@ -16,40 +38,52 @@
     {
       "productSlug": "anker-usbc-cable-180cm",
       "priceRange": "¥1,190",
-      "strength": "60W急速充電・ナイロン耐久・コスパ最強",
-      "weakness": "映像出力非対応（USB 2.0）",
-      "recommended": "Android・iPad・MacBookの毎日充電",
+      "strength": "60W急速充電・ナイロン耐久・2万回屈曲テスト済・コスパ最強",
+      "weakness": "映像出力非対応（USB 2.0）・高速データ転送非対応",
+      "recommended": "Android・iPad・MacBookの毎日充電ケーブルを断線知らずにしたい",
       "rating": 4.5
     },
     {
       "productSlug": "anker-powerline-usbc-lightning",
       "priceRange": "¥1,990",
-      "strength": "MFi認証・18W急速充電・断線しにくい",
-      "weakness": "USB-C側が必要",
-      "recommended": "iPhoneをUSB-C充電器から急速充電",
+      "strength": "Apple MFi認証・18W急速充電・ダブルブレイドナイロン設計",
+      "weakness": "USB-C充電器が必要（USB-A不可）",
+      "recommended": "iPhoneをUSB-C充電器・MacBookから急速充電したい",
       "rating": 4.5
     },
     {
       "productSlug": "anker-powercore-slim-10000",
       "priceRange": "¥2,990",
-      "strength": "ケーブル不要の外出充電",
-      "weakness": "急速充電非対応",
-      "recommended": "外出時のケーブル本数を減らしたい",
+      "strength": "ケーブル不要で外出充電・薄型軽量",
+      "weakness": "急速充電非対応・重さが加わる",
+      "recommended": "外出時にケーブル本数を減らしてコンセントなしで充電したい",
       "rating": 4.5
     }
   ],
   "faq": [
     {
       "q": "USB-Cケーブルは何Wのものを選べばいい？",
-      "a": "スマホなら18〜45W、iPad Proなら45W、MacBook Airなら45〜65W対応ケーブルが目安です。ケーブルと充電器の低い方の出力が適用されます。"
+      "a": "スマホの急速充電なら18〜45W、iPad Proなら45W、MacBook Airなら45〜65W対応ケーブルが目安です。ケーブルと充電器の低い方の出力が実際の充電速度になります。迷ったら60W以上のケーブルを選べばほぼ全デバイスに対応できます。"
     },
     {
-      "q": "MFi認証とは？",
-      "a": "Apple公認のケーブル認証です。非認証品はiOS更新後に使えなくなることがあります。iPhoneには認証品を選ぶのが無難です。"
+      "q": "MFi認証とは何か？非認証品は使えない？",
+      "a": "Apple公認のライセンス認証です。非認証品はiOS更新後に「このアクセサリは使用できません」と表示されて使えなくなることがあります。iPhoneに使うLightningケーブルは必ずMFi認証品を選びましょう。"
     },
     {
-      "q": "ケーブルはどれくらいで断線する？",
-      "a": "安価なケーブルは3〜6ヶ月で断線することも。Anker Nylonシリーズは2万回以上の曲げ試験をクリアしており1〜2年使えるのが目安です。"
+      "q": "ケーブルはどのくらいで断線する？",
+      "a": "安価なケーブルはコネクタ付近の補強が弱く、3〜6ヶ月で断線することも。Anker PowerLine III は2万回以上の屈曲テストをクリアしており、毎日使っても1〜2年は使えるのが目安です。"
+    },
+    {
+      "q": "USB-AケーブルとUSB-Cケーブルはどちらを選ぶべき？",
+      "a": "現在購入するなら、USB-Cが両端のケーブルを選ぶのがおすすめです。USB-A（旧型の四角いコネクタ）は充電速度が最大18W程度に制限されます。USB-C充電器を持っているなら、USB-C to USB-Cケーブルで速度を最大限引き出せます。"
+    },
+    {
+      "q": "1本で全デバイスを充電する方法は？",
+      "a": "USB-C to USB-Cケーブル1本ではiPhoneに直接繋げません（Lightning端子のため）。全デバイスを1本でカバーしたい場合はUSB-C to Lightning + 変換アダプターの組み合わせか、USB-C to USB-Cケーブルに「Lightningアダプター」を追加する方法があります。"
+    },
+    {
+      "q": "ケーブルの規格（USB 2.0 / 3.0 / 3.2）の違いは？",
+      "a": "充電速度には影響しませんが、データ転送速度が異なります。USB 2.0は480Mbps、USB 3.0は5Gbps、USB 3.2は10Gbps以上。写真・動画のバックアップなど大容量データを頻繁に転送する場合はUSB 3.0以上を選びましょう。充電だけならUSB 2.0で十分です。"
     }
   ],
   "relatedBest": ["best-consumables-batteries-2026", "best-charging-compact-charger-2026"],

@@ -85,6 +85,25 @@ const comparisonProducts = (article.comparison ?? []).map((c: any) => ({
       </div>
     </section>
 
+    <!-- 選び方の基準 -->
+    {article.selectionCriteria?.length > 0 && (
+      <section class="section">
+        <h2 class="section-title">選び方の基準</h2>
+        <div class="criteria-list">
+          {article.selectionCriteria.map((c: any, i: number) => (
+            <div class="criteria-item">
+              <div class="criteria-num">{i + 1}</div>
+              <div class="criteria-body">
+                <h3 class="criteria-title">{c.title}</h3>
+                <p class="criteria-text">{c.body}</p>
+                {c.tip && <p class="criteria-tip">💡 {c.tip}</p>}
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+    )}
+
     <!-- 比較表 -->
     {comparisonProducts.length > 0 && (
       <section class="section">
@@ -253,6 +272,15 @@ const comparisonProducts = (article.comparison ?? []).map((c: any) => ({
 
   /* ボタン */
   .btn-sub { font-size: 0.85rem; font-weight: 700; color: var(--color-primary); text-decoration: underline; }
+
+  /* 選び方の基準 */
+  .criteria-list { display: flex; flex-direction: column; gap: 16px; }
+  .criteria-item { display: flex; gap: 16px; background: var(--color-card); border-radius: var(--radius); padding: 20px; box-shadow: var(--shadow); }
+  .criteria-num { flex-shrink: 0; width: 36px; height: 36px; background: var(--color-primary); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 1rem; }
+  .criteria-body { flex: 1; }
+  .criteria-title { font-size: 1rem; font-weight: 800; margin-bottom: 6px; }
+  .criteria-text { font-size: 0.88rem; line-height: 1.7; color: var(--color-text-muted); }
+  .criteria-tip { font-size: 0.85rem; margin-top: 8px; padding: 8px 12px; background: #fffbf0; border-radius: 4px; color: var(--color-text); line-height: 1.6; }
 
   /* FAQ */
   .faq-list { display: flex; flex-direction: column; gap: 0; }
