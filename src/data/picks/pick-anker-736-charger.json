@@ -1,0 +1,14 @@
+{
+  "slug": "pick-anker-736-charger",
+  "title": "MacBook Pro・複数デバイスを1台で急速充電 Anker 736",
+  "productSlug": "anker-736-charger-100w",
+  "targetUser": "MacBook ProやThinkPadなど高出力が必要なノートPC＋スマホを充電器1台にまとめたい",
+  "reasons": [
+    "100W GaN IIで3ポート同時充電——MacBook Pro＋iPad＋スマホを充電器1台に集約してデスクがすっきりする",
+    "MacBook Pro 14インチへの100W充電対応で純正充電器より小型・軽量、旅行にも持ち出しやすい",
+    "折りたたみプラグ採用でカバン内でコンセントの刃が他のものを傷つけない"
+  ],
+  "caution": "3ポート同時使用時はUSB-C1が最大65W・USB-C2が最大15Wに分散。MacBook Proの充電のみなら1ポート集中が理想。付属ケーブルなし。",
+  "alternatives": ["pick-anker-521-charger", "best-charging-compact-charger-2026"],
+  "publishedAt": "2026-02-23"
+}

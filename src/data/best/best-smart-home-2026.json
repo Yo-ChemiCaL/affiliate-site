@@ -6,18 +6,58 @@
   "categorySlug": "smart-home",
   "publishedAt": "2026-02-12",
   "updatedAt": "2026-02-22",
-  "conclusion": "スマートホーム入門なら **Philips Hue スターターセット** が最も導入しやすくおすすめです。照明から始めると生活の変化を実感しやすく、Alexa連携で音声操作もすぐに使えます。掃除を自動化したい方は **Eufy RoboVac 11S** も合わせて検討してください。",
+  "conclusion": "スマートホーム入門で最もコスパが高いのは **TP-Link Tapo P105**（¥1,680）です。既存家電をそのままスマート化できます。声操作のハブには **Amazon Echo Dot 第5世代** が定番。照明をフルカラーでスマート化するなら **Philips Hue**、掃除の自動化は **Eufy RoboVac 11S** の順で投資効果が高い順に検討しましょう。",
+  "selectionCriteria": [
+    {
+      "title": "スマートホーム入門はコスト最小で体験することが最重要",
+      "body": "スマートホームは「試してみないと自分に合うか分からない」カテゴリです。まずはTapo P105（¥1,680）など低コストなデバイスで体験し、自動化の快適さを実感してから範囲を広げる順番が最もリスクが低い導入方法です。高額なシステムを一度に揃えて「思ったより使わなかった」という失敗を避けられます。",
+      "tip": "最初は1〜2個のデバイスで試す。使用頻度が高いと感じてから追加投資が正解"
+    },
+    {
+      "title": "Amazon Alexa・Google Home・Apple HomeKitの対応を確認する",
+      "body": "スマートホームデバイスは「どのエコシステムに対応しているか」を統一することで快適さが増します。Alexa（Amazon Echo）を中心にするか、Google Home（Google Nest）を中心にするかを先に決め、対応デバイスを選ぶと管理アプリが1つにまとまります。混在させると設定が煩雑になります。",
+      "tip": "Amazonプライム会員でEchoシリーズを持っているなら、Alexa対応に絞るのが最も簡単"
+    },
+    {
+      "title": "ハブが必要かハブレスかを確認する",
+      "body": "Philips HueはブリッジというハブデバイスをWiFiルーターに接続する必要があります。一方、Tapo P105やEcho Dotは直接WiFiに接続するため追加機器が不要です。導入コストをできるだけ下げたいなら「ハブレス」のデバイスを選ぶのが鉄則。ハブが必要な製品は初期費用が高くなりますが、より高機能なオートメーションが可能です。",
+      "tip": "ハブが必要なデバイスは「ハブ代が別途かかる」と認識して総コストを計算する"
+    },
+    {
+      "title": "使用頻度が高い家電から優先する",
+      "body": "スマートホームの効果を最大化するには、毎日使う家電をスマート化するのが鉄則です。毎日ON/OFFするエアコン・照明・扇風機から始めると、タイマー・自動化の効果を日常的に実感できます。たまにしか使わない家電のスマートプラグは優先度が低く、設定しても活用されないケースが多いです。",
+      "tip": "毎朝起床時に自動ONしたい家電、帰宅時に自動OFFしたい家電をリストアップしてから購入"
+    }
+  ],
   "topPicks": [
-    { "rank": 1, "label": "照明スマート化入門", "productSlug": "philips-hue-starter-kit", "pickSlug": "pick-philips-hue" },
-    { "rank": 2, "label": "掃除の完全自動化", "productSlug": "eufy-robovac-11s", "pickSlug": "pick-eufy-robovac" }
+    { "rank": 1, "label": "コスパ最強スマートホーム入口", "productSlug": "tplink-tapo-p105", "pickSlug": "pick-tplink-tapo-p105" },
+    { "rank": 2, "label": "Alexaハブで音声操作の中心に", "productSlug": "amazon-echo-dot-5th", "pickSlug": "pick-amazon-echo-dot-5th" },
+    { "rank": 3, "label": "照明スマート化フルカラー", "productSlug": "philips-hue-starter-kit", "pickSlug": "pick-philips-hue" },
+    { "rank": 4, "label": "掃除の完全自動化", "productSlug": "eufy-robovac-11s", "pickSlug": "pick-eufy-robovac" }
   ],
   "comparison": [
     {
+      "productSlug": "tplink-tapo-p105",
+      "priceRange": "¥1,680",
+      "strength": "¥1,680・ハブ不要・Alexa対応・タイマー機能",
+      "weakness": "2.4GHz専用・消費電力モニターは別モデル",
+      "recommended": "既存家電をそのままスマート化したい入門者",
+      "rating": 4.4
+    },
+    {
+      "productSlug": "amazon-echo-dot-5th",
+      "priceRange": "¥5,980",
+      "strength": "モーションセンサー搭載・音質向上・Alexa全機能",
+      "weakness": "スピーカー音質は音楽鑑賞には不向き",
+      "recommended": "声でスマートホームを操作したい・Alexaエコシステムを構築したい",
+      "rating": 4.5
+    },
+    {
       "productSlug": "philips-hue-starter-kit",
       "priceRange": "¥12,800",
-      "strength": "設定簡単・Alexa完全対応・色調変更可",
-      "weakness": "初期費用やや高め",
-      "recommended": "照明から始めたいスマートホーム入門者",
+      "strength": "設定簡単・Alexa完全対応・1600万色調光",
+      "weakness": "初期費用やや高め・ブリッジが必要",
+      "recommended": "照明の色・明るさを自動化してテレワーク環境を最適化したい",
       "rating": 4.4
     },
     {
@@ -32,17 +72,29 @@
   "faq": [
     {
       "q": "スマートホームはWi-Fiがないと使えない？",
-      "a": "多くの製品はWi-Fi（2.4GHz）が必要です。Philips HueはBluetooth単体でも動作しますが、Alexa連携にはブリッジとWi-Fiが必要です。"
+      "a": "多くの製品はWi-Fi（2.4GHz）が必要です。Philips HueはBluetooth単体でも動作しますが、Alexa連携にはブリッジとWi-Fiが必要です。Tapo P105もWiFi（2.4GHz）が必須です。"
     },
     {
       "q": "電気代は節約できる？",
-      "a": "スマートプラグや調光照明を使えば不要な待機電力をカットできます。環境にもよりますが年間数百〜数千円の節約事例があります。"
+      "a": "スマートプラグや調光照明を使えば不要な待機電力をカットできます。Tapo P105の消費電力モニター機能を使えば、どの家電が電気を多く使っているか把握できます。環境にもよりますが年間数百〜数千円の節約事例があります。"
     },
     {
       "q": "賃貸でも設置できる？",
-      "a": "照明の交換や小型デバイスの設置は工事不要のため、賃貸でも問題なく導入できます。"
+      "a": "照明の交換や小型デバイスの設置は工事不要のため、賃貸でも問題なく導入できます。スマートプラグは既存のコンセントにそのまま挿すだけで使えます。"
+    },
+    {
+      "q": "Echo DotとTapo P105はどう連携する？",
+      "a": "AlexaアプリでTapo P105を「スマートホームデバイス」として登録すると、「アレクサ、リビングの電気を消して」と話しかけるだけでコンセントをON/OFFできます。ルーティン機能で「おやすみ」と言うと複数のプラグを一括OFFにする設定も可能です。"
+    },
+    {
+      "q": "スマートホームを始めるならどれを最初に買うべき？",
+      "a": "最もコストが低く効果を実感しやすいのはTapo P105（¥1,680）です。次にEcho Dot（¥5,980）で声操作を追加すると快適さが大幅に上がります。照明にこだわりたいならPhilips Hueを追加する順番がおすすめです。"
+    },
+    {
+      "q": "ロボット掃除機の設置場所で注意することは？",
+      "a": "段差の多い家・厚めのカーペット・ケーブルが床に散乱している環境は苦手です。Eufy RoboVac 11Sはマッピング機能なしのためランダム走行ですが、障害物を片付けた部屋であれば十分な清掃能力を発揮します。"
     }
   ],
-  "relatedBest": ["best-mobile-battery-2026"],
-  "relatedPicks": ["pick-philips-hue", "pick-eufy-robovac"]
+  "relatedBest": ["best-mobile-battery-2026", "best-worksetup-desk-environment-2026"],
+  "relatedPicks": ["pick-tplink-tapo-p105", "pick-amazon-echo-dot-5th", "pick-philips-hue", "pick-eufy-robovac"]
 }

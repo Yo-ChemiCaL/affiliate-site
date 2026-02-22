@@ -1,0 +1,14 @@
+{
+  "slug": "pick-logicool-mx-anywhere-3s",
+  "title": "外出先・狭いデスクでMX品質を Logicool MX Anywhere 3S",
+  "productSlug": "logicool-mx-anywhere-3s",
+  "targetUser": "ノートPC持ち歩きが多い・デスクが狭い・MX Master 3Sは大きすぎると感じる・静音マウスを探している",
+  "reasons": [
+    "MX Master 3Sと同じ8000DPI高精度センサー＋静音クリックを搭載しつつ99gの軽量コンパクト設計",
+    "Bluetooth対応でレシーバー不要、カバンのサイドポケットに入るサイズで外出にストレスなく持ち運べる",
+    "最大3台のマルチデバイス対応でMac・Windows・iPadをボタン1つで瞬時に切り替え可能"
+  ],
+  "caution": "MX Master 3Sの電磁気スクロールホイール（超高速スクロール）は非搭載。サムホイール・アプリスイッチボタンもなし。長時間デスク固定での快適性はMX Master 3Sが上。",
+  "alternatives": ["pick-logicool-mx-master-3s", "best-worksetup-pc-peripherals-2026"],
+  "publishedAt": "2026-02-23"
+}

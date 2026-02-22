@@ -30,9 +30,10 @@
     }
   ],
   "topPicks": [
-    { "rank": 1, "label": "マウス生産性最高峰", "productSlug": "logicool-mx-master-3s", "pickSlug": "pick-logicool-mx-master-3s" },
-    { "rank": 2, "label": "タイピング品質向上", "productSlug": "logicool-mx-keys", "pickSlug": "pick-logicool-mx-keys" },
-    { "rank": 3, "label": "ポート不足を一括解決", "productSlug": "anker-usb-hub-7in1", "pickSlug": "pick-anker-usb-hub-7in1" }
+    { "rank": 1, "label": "デスク固定・生産性最高峰", "productSlug": "logicool-mx-master-3s", "pickSlug": "pick-logicool-mx-master-3s" },
+    { "rank": 2, "label": "外出・狭いデスクのコンパクト版", "productSlug": "logicool-mx-anywhere-3s", "pickSlug": "pick-logicool-mx-anywhere-3s" },
+    { "rank": 3, "label": "タイピング品質向上", "productSlug": "logicool-mx-keys", "pickSlug": "pick-logicool-mx-keys" },
+    { "rank": 4, "label": "ポート不足を一括解決", "productSlug": "anker-usb-hub-7in1", "pickSlug": "pick-anker-usb-hub-7in1" }
   ],
   "comparison": [
     {
@@ -40,8 +41,16 @@
       "priceRange": "¥14,850",
       "strength": "電磁気スクロール・静音クリック・Mac/Win両対応・3台切替",
       "weakness": "141gとやや重め・価格高め",
-      "recommended": "毎日長時間PCを使うビジネスパーソン",
+      "recommended": "毎日長時間PCを使うビジネスパーソン・デスク固定メイン",
       "rating": 4.7
+    },
+    {
+      "productSlug": "logicool-mx-anywhere-3s",
+      "priceRange": "¥8,580",
+      "strength": "8000DPI・静音クリック・軽量99g・3台マルチデバイス",
+      "weakness": "電磁気スクロールなし・多ボタンカスタマイズは少なめ",
+      "recommended": "ノートPCとの外出・狭いデスク・MX Master 3Sのコンパクト版",
+      "rating": 4.5
     },
     {
       "productSlug": "logicool-mx-keys",
@@ -87,5 +96,5 @@
     }
   ],
   "relatedBest": ["best-worksetup-desk-environment-2026", "best-worksetup-usecase-2026"],
-  "relatedPicks": ["pick-logicool-mx-master-3s", "pick-logicool-mx-keys", "pick-anker-usb-hub-7in1"]
+  "relatedPicks": ["pick-logicool-mx-master-3s", "pick-logicool-mx-anywhere-3s", "pick-logicool-mx-keys", "pick-anker-usb-hub-7in1"]
 }

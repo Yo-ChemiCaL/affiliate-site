@@ -6,11 +6,12 @@
   "categorySlug": "work-setup",
   "publishedAt": "2026-02-22",
   "updatedAt": "2026-02-22",
-  "conclusion": "デスク環境の第一歩は **BenQ ScreenBar** で目の疲れを解消し、**Anker 7-in-1 ハブ** でポート問題を片付けることです。",
+  "conclusion": "デスク環境の第一歩は **BenQ ScreenBar** で目の疲れを解消し、**Anker 7-in-1 ハブ** でポート問題を片付けることです。オンライン会議の品質も上げたい場合は **Logicool C920n ウェブカメラ** が即効性の高いアップグレードです。",
   "topPicks": [
     { "rank": 1, "label": "目の疲れを軽減", "productSlug": "benq-screenbar", "pickSlug": "pick-benq-screenbar" },
     { "rank": 2, "label": "配線・ポート整理", "productSlug": "anker-usb-hub-7in1", "pickSlug": "pick-anker-usb-hub-7in1" },
-    { "rank": 3, "label": "キーボードで入力快適化", "productSlug": "logicool-mx-keys", "pickSlug": "pick-logicool-mx-keys" }
+    { "rank": 3, "label": "会議映像をFull HDに改善", "productSlug": "logicool-c920n", "pickSlug": "pick-logicool-c920n" },
+    { "rank": 4, "label": "キーボードで入力快適化", "productSlug": "logicool-mx-keys", "pickSlug": "pick-logicool-mx-keys" }
   ],
   "comparison": [
     {
@@ -27,6 +28,14 @@
       "strength": "7ポート一括接続・持ち運び可",
       "weakness": "4K60fps非対応",
       "recommended": "MacBook等でポートが足りない方",
+      "rating": 4.3
+    },
+    {
+      "productSlug": "logicool-c920n",
+      "priceRange": "¥7,480",
+      "strength": "Full HD 1080P・自動フォーカス・プラグアンドプレイ",
+      "weakness": "4K非対応・暗所は照明補助が必要",
+      "recommended": "Zoom・Teams会議の映像をノートPC内蔵カメラからアップグレードしたい",
       "rating": 4.3
     },
     {
@@ -50,8 +59,20 @@
     {
       "q": "USBハブはどこに置くのがいい？",
       "a": "デスク上で手が届きやすい位置に置くか、モニター裏にテープ固定するとすっきりします。ケーブル長は60cmほどあると便利です。"
+    },
+    {
+      "q": "ウェブカメラとノートPC内蔵カメラで差はある？",
+      "a": "ノートPC内蔵カメラは720P以下が多く、画角も狭め。Logicool C920nはFull HD 1080Pで自動フォーカス付きのため、相手に与える印象が明確に変わります。特に顔が鮮明に映るため、オンライン会議での存在感が上がります。"
+    },
+    {
+      "q": "テレワーク環境整備でまず何を買うべき？",
+      "a": "優先順位の目安は①ScreenBar（¥12,900）で目の疲れを軽減→②ウェブカメラ（¥7,480）で会議品質改善→③USBハブ（¥4,590）でポート問題解決の順が費用対効果が高い順番です。"
+    },
+    {
+      "q": "ウェブカメラはBenQ ScreenBarと一緒に使える？",
+      "a": "はい、組み合わせて使うとより効果的です。ScreenBarで手元を明るくすると、ウェブカメラの映像も暗くなりにくくなります。ScreenBarはモニター上部に装着するため、その上にウェブカメラを置くことも可能です。"
     }
   ],
   "relatedBest": ["best-worksetup-pc-peripherals-2026", "best-worksetup-usecase-2026"],
-  "relatedPicks": ["pick-benq-screenbar", "pick-anker-usb-hub-7in1"]
+  "relatedPicks": ["pick-benq-screenbar", "pick-anker-usb-hub-7in1", "pick-logicool-c920n", "pick-logicool-mx-keys"]
 }

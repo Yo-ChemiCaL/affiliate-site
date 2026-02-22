@@ -1,0 +1,14 @@
+{
+  "slug": "pick-tplink-tapo-p105",
+  "title": "¥1,680でハブ不要のスマートホーム入門 TP-Link Tapo P105",
+  "productSlug": "tplink-tapo-p105",
+  "targetUser": "スマートホームに興味があるが費用をかけたくない・Alexa/Google Homeと連携して家電を音声操作したい",
+  "reasons": [
+    "¥1,680・ハブ不要——コンセントに差してWiFiを設定するだけでスマートホームがすぐ始められる",
+    "外出先からスマホでON/OFFできるため「家電を消し忘れた」という不安がなくなる",
+    "Alexa・Google Home対応でEcho Dotと連携すれば声だけで家電を操作できる"
+  ],
+  "caution": "2.4GHz WiFiのみ対応（5GHz専用ルーター不可）。大電流（16A以上）の家電には使用不可。消費電力モニタリングには上位モデルのTapo P110が必要。",
+  "alternatives": ["best-smart-home-2026"],
+  "publishedAt": "2026-02-23"
+}
