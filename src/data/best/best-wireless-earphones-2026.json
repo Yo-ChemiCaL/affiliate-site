@@ -6,7 +6,7 @@
   "categorySlug": "commute",
   "publishedAt": "2026-02-23",
   "updatedAt": "2026-02-23",
-  "conclusion": "完全ワイヤレスイヤホンはAnker Soundcore Life P3、オーバーイヤーヘッドホンはAnker Soundcore Space Q45が各カテゴリのコスパ最強です。ANCの深さよりバッテリーを重視するならP40iも有力候補です。",
+  "conclusion": "完全ワイヤレスイヤホンはAnker Soundcore Life P3、コスパヘッドホンはAnker Q45が最強です。軽量重視ならSony WH-CH720N（¥14,000前後）、業界最高峰のANCを求めるならSony WH-1000XM5（¥44,000）が最終答えになります。",
   "selectionCriteria": [
     {
       "title": "ANC（アクティブノイズキャンセリング）性能で選ぶ",
@@ -32,7 +32,9 @@
   "topPicks": [
     { "rank": 1, "label": "ヘッドホン部門コスパ最強", "productSlug": "anker-soundcore-q45", "pickSlug": "pick-anker-soundcore-q45" },
     { "rank": 2, "label": "TWS部門コスパ最強", "productSlug": "anker-soundcore-life-p3", "pickSlug": "pick-anker-soundcore-life-p3" },
-    { "rank": 3, "label": "バッテリー重視のTWS", "productSlug": "anker-soundcore-p40i", "pickSlug": "pick-anker-soundcore-p40i" }
+    { "rank": 3, "label": "バッテリー重視のTWS", "productSlug": "anker-soundcore-p40i", "pickSlug": "pick-anker-soundcore-p40i" },
+    { "rank": 4, "label": "軽量・長時間の通勤向けANC", "productSlug": "sony-wh-ch720n", "pickSlug": "pick-sony-wh-ch720n" },
+    { "rank": 5, "label": "最高峰ANC・ハイエンド", "productSlug": "sony-wh-1000xm5", "pickSlug": "pick-sony-wh-1000xm5" }
   ],
   "comparison": [
     {
@@ -58,6 +60,22 @@
       "weakness": "Life P3よりANCが若干弱め・若干大きめ",
       "recommended": "バッテリー持ちを最優先したいTWSユーザー",
       "rating": 4.2
+    },
+    {
+      "productSlug": "sony-wh-ch720n",
+      "priceRange": "¥14,000前後",
+      "strength": "147gの超軽量・最大35時間再生・マルチポイント2台接続",
+      "weakness": "ANCの深さはWH-1000XM5・Q45より劣る",
+      "recommended": "長時間装着でも首・頭への負担を最小限にしたい方",
+      "rating": 4.3
+    },
+    {
+      "productSlug": "sony-wh-1000xm5",
+      "priceRange": "¥44,000",
+      "strength": "業界最高峰ANC・30時間再生・マルチポイント・装着圧ゼロ設計",
+      "weakness": "折りたたみ不可・価格がコスパ機の6〜7倍",
+      "recommended": "新幹線・飛行機で騒音を完全にシャットアウトしたいヘビーユーザー",
+      "rating": 4.7
     }
   ],
   "faq": [
@@ -79,5 +97,5 @@
     }
   ],
   "relatedBest": ["best-worksetup-pc-peripherals-2026"],
-  "relatedPicks": ["pick-anker-soundcore-q45", "pick-anker-soundcore-life-p3", "pick-anker-soundcore-p40i"]
+  "relatedPicks": ["pick-anker-soundcore-q45", "pick-anker-soundcore-life-p3", "pick-anker-soundcore-p40i", "pick-sony-wh-ch720n", "pick-sony-wh-1000xm5"]
 }

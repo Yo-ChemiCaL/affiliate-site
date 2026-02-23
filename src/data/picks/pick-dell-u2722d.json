@@ -1,0 +1,14 @@
+{
+  "slug": "pick-dell-u2722d",
+  "title": "USB-C1本でMacBookを繋いで作業できる4Kモニターを選ぶ",
+  "productSlug": "dell-u2722d",
+  "targetUser": "MacBook Air / Pro・Surface ProにUSB-C1本で映像出力＋充電を同時に完結させたい方",
+  "reasons": [
+    "USB-C 90W給電対応でMacBook Pro 14インチを接続しながら充電でき、ケーブル1本でデスクがすっきりまとまる",
+    "4K IPS・デルタE<2の色精度でカラーキャリブレーション済み——デザイン・写真編集でも業務レベルの色再現が可能",
+    "HDR400・高輝度400cd/m²でグラフ・スプレッドシートの細かいテキストも27インチ4Kで鮮明に表示される"
+  ],
+  "caution": "¥49,980の高価格帯です。コスパを重視するなら同等USB-C給電の安価な24インチ4Kモニターも選択肢に入ります。奥行きがあるスタンドのため、デスクの奥行き70cm以上を確保してください。",
+  "alternatives": ["best-worksetup-desk-environment-2026", "pick-benq-screenbar"],
+  "publishedAt": "2026-02-23"
+}

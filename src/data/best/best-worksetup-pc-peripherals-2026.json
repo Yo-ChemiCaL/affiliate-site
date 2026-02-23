@@ -6,7 +6,7 @@
   "categorySlug": "work-setup",
   "publishedAt": "2026-02-22",
   "updatedAt": "2026-02-22",
-  "conclusion": "マウスは MX Master 3S、キーボードは MX Keys、ポート不足解消は Anker 7-in-1 ハブが各カテゴリ最高峰の組み合わせです。3点セットで揃えると Logicool Flow による Mac/Windows 統合操作も実現できます。",
+  "conclusion": "マウスは MX Master 3S、キーボードは MX Keys、ポート不足解消は Anker 7-in-1 ハブが各カテゴリ最高峰の組み合わせです。腱鞘炎・肘の痛みに悩む方には Logicool LIFT エルゴノミクスマウスへの切り替えが根本的な解決策になります。",
   "selectionCriteria": [
     {
       "title": "マウス選びの3ポイント：DPI・重さ・接続方式",
@@ -33,7 +33,9 @@
     { "rank": 1, "label": "デスク固定・生産性最高峰", "productSlug": "logicool-mx-master-3s", "pickSlug": "pick-logicool-mx-master-3s" },
     { "rank": 2, "label": "外出・狭いデスクのコンパクト版", "productSlug": "logicool-mx-anywhere-3s", "pickSlug": "pick-logicool-mx-anywhere-3s" },
     { "rank": 3, "label": "タイピング品質向上", "productSlug": "logicool-mx-keys", "pickSlug": "pick-logicool-mx-keys" },
-    { "rank": 4, "label": "ポート不足を一括解決", "productSlug": "anker-usb-hub-7in1", "pickSlug": "pick-anker-usb-hub-7in1" }
+    { "rank": 4, "label": "ポート不足を一括解決", "productSlug": "anker-usb-hub-7in1", "pickSlug": "pick-anker-usb-hub-7in1" },
+    { "rank": 5, "label": "エルゴノミクス・腱鞘炎対策", "productSlug": "logicool-lift-ergo", "pickSlug": "pick-logicool-lift-ergo" },
+    { "rank": 6, "label": "USB-C対応8-in-1ハブ", "productSlug": "anker-655-usbc-hub", "pickSlug": "pick-anker-655-usbc-hub" }
   ],
   "comparison": [
     {
@@ -67,6 +69,22 @@
       "weakness": "HDMI 4K60fps非対応（4K30fps）",
       "recommended": "MacBook・SurfaceのポートをHDMI含め一括解決",
       "rating": 4.3
+    },
+    {
+      "productSlug": "logicool-lift-ergo",
+      "priceRange": "¥9,900",
+      "strength": "57°傾斜の垂直持ちで腕の回内を抑制・腱鞘炎・肘の疲れを軽減",
+      "weakness": "慣れるまで1〜2週間必要・左手用モデル別売り",
+      "recommended": "長時間マウス操作で腱鞘炎・肘の痛みに悩んでいる方",
+      "rating": 4.4
+    },
+    {
+      "productSlug": "anker-655-usbc-hub",
+      "priceRange": "¥6,490",
+      "strength": "USB-C×2/USB-A×2/HDMI 4K60fps/SD/microSD・8ポート",
+      "weakness": "バスパワーのため高負荷時に発熱することがある",
+      "recommended": "MacBookで4K60fpsのモニター出力が必要・ポートが8個欲しい方",
+      "rating": 4.4
     }
   ],
   "faq": [
@@ -96,5 +114,5 @@
     }
   ],
   "relatedBest": ["best-worksetup-desk-environment-2026", "best-worksetup-usecase-2026"],
-  "relatedPicks": ["pick-logicool-mx-master-3s", "pick-logicool-mx-anywhere-3s", "pick-logicool-mx-keys", "pick-anker-usb-hub-7in1"]
+  "relatedPicks": ["pick-logicool-mx-master-3s", "pick-logicool-mx-anywhere-3s", "pick-logicool-mx-keys", "pick-anker-usb-hub-7in1", "pick-logicool-lift-ergo", "pick-anker-655-usbc-hub"]
 }

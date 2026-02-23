@@ -6,7 +6,7 @@
   "categorySlug": "charging",
   "publishedAt": "2026-02-22",
   "updatedAt": "2026-02-22",
-  "conclusion": "毎日の通勤ならスリムな Anker PowerCore Slim 10000 が最適。USB-C急速充電が必要なら PowerCore 10000 PD Redux、充電器一体型で旅行にも使いたいなら Anker 733 がおすすめです。",
+  "conclusion": "毎日の通勤ならスリムな Anker PowerCore Slim 10000 が最適。USB-C急速充電が必要なら PowerCore 335、充電器一体型で旅行にも使いたいなら Anker 733 がおすすめです。iPhoneユーザーでMagSafe充電を試したいなら Anker 622 MagGo が独自の使い勝手を提供します。",
   "selectionCriteria": [
     {
       "title": "容量（mAh）の目安から選ぶ",
@@ -32,7 +32,10 @@
   "topPicks": [
     { "rank": 1, "label": "薄型・軽量 総合1位", "productSlug": "anker-powercore-slim-10000", "pickSlug": "pick-anker-powercore-slim" },
     { "rank": 2, "label": "USB-C急速充電", "productSlug": "anker-powercore-335-10000", "pickSlug": "pick-anker-powercore-335" },
-    { "rank": 3, "label": "旅行・出張の相棒", "productSlug": "anker-733-powerbank-10k", "pickSlug": "pick-anker-733-powerbank" }
+    { "rank": 3, "label": "旅行・出張の相棒", "productSlug": "anker-733-powerbank-10k", "pickSlug": "pick-anker-733-powerbank" },
+    { "rank": 4, "label": "最軽量・極薄スリム", "productSlug": "anker-powercore-5000", "pickSlug": "pick-anker-powercore-5000" },
+    { "rank": 5, "label": "iPhone MagSafe対応", "productSlug": "anker-622-maggo", "pickSlug": "pick-anker-622-maggo" },
+    { "rank": 6, "label": "MagSafe磁気吸着・軽量", "productSlug": "anker-powercore-magnetic-5k", "pickSlug": "pick-anker-powercore-magnetic-5k" }
   ],
   "comparison": [
     {
@@ -58,6 +61,30 @@
       "weakness": "価格高め・重量約200g",
       "recommended": "旅行・出張で充電器とバッテリーを1台にまとめたい",
       "rating": 4.3
+    },
+    {
+      "productSlug": "anker-powercore-5000",
+      "priceRange": "¥2,490",
+      "strength": "96g超軽量・厚さ14mm・スーツ胸ポケットに収まるスリムさ",
+      "weakness": "5000mAhのためスマホ約1.3回分・USB-Aのみ",
+      "recommended": "「とにかく軽く・小さく」を最優先したいミニマリスト向け",
+      "rating": 4.2
+    },
+    {
+      "productSlug": "anker-622-maggo",
+      "priceRange": "¥4,990",
+      "strength": "iPhone背面にMagSafeで磁気吸着・ケーブルレス充電",
+      "weakness": "5000mAh・5Wワイヤレス充電のみ（急速充電非対応）",
+      "recommended": "iPhoneをケーブルなしで充電しながら使いたいiPhoneユーザー",
+      "rating": 4.1
+    },
+    {
+      "productSlug": "anker-powercore-magnetic-5k",
+      "priceRange": "¥3,490",
+      "strength": "MagSafe磁気吸着・軽量96g・USB-C入力",
+      "weakness": "5000mAh・有線接続の急速充電には非対応",
+      "recommended": "iPhone 12以降でMagSafeに慣れた方の予備電源として",
+      "rating": 4.2
     }
   ],
   "faq": [
@@ -87,5 +114,5 @@
     }
   ],
   "relatedBest": ["best-charging-compact-charger-2026", "best-travel-charging-2026"],
-  "relatedPicks": ["pick-anker-powercore-slim", "pick-anker-powercore-335", "pick-anker-733-powerbank"]
+  "relatedPicks": ["pick-anker-powercore-slim", "pick-anker-powercore-335", "pick-anker-733-powerbank", "pick-anker-powercore-5000", "pick-anker-622-maggo", "pick-anker-powercore-magnetic-5k"]
 }

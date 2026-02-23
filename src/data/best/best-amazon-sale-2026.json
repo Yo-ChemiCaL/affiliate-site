@@ -1,0 +1,110 @@
+{
+  "slug": "best-amazon-sale-2026",
+  "title": "Amazonセール 狙い目ガジェット 2026 ブラックフライデー・プライムデー完全ガイド",
+  "description": "プライムデー・ブラックフライデー・初売りなどAmazonセールで必ず値下がりする狙い目ガジェットを厳選。セール前に抑えておくべき商品リストと価格チェック方法を解説。",
+  "category": "充電・電源",
+  "categorySlug": "charging",
+  "publishedAt": "2026-02-23",
+  "updatedAt": "2026-02-23",
+  "conclusion": "Amazonセールで最もコスパよく買えるのは ①モバイルバッテリー（Anker） ②充電器（GaN） ③イヤホン・ヘッドホン の3カテゴリです。ウィッシュリストに登録してセールを待つのが賢い購入戦略です。",
+  "selectionCriteria": [
+    {
+      "title": "Amazonセールのタイミングを把握する",
+      "body": "Amazonの主要セールは年4回：プライムデー（7月）・プライム感謝祭（10月）・ブラックフライデー（11月）・初売り（1月）。Ankerなどガジェットブランドは20〜50%OFFになることが多く、セール前に通常価格を把握しておくことが重要です。Keepaや価格.comで過去の価格推移を確認してから購入判断しましょう。",
+      "tip": "セール当日に焦らないために、事前にウィッシュリストへ追加して価格変動を通知設定"
+    },
+    {
+      "title": "モバイルバッテリー・充電器はAnkerが最大割引",
+      "body": "Ankerはプライムデーに全製品30〜40%OFFになることが多く、最もセールの恩恵を受けやすいカテゴリです。特に Anker PowerCore Slim 10000（通常¥2,990）や Anker 736 Charger 65W（通常¥3,490）はセール時に大幅値引きされる人気商品です。まとめ買いや予備用として複数購入するのもおすすめです。",
+      "tip": "Ankerのタイムセール（数時間限定）は見逃しやすい——AmazonアプリのPush通知をオンに"
+    },
+    {
+      "title": "イヤホン・ヘッドホンは新モデル発表後が狙い目",
+      "body": "ソニー・Ankerなどは新モデル発表（例：WH-1000XM6が出たらXM5が値下がり）のタイミングで旧モデルが大幅値引きされます。XM5（¥44,000）がセール時に30%OFFになると¥30,800と一気に現実的な価格になります。Life P3（通常¥6,990）もセール時に¥4,990〜5,500前後になることが多いです。",
+      "tip": "購入を急ぐ必要がない場合は、Amazonの「お気に入りリスト」で価格下落を待つのがベスト"
+    },
+    {
+      "title": "PC周辺機器（Logicool）はセール時に価格が動きやすい",
+      "body": "Logicoolのマウス・キーボードはAmazonセール時に10〜20%OFFになることが多いです。MX Master 3S（通常¥14,850）がセール時に¥12,000前後、MX Keys（通常¥16,940）が¥14,000前後になるのが目安です。Logicool公式サイトよりAmazonのセール価格が安くなるタイミングを逃さないようにしましょう。",
+      "tip": "Logicool製品はヨドバシ・楽天も比較対象——Amazonセール時でもたまに安い店がある"
+    }
+  ],
+  "topPicks": [
+    { "rank": 1, "label": "セール最多買い：薄型バッテリー", "productSlug": "anker-powercore-slim-10000", "pickSlug": "pick-anker-powercore-slim" },
+    { "rank": 2, "label": "セール時コスパ最強充電器", "productSlug": "anker-735-charger-65w", "pickSlug": "pick-anker-735-charger-65w" },
+    { "rank": 3, "label": "セール待ち候補：コスパANCイヤホン", "productSlug": "anker-soundcore-life-p3", "pickSlug": "pick-anker-soundcore-life-p3" },
+    { "rank": 4, "label": "セール時に狙うハイエンド", "productSlug": "sony-wh-1000xm5", "pickSlug": "pick-sony-wh-1000xm5" },
+    { "rank": 5, "label": "セール定番：コスパマウス", "productSlug": "logicool-mx-anywhere-3s", "pickSlug": "pick-logicool-mx-anywhere-3s" },
+    { "rank": 6, "label": "スマホ充電器を予備でまとめ買い", "productSlug": "anker-511-charger-30w", "pickSlug": "pick-anker-511-charger-30w" }
+  ],
+  "comparison": [
+    {
+      "productSlug": "anker-powercore-slim-10000",
+      "priceRange": "¥2,990（セール時¥2,000〜2,400）",
+      "strength": "通常でも安い・セール時は¥2,000前後に",
+      "weakness": "PD急速充電非対応",
+      "recommended": "セール価格で予備用にまとめ買いしたい方",
+      "rating": 4.5
+    },
+    {
+      "productSlug": "anker-735-charger-65w",
+      "priceRange": "¥3,490（セール時¥2,400〜2,800）",
+      "strength": "65W GaN・USB-C×2・セール時のコスパが抜群",
+      "weakness": "MacBook Proの高速充電には100Wが必要",
+      "recommended": "充電器をセールで1〜2個まとめ買いしたい方",
+      "rating": 4.5
+    },
+    {
+      "productSlug": "anker-soundcore-life-p3",
+      "priceRange": "¥6,990（セール時¥4,990〜5,500）",
+      "strength": "¥4,990ならANCイヤホンとして最高のコスパに",
+      "weakness": "セール期間限定なので機を逃さないこと",
+      "recommended": "ANCイヤホンを初めて試す方・セール待ち推奨",
+      "rating": 4.3
+    },
+    {
+      "productSlug": "sony-wh-1000xm5",
+      "priceRange": "¥44,000（セール時¥30,000〜35,000）",
+      "strength": "セール時は業界最高峰ANCが¥30,000台で購入可能",
+      "weakness": "セール対象になるタイミングを事前にリサーチ必要",
+      "recommended": "WH-1000XM5が欲しいがセールを待っている方",
+      "rating": 4.7
+    },
+    {
+      "productSlug": "logicool-mx-anywhere-3s",
+      "priceRange": "¥8,580（セール時¥7,000〜7,500）",
+      "strength": "セール時に¥7,000前後になりコスパが大幅向上",
+      "weakness": "Logicool製品のセール幅は小さめ（10〜15%）",
+      "recommended": "コンパクトマウスをセール価格で購入したい方",
+      "rating": 4.5
+    },
+    {
+      "productSlug": "anker-511-charger-30w",
+      "priceRange": "¥1,790（セール時¥1,200〜1,400）",
+      "strength": "セール時に¥1,200前後——旅行用・予備にまとめ買い最適",
+      "weakness": "USB-Cポート1口のみ",
+      "recommended": "旅行用・予備用の充電器を安く複数揃えたい方",
+      "rating": 4.4
+    }
+  ],
+  "faq": [
+    {
+      "q": "Amazonセールで最も安くなりやすいブランドは？",
+      "a": "Ankerが最もセール割引が大きく、プライムデー・ブラックフライデーで30〜40%OFFが頻繁に見られます。Logicool・Sonyは10〜20%程度の割引が多い傾向があります。"
+    },
+    {
+      "q": "セール価格が本当に安いか確認する方法は？",
+      "a": "Keepa（ブラウザ拡張機能）を使うと商品ページに価格推移グラフが表示されます。セール前に人工的に値上げしてから割引するケースもあるため、過去最安値との比較が重要です。"
+    },
+    {
+      "q": "プライム会員でないとセール価格で買えない？",
+      "a": "プライムデーはプライム会員限定ですが、ブラックフライデー・初売りは非会員でも購入可能なセールが多いです。頻繁にAmazonを使う場合はプライム会員（月額600円）のほうが元が取れる場合が多いです。"
+    },
+    {
+      "q": "セール当日に在庫切れになることはある？",
+      "a": "人気商品（Anker・Logicool）はセール開始直後に在庫が減ることがあります。ウィッシュリストに追加しておき、セール開始と同時にカートに入れる準備をしておくのがおすすめです。"
+    }
+  ],
+  "relatedBest": ["best-charging-mobile-battery-2026", "best-charging-compact-charger-2026", "best-wireless-earphones-2026"],
+  "relatedPicks": ["pick-anker-powercore-slim", "pick-anker-735-charger-65w", "pick-anker-soundcore-life-p3"]
+}

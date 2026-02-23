@@ -6,12 +6,14 @@
   "categorySlug": "charging",
   "publishedAt": "2026-02-22",
   "updatedAt": "2026-02-22",
-  "conclusion": "MacBook Proなど高出力が必要なら **Anker 736 Charger 100W**、MacBook Air・iPadなら **Anker 521 Charger 40W**、スマホだけなら **PowerPort III Nano 20W** でコスパ最優先が正解です。",
+  "conclusion": "MacBook Proなど高出力が必要なら **Anker 736 Charger 100W**、MacBook Air・iPadなら **Anker 521 Charger 40W**、スマホ2台同時充電なら **Anker 735 Charger 65W**、スマホだけなら **PowerPort III Nano 20W** でコスパ最優先が正解です。",
   "topPicks": [
     { "rank": 1, "label": "MacBook Pro対応・3ポート", "productSlug": "anker-736-charger-100w", "pickSlug": "pick-anker-736-charger" },
     { "rank": 2, "label": "MacBook Air・iPad急速充電", "productSlug": "anker-521-charger-45w", "pickSlug": "pick-anker-521-charger" },
     { "rank": 3, "label": "スマホ専用コスパ最強", "productSlug": "anker-powerport-iii-nano-20w", "pickSlug": "pick-anker-powerport-nano-20w" },
-    { "rank": 4, "label": "バッテリー内蔵で1台2役", "productSlug": "anker-733-powerbank-10k", "pickSlug": "pick-anker-733-powerbank" }
+    { "rank": 4, "label": "バッテリー内蔵で1台2役", "productSlug": "anker-733-powerbank-10k", "pickSlug": "pick-anker-733-powerbank" },
+    { "rank": 5, "label": "65W 2ポート・旅行に最適", "productSlug": "anker-735-charger-65w", "pickSlug": "pick-anker-735-charger-65w" },
+    { "rank": 6, "label": "30W・超小型スマホ専用", "productSlug": "anker-511-charger-30w", "pickSlug": "pick-anker-511-charger-30w" }
   ],
   "comparison": [
     {
@@ -45,6 +47,22 @@
       "weakness": "価格高め・重量あり",
       "recommended": "充電器とバッテリーを1つに統合したい",
       "rating": 4.3
+    },
+    {
+      "productSlug": "anker-735-charger-65w",
+      "priceRange": "¥3,490",
+      "strength": "65W GaN II・USB-C×2+USB-A・MacBook Air対応・折りたたみプラグ",
+      "weakness": "100W機種に比べ出力が不足するケースも",
+      "recommended": "MacBook AirとスマホをUSB-C 2口で同時に充電したい方",
+      "rating": 4.5
+    },
+    {
+      "productSlug": "anker-511-charger-30w",
+      "priceRange": "¥1,790",
+      "strength": "30W GaN・超小型・iPhoneとAndroid両対応・急速充電",
+      "weakness": "USB-Cポート1口のみ・PC充電には力不足",
+      "recommended": "旅行バッグに常時1個入れておくサブ充電器",
+      "rating": 4.4
     }
   ],
   "faq": [
@@ -74,5 +92,5 @@
     }
   ],
   "relatedBest": ["best-charging-mobile-battery-2026", "best-charging-usecase-2026"],
-  "relatedPicks": ["pick-anker-736-charger", "pick-anker-521-charger", "pick-anker-powerport-nano-20w"]
+  "relatedPicks": ["pick-anker-736-charger", "pick-anker-521-charger", "pick-anker-powerport-nano-20w", "pick-anker-735-charger-65w", "pick-anker-511-charger-30w"]
 }
