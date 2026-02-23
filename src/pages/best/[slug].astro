@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import JsonLd from '../../components/JsonLd.astro';
 import { url } from '../../lib/url';
 import productsData from '../../data/products.json';
 
@@ -27,13 +28,38 @@ const comparisonProducts = (article.comparison ?? []).map((c: any) => ({
   ...c,
   product: getProduct(c.productSlug),
 }));
+
+const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? '';
+const pageUrl = new URL(url(`/best/${article.slug}/`), Astro.site).href;
+const bestListUrl = `${siteUrl}/best/`;
+const ogImage = topProducts[0]?.product?.image ?? '/images/og-default.jpg';
 ---
 
 <BaseLayout
   title={`${article.title} | mono-lab`}
   description={article.description}
+  ogImage={ogImage}
   ogType="article"
 >
+  <Fragment slot="head">
+    <JsonLd
+      type="Article"
+      headline={article.title}
+      description={article.description}
+      image={ogImage}
+      datePublished={article.publishedAt}
+      dateModified={article.updatedAt}
+      url={pageUrl}
+    />
+    <JsonLd
+      type="Breadcrumb"
+      items={[
+        { name: 'ホーム', url: siteUrl },
+        { name: '比較記事', url: bestListUrl },
+        { name: article.title, url: pageUrl },
+      ]}
+    />
+  </Fragment>
   <div class="container best-page">
     <!-- Breadcrumb -->
     <nav class="breadcrumb">

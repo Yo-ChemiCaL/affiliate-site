@@ -1,0 +1,14 @@
+{
+  "slug": "pick-anker-usba-to-usbc-cable",
+  "title": "古いUSB-A充電器でAndroid・iPadをUSB-Cで充電するケーブルを選ぶ",
+  "productSlug": "anker-usba-to-usbc-cable",
+  "targetUser": "USB-A充電器を使い続けながらUSB-C端子のスマホやタブレットを充電したい方",
+  "reasons": [
+    "USB-A→USB-C変換で古い充電器やPC・カーチャージャーのUSB-Aポートから充電できる",
+    "断線しにくい強化設計でスタンダードなケーブルより長持ちし、買い替え頻度を減らせる",
+    "¥890のコスパで何本でも揃えられ、自宅・職場・車内と各所に1本置いておける"
+  ],
+  "caution": "USB-A接続のためPD急速充電非対応です。iPhone の高速充電（USB-C充電器）には別途USB-C to Lightningケーブルが必要です。",
+  "alternatives": ["best-consumables-usb-cables-2026"],
+  "publishedAt": "2026-02-23"
+}

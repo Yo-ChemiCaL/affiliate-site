@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import JsonLd from '../../components/JsonLd.astro';
 import { url } from '../../lib/url';
 import productsData from '../../data/products.json';
 
@@ -19,6 +20,10 @@ const stars = '★'.repeat(Math.round(product.rating)) + '☆'.repeat(5 - Math.r
 const discount = product.originalPrice && product.price
   ? Math.round((1 - product.price / product.originalPrice) * 100)
   : null;
+
+const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? '';
+const pageUrl = new URL(url(`/pick/${pick.slug}/`), Astro.site).href;
+const pickListUrl = `${siteUrl}/pick/`;
 ---
 
 <BaseLayout
@@ -27,6 +32,24 @@ const discount = product.originalPrice && product.price
   ogImage={product.image}
   ogType="article"
 >
+  <Fragment slot="head">
+    <JsonLd
+      type="Article"
+      headline={pick.title}
+      description={`${pick.targetUser}向け。${pick.reasons[0]}`}
+      image={product.image}
+      datePublished={pick.publishedAt}
+      url={pageUrl}
+    />
+    <JsonLd
+      type="Breadcrumb"
+      items={[
+        { name: 'ホーム', url: siteUrl },
+        { name: '即決ガイド', url: pickListUrl },
+        { name: pick.title, url: pageUrl },
+      ]}
+    />
+  </Fragment>
   <div class="container pick-page">
     <!-- Breadcrumb -->
     <nav class="breadcrumb">

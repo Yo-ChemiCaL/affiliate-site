@@ -8,27 +8,35 @@ import productsData from '../data/products.json';
 
 const products = productsData as Product[];
 
-// ── Quick Picks 選定 ─────────────────────────────────────────────────────────
-// 選定基準:
-//   1. rating >= 4.1 かつ reviewCount >= 300 でフィルタ（購買信頼性の最低ライン）
-//   2. rating 降順でソート（最高評価を優先）
-//   3. categorySlug 重複なし（先着1件）で最大3件採用（シーン多様性を確保）
-const QP_RATING_MIN = 4.1;
-const QP_REVIEW_MIN = 300;
-const _seenCats = new Set<string>();
-const quickPicks = [...products]
-  .filter((p) => p.rating >= QP_RATING_MIN && p.reviewCount >= QP_REVIEW_MIN)
-  .sort((a, b) => b.rating - a.rating)
-  .filter((p) => {
-    const slug = (p as any).categorySlug ?? toCategorySlug(p.category);
-    if (_seenCats.has(slug)) return false;
-    _seenCats.add(slug);
-    return true;
-  })
-  .slice(0, 3);
+// ── CV速度Tier定義 (注目商品ソート用) ──────────────────────────────────────────
+// S: charging, A: work-setup/commute, B: consumables, C: その他
+const CV_TIER: Record<string, number> = {
+  'charging': 0,
+  'work-setup': 1,
+  'commute': 1,
+  'consumables': 2,
+};
+const getCvTier = (p: Product): number =>
+  CV_TIER[(p as any).categorySlug ?? toCategorySlug(p.category)] ?? 3;
+
+// ── Quick Picks: ユーザータイプ別3選 ──────────────────────────────────────────
+const USER_TYPE_PICKS: Array<{ typeLabel: string; slug: string }> = [
+  { typeLabel: '🏠 在宅メイン',  slug: 'logicool-mx-master-3s' },
+  { typeLabel: '🚃 毎日通勤',    slug: 'anker-soundcore-life-p3' },
+  { typeLabel: '✈️ 出張・旅行',  slug: 'anker-733-powerbank-10k' },
+];
+const quickPicks = USER_TYPE_PICKS.map(({ typeLabel, slug }) => ({
+  ...(products.find((p) => p.slug === slug) as Product),
+  typeLabel,
+}));
 
 // ── 注目商品 ─────────────────────────────────────────────────────────────────
-const featuredProducts = products.filter((p) => p.featured);
+const featuredProducts = products
+  .filter((p) => p.featured)
+  .sort((a, b) => {
+    const tierDiff = getCvTier(a) - getCvTier(b);
+    return tierDiff !== 0 ? tierDiff : b.rating - a.rating;
+  });
 
 // ── カテゴリ一覧（英語slug） ─────────────────────────────────────────────────
 const categoryMap = products.reduce<Record<string, { name: string; slug: string; count: number }>>((acc, p) => {
@@ -64,7 +72,7 @@ const bestArticles = bestFiles.map((f) => f.default).slice(0, 3);
   <section class="section section-light" id="quick-picks">
     <div class="container">
       <div class="section-head">
-        <h2 class="section-title">今すぐ選ぶ — シーン別ベスト1</h2>
+        <h2 class="section-title">在宅 / 通勤 / 旅行 — 用途別おすすめ1選</h2>
       </div>
       <div class="qp-grid">
         {quickPicks.map((p) => {
@@ -78,7 +86,7 @@ const bestArticles = bestFiles.map((f) => f.default).slice(0, 3);
                 {discount && <span class="qp-off">{discount}%OFF</span>}
               </div>
               <div class="qp-body">
-                <span class="qp-scene">{(p as any).scene}</span>
+                <span class="qp-scene">{(p as any).typeLabel}</span>
                 <p class="qp-title">{p.title}</p>
                 <ul class="qp-points">
                   <li class="qp-strength">✅ {(p as any).strength}</li>

@@ -14,7 +14,22 @@ for (const article of articles) {
   if (!categoryMap[cat]) categoryMap[cat] = { name: cat, articles: [] };
   categoryMap[cat].articles.push(article);
 }
-const categories = Object.values(categoryMap);
+
+// CV速度Tier順にカテゴリを並び替え
+// S: charging → A: work-setup/commute → B: consumables → C: travel → smart
+const CATEGORY_CV_ORDER = [
+  '充電・電源',
+  'デスク・PC環境',
+  '通勤・外出',
+  '日用消耗品',
+  '旅行・移動便利',
+  'テレワーク・在宅',
+];
+const categories = Object.values(categoryMap).sort((a, b) => {
+  const ia = CATEGORY_CV_ORDER.indexOf(a.name);
+  const ib = CATEGORY_CV_ORDER.indexOf(b.name);
+  return (ia === -1 ? 99 : ia) - (ib === -1 ? 99 : ib);
+});
 
 // アンカー用スラッグ生成
 function catSlug(name: string) {

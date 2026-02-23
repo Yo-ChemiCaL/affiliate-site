@@ -1,0 +1,14 @@
+{
+  "slug": "pick-anker-735-charger-65w",
+  "title": "MacBook AirとスマホをGaN充電器1台でまとめて急速充電する",
+  "productSlug": "anker-735-charger-65w",
+  "targetUser": "MacBook Airとスマホ・タブレットを充電器1台にまとめたい方",
+  "reasons": [
+    "65W GaN IIで MacBook Air を高速充電しながらUSB-Aポートでスマホも同時充電できる",
+    "折りたたみプラグで旅行バッグに入れてもかさばらずデスク・出張の両方で使い回せる",
+    "100W版（¥4,990）より安価な¥3,490でMacBook Air用途なら十分な出力をカバー"
+  ],
+  "caution": "MacBook Pro（140W必要）には出力不足です。USB-C×2ポートを同時使用すると出力が分散されるため、PC充電時は1ポート占有を推奨します。",
+  "alternatives": ["best-charging-compact-charger-2026", "pick-anker-736-charger"],
+  "publishedAt": "2026-02-23"
+}

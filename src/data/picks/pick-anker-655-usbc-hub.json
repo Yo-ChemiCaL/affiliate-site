@@ -1,0 +1,14 @@
+{
+  "slug": "pick-anker-655-usbc-hub",
+  "title": "4K60Hzモニター出力と有線LANをMacBook 1本で解決するハブを選ぶ",
+  "productSlug": "anker-655-usbc-hub",
+  "targetUser": "MacBook・Surface で4K60fps外部モニター出力と安定した有線LAN接続を同時に使いたい方",
+  "reasons": [
+    "HDMI 4K60Hz対応——7-in-1ハブ（4K30fps止まり）では物足りなかった4K/60fps映像出力を実現",
+    "有線LANポート搭載で Wi-Fi が不安定なオフィス・ホテルでも安定したネット接続ができる",
+    "USB-C PD 85W・USB-A×2・SD/microSD も搭載し1台でポート不足を全て解決"
+  ],
+  "caution": "¥9,990と7-in-1ハブより高価です。4K60Hz・有線LANが不要なら7-in-1ハブ（¥4,590）で十分です。長時間フル使用時に発熱が生じる場合があります。",
+  "alternatives": ["best-worksetup-pc-peripherals-2026", "pick-anker-usb-hub-7in1"],
+  "publishedAt": "2026-02-23"
+}

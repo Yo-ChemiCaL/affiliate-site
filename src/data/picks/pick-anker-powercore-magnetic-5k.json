@@ -1,0 +1,14 @@
+{
+  "slug": "pick-anker-powercore-magnetic-5k",
+  "title": "iPhoneに磁気吸着して両手フリーで使えるモバイルバッテリーを選ぶ",
+  "productSlug": "anker-powercore-magnetic-5k",
+  "targetUser": "iPhoneユーザーで通勤・外出中にケーブルなしでスマートに充電したい方",
+  "reasons": [
+    "MagSafe磁気吸着でiPhone背面にぴったり固定——充電しながらそのまま通話・操作できる",
+    "重量わずか90gの軽量設計でポケットに入れたままiPhoneに装着しても違和感が少ない",
+    "5000mAhでiPhone約1回分補充でき、外出中の充電切れリスクを解消できる"
+  ],
+  "caution": "ワイヤレス充電速度は最大5Wです。急ぎの充電には有線接続のモバイルバッテリーをお勧めします。iPhone 12以降のMagSafeモデル専用で、Androidには非対応です。",
+  "alternatives": ["best-charging-mobile-battery-2026", "pick-anker-powercore-5000"],
+  "publishedAt": "2026-02-23"
+}

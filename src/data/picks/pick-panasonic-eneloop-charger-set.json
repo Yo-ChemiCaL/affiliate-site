@@ -1,0 +1,14 @@
+{
+  "slug": "pick-panasonic-eneloop-charger-set",
+  "title": "eneloopをゼロから始める——充電器と電池をセットで揃える",
+  "productSlug": "panasonic-eneloop-charger-set",
+  "targetUser": "これからeneloopを導入したい方・充電器と電池を別々に選ぶのが面倒な方",
+  "reasons": [
+    "充電器＋単3eneloop 4本がセットになっており、届いてすぐ使い始められる",
+    "急速充電器が付属しているため、充電切れになっても短時間で充電を再開できる",
+    "単3/単4両対応の充電器なので、将来的に単4eneloopを追加しても同じ充電器で管理できる"
+  ],
+  "caution": "付属のeneloopは標準モデル（2000mAh）です。ゲームコントローラーや懐中電灯など大電流用途ではeneloop pro（2500mAh）のほうが再生時間が長くなります。",
+  "alternatives": ["best-consumables-batteries-2026", "pick-panasonic-eneloop-pro"],
+  "publishedAt": "2026-02-23"
+}

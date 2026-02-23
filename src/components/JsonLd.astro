@@ -29,7 +29,17 @@ interface WebSiteJsonLd {
   description?: string;
 }
 
-type Props = ProductJsonLd | BreadcrumbJsonLd | WebSiteJsonLd;
+interface ArticleJsonLd {
+  type: 'Article';
+  headline: string;
+  description: string;
+  image: string;
+  datePublished: string;
+  dateModified?: string;
+  url: string;
+}
+
+type Props = ProductJsonLd | BreadcrumbJsonLd | WebSiteJsonLd | ArticleJsonLd;
 
 const data = Astro.props;
 
@@ -76,6 +86,21 @@ if (data.type === 'Product') {
       '@type': 'SearchAction',
       target: `${data.url}/search?q={search_term_string}`,
       'query-input': 'required name=search_term_string',
+    },
+  };
+} else if (data.type === 'Article') {
+  jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: data.headline,
+    description: data.description,
+    image: data.image,
+    datePublished: data.datePublished,
+    ...(data.dateModified && { dateModified: data.dateModified }),
+    url: data.url,
+    publisher: {
+      '@type': 'Organization',
+      name: 'mono-lab',
     },
   };
 }

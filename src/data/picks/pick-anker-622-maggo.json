@@ -1,0 +1,14 @@
+{
+  "slug": "pick-anker-622-maggo",
+  "title": "iPhoneに貼り付けてケーブルなしで充電できるMagSafeバッテリーを選ぶ",
+  "productSlug": "anker-622-maggo",
+  "targetUser": "iPhone 12以降のユーザーで、ケーブルを挿す手間なく外出先で充電を補いたい方",
+  "reasons": [
+    "MagSafeで iPhone 背面に磁気吸着——ケーブルを挿さずそのまま使いながら充電できる",
+    "スタンド機能付きで動画視聴や卓上での充電にも対応、1台2役で使える",
+    "5000mAhでiPhone約1回分を補充でき、半日外出程度の充電切れをカバー"
+  ],
+  "caution": "ワイヤレス充電速度は最大5Wのため、有線バッテリーより充電時間がかかります。iPhone 12以降のMagSafeモデル専用です。Android・旧iPhoneには非対応。",
+  "alternatives": ["best-charging-mobile-battery-2026", "pick-anker-powercore-5000"],
+  "publishedAt": "2026-02-23"
+}

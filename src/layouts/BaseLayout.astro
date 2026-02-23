@@ -35,7 +35,7 @@ const siteUrl = Astro.site?.toString() ?? '';
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <meta name="google-site-verification" content="zkO9F2M_pH6IK9pntgApTLqNA8W3BYSZvFLCG1cbH2I" />
-    <link rel="alternate" type="application/rss+xml" title="おすすめ商品レビュー RSS" href="/rss.xml" />
+    <link rel="alternate" type="application/rss+xml" title="mono-lab RSS" href="/rss.xml" />
 
     <SEOHead
       title={title}
@@ -47,9 +47,9 @@ const siteUrl = Astro.site?.toString() ?? '';
     />
     <JsonLd
       type="WebSite"
-      name="おすすめ商品レビュー"
+      name="mono-lab"
       url={siteUrl}
-      description="Amazon・A8.netアフィリエイトおすすめ商品を厳選紹介"
+      description="Amazon厳選おすすめ商品を用途別に比較・紹介"
     />
     <slot name="head" />
   </head>
