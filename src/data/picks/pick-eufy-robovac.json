@@ -1,4 +1,5 @@
 {
+  "draft": true,
   "slug": "pick-eufy-robovac",
   "title": "一人暮らしの掃除を完全自動化する最安ロボット掃除機",
   "productSlug": "eufy-robovac-11s",
@@ -9,6 +10,8 @@
     "ロボット掃除機カテゴリで圧倒的コスパ——週6回の掃除時間を丸ごと節約"
   ],
   "caution": "マッピング機能・進入禁止エリアの設定はできません。段差の多い部屋や複雑な間取りでは、上位モデルの検討をお勧めします。",
-  "alternatives": ["best-smart-home-2026"],
+  "alternatives": [
+    "best-smart-home-2026"
+  ],
   "publishedAt": "2026-02-14"
 }

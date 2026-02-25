@@ -1,4 +1,5 @@
 {
+  "draft": true,
   "slug": "pick-anker-powercore-slim",
   "title": "毎日の通勤・外出ならこのモバイルバッテリー一択",
   "productSlug": "anker-powercore-slim-10000",
@@ -9,6 +10,8 @@
     "Anker独自技術で過充電・過電流をしっかり保護"
   ],
   "caution": "急速充電（PD）には非対応のため、iPadやPC充電には別途対応モデルが必要です。",
-  "alternatives": ["best-mobile-battery-2026"],
+  "alternatives": [
+    "best-mobile-battery-2026"
+  ],
   "publishedAt": "2026-02-10"
 }

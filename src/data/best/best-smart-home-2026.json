@@ -2,7 +2,7 @@
   "slug": "best-smart-home-2026",
   "title": "スマートホームガジェット おすすめ比較2026【節電にも】",
   "description": "Alexa連携・節電・自動化に役立つスマートホームガジェットを価格帯・使いやすさで比較。初めてでも導入しやすい製品を厳選しました。",
-  "category": "スマートホーム",
+  "category": "スタンド・周辺機器",
   "categorySlug": "smart-home",
   "publishedAt": "2026-02-12",
   "updatedAt": "2026-02-22",
@@ -30,10 +30,30 @@
     }
   ],
   "topPicks": [
-    { "rank": 1, "label": "コスパ最強スマートホーム入口", "productSlug": "tplink-tapo-p105", "pickSlug": "pick-tplink-tapo-p105" },
-    { "rank": 2, "label": "Alexaハブで音声操作の中心に", "productSlug": "amazon-echo-dot-5th", "pickSlug": "pick-amazon-echo-dot-5th" },
-    { "rank": 3, "label": "照明スマート化フルカラー", "productSlug": "philips-hue-starter-kit", "pickSlug": "pick-philips-hue" },
-    { "rank": 4, "label": "掃除の完全自動化", "productSlug": "eufy-robovac-11s", "pickSlug": "pick-eufy-robovac" }
+    {
+      "rank": 1,
+      "label": "コスパ最強スマートホーム入口",
+      "productSlug": "tplink-tapo-p105",
+      "pickSlug": "pick-tplink-tapo-p105"
+    },
+    {
+      "rank": 2,
+      "label": "Alexaハブで音声操作の中心に",
+      "productSlug": "amazon-echo-dot-5th",
+      "pickSlug": "pick-amazon-echo-dot-5th"
+    },
+    {
+      "rank": 3,
+      "label": "照明スマート化フルカラー",
+      "productSlug": "philips-hue-starter-kit",
+      "pickSlug": "pick-philips-hue"
+    },
+    {
+      "rank": 4,
+      "label": "掃除の完全自動化",
+      "productSlug": "eufy-robovac-11s",
+      "pickSlug": "pick-eufy-robovac"
+    }
   ],
   "comparison": [
     {
@@ -95,6 +115,14 @@
       "a": "段差の多い家・厚めのカーペット・ケーブルが床に散乱している環境は苦手です。Eufy RoboVac 11Sはマッピング機能なしのためランダム走行ですが、障害物を片付けた部屋であれば十分な清掃能力を発揮します。"
     }
   ],
-  "relatedBest": ["best-mobile-battery-2026", "best-worksetup-desk-environment-2026"],
-  "relatedPicks": ["pick-tplink-tapo-p105", "pick-amazon-echo-dot-5th", "pick-philips-hue", "pick-eufy-robovac"]
+  "relatedBest": [
+    "best-mobile-battery-2026",
+    "best-worksetup-desk-environment-2026"
+  ],
+  "relatedPicks": [
+    "pick-tplink-tapo-p105",
+    "pick-amazon-echo-dot-5th",
+    "pick-philips-hue",
+    "pick-eufy-robovac"
+  ]
 }

@@ -2,7 +2,7 @@
   "slug": "best-consumables-usb-cables-2026",
   "title": "おすすめUSBケーブル 2026 USB-C・Lightning対応",
   "description": "断線しにくい・急速充電対応・MFi認証取得のUSBケーブルをAndroid向け・iPhone向けで比較。毎日使う消耗品を賢く選ぶ。",
-  "category": "日用消耗品",
+  "category": "ケーブル・充電",
   "categorySlug": "consumables",
   "publishedAt": "2026-02-22",
   "updatedAt": "2026-02-22",
@@ -30,9 +30,24 @@
     }
   ],
   "topPicks": [
-    { "rank": 1, "label": "USB-C万能ケーブル", "productSlug": "anker-usbc-cable-180cm", "pickSlug": "pick-anker-usbc-cable" },
-    { "rank": 2, "label": "iPhone急速充電", "productSlug": "anker-powerline-usbc-lightning", "pickSlug": "pick-anker-usbc-lightning" },
-    { "rank": 3, "label": "ケーブル不要・バッテリー一体型", "productSlug": "anker-powercore-slim-10000", "pickSlug": "pick-anker-powercore-slim" }
+    {
+      "rank": 1,
+      "label": "USB-C万能ケーブル",
+      "productSlug": "anker-usbc-cable-180cm",
+      "pickSlug": "pick-anker-usbc-cable"
+    },
+    {
+      "rank": 2,
+      "label": "iPhone急速充電",
+      "productSlug": "anker-powerline-usbc-lightning",
+      "pickSlug": "pick-anker-usbc-lightning"
+    },
+    {
+      "rank": 3,
+      "label": "ケーブル不要・バッテリー一体型",
+      "productSlug": "anker-powercore-slim-10000",
+      "pickSlug": "pick-anker-powercore-slim"
+    }
   ],
   "comparison": [
     {
@@ -86,6 +101,12 @@
       "a": "充電速度には影響しませんが、データ転送速度が異なります。USB 2.0は480Mbps、USB 3.0は5Gbps、USB 3.2は10Gbps以上。写真・動画のバックアップなど大容量データを頻繁に転送する場合はUSB 3.0以上を選びましょう。充電だけならUSB 2.0で十分です。"
     }
   ],
-  "relatedBest": ["best-consumables-batteries-2026", "best-charging-compact-charger-2026"],
-  "relatedPicks": ["pick-anker-usbc-cable", "pick-anker-usbc-lightning"]
+  "relatedBest": [
+    "best-consumables-batteries-2026",
+    "best-charging-compact-charger-2026"
+  ],
+  "relatedPicks": [
+    "pick-anker-usbc-cable",
+    "pick-anker-usbc-lightning"
+  ]
 }

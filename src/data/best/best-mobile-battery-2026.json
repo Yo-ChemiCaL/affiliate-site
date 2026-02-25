@@ -1,4 +1,5 @@
 {
+  "draft": true,
   "slug": "best-mobile-battery-2026",
   "title": "モバイルバッテリー おすすめ比較ランキング2026",
   "description": "毎日の持ち運びに使えるモバイルバッテリーを容量・充電速度・携帯性で比較。口コミ評価の高い3製品を厳選しました。",
@@ -8,8 +9,18 @@
   "updatedAt": "2026-02-22",
   "conclusion": "毎日の通勤・外出なら **Anker PowerCore Slim 10000** が最もバランスに優れています。薄型で持ち運びやすく、10000mAhでスマホ約2回分充電できます。急速充電が必要な場面が多い方には大容量モデルも検討してみてください。",
   "topPicks": [
-    { "rank": 1, "label": "総合バランス最優秀", "productSlug": "anker-powercore-slim-10000", "pickSlug": "pick-anker-powercore-slim" },
-    { "rank": 2, "label": "持ち運び重視", "productSlug": "iottie-easy-one-touch-5", "pickSlug": "" }
+    {
+      "rank": 1,
+      "label": "総合バランス最優秀",
+      "productSlug": "anker-powercore-slim-10000",
+      "pickSlug": "pick-anker-powercore-slim"
+    },
+    {
+      "rank": 2,
+      "label": "持ち運び重視",
+      "productSlug": "iottie-easy-one-touch-5",
+      "pickSlug": ""
+    }
   ],
   "comparison": [
     {
@@ -43,6 +54,10 @@
       "a": "最新スマホはUSB-Cが主流です。USB-C入出力対応のモデルを選ぶとケーブルを統一でき便利です。"
     }
   ],
-  "relatedBest": ["best-desk-gadgets-2026"],
-  "relatedPicks": ["pick-anker-powercore-slim"]
+  "relatedBest": [
+    "best-desk-gadgets-2026"
+  ],
+  "relatedPicks": [
+    "pick-anker-powercore-slim"
+  ]
 }

@@ -1,4 +1,5 @@
 {
+  "draft": true,
   "slug": "best-charging-mobile-battery-2026",
   "title": "おすすめモバイルバッテリー 2026 容量・携帯性で比較",
   "description": "通勤・外出・旅行で使えるモバイルバッテリーを容量・薄さ・充電速度で比較。口コミ評価の高い3製品を厳選。",
@@ -30,12 +31,42 @@
     }
   ],
   "topPicks": [
-    { "rank": 1, "label": "薄型・軽量 総合1位", "productSlug": "anker-powercore-slim-10000", "pickSlug": "pick-anker-powercore-slim" },
-    { "rank": 2, "label": "USB-C急速充電", "productSlug": "anker-powercore-335-10000", "pickSlug": "pick-anker-powercore-335" },
-    { "rank": 3, "label": "旅行・出張の相棒", "productSlug": "anker-733-powerbank-10k", "pickSlug": "pick-anker-733-powerbank" },
-    { "rank": 4, "label": "最軽量・極薄スリム", "productSlug": "anker-powercore-5000", "pickSlug": "pick-anker-powercore-5000" },
-    { "rank": 5, "label": "iPhone MagSafe対応", "productSlug": "anker-622-maggo", "pickSlug": "pick-anker-622-maggo" },
-    { "rank": 6, "label": "MagSafe磁気吸着・軽量", "productSlug": "anker-powercore-magnetic-5k", "pickSlug": "pick-anker-powercore-magnetic-5k" }
+    {
+      "rank": 1,
+      "label": "薄型・軽量 総合1位",
+      "productSlug": "anker-powercore-slim-10000",
+      "pickSlug": "pick-anker-powercore-slim"
+    },
+    {
+      "rank": 2,
+      "label": "USB-C急速充電",
+      "productSlug": "anker-powercore-335-10000",
+      "pickSlug": "pick-anker-powercore-335"
+    },
+    {
+      "rank": 3,
+      "label": "旅行・出張の相棒",
+      "productSlug": "anker-733-powerbank-10k",
+      "pickSlug": "pick-anker-733-powerbank"
+    },
+    {
+      "rank": 4,
+      "label": "最軽量・極薄スリム",
+      "productSlug": "anker-powercore-5000",
+      "pickSlug": "pick-anker-powercore-5000"
+    },
+    {
+      "rank": 5,
+      "label": "iPhone MagSafe対応",
+      "productSlug": "anker-622-maggo",
+      "pickSlug": "pick-anker-622-maggo"
+    },
+    {
+      "rank": 6,
+      "label": "MagSafe磁気吸着・軽量",
+      "productSlug": "anker-powercore-magnetic-5k",
+      "pickSlug": "pick-anker-powercore-magnetic-5k"
+    }
   ],
   "comparison": [
     {
@@ -113,6 +144,16 @@
       "a": "プライムデー（7月）・ブラックフライデー（11月）・初売り（1月）で20〜40%OFFになることが多いです。急ぎでなければAmazonのウィッシュリストに登録しておき、価格変動をチェックする方法がおすすめです。"
     }
   ],
-  "relatedBest": ["best-charging-compact-charger-2026", "best-travel-charging-2026"],
-  "relatedPicks": ["pick-anker-powercore-slim", "pick-anker-powercore-335", "pick-anker-733-powerbank", "pick-anker-powercore-5000", "pick-anker-622-maggo", "pick-anker-powercore-magnetic-5k"]
+  "relatedBest": [
+    "best-charging-compact-charger-2026",
+    "best-travel-charging-2026"
+  ],
+  "relatedPicks": [
+    "pick-anker-powercore-slim",
+    "pick-anker-powercore-335",
+    "pick-anker-733-powerbank",
+    "pick-anker-powercore-5000",
+    "pick-anker-622-maggo",
+    "pick-anker-powercore-magnetic-5k"
+  ]
 }

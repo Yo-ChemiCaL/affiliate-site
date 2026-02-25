@@ -1,4 +1,5 @@
 {
+  "draft": true,
   "slug": "best-travel-charging-2026",
   "title": "旅行・出張 充電グッズおすすめ 2026 コンパクト・一体型",
   "description": "旅行・出張の荷物を減らしながらデバイスをしっかり充電できる製品を比較。充電器一体型・薄型バッテリー・コンパクト充電器の3軸で厳選。",
@@ -8,9 +9,24 @@
   "updatedAt": "2026-02-22",
   "conclusion": "荷物を最小化するなら **Anker 733** の一体型が最強。コスパ重視で充電器とバッテリーを分けるなら **511 Charger + PowerCore Slim** の組み合わせが実用的です。",
   "topPicks": [
-    { "rank": 1, "label": "充電器＋バッテリー一体型", "productSlug": "anker-733-powerbank-10k", "pickSlug": "pick-anker-733-powerbank" },
-    { "rank": 2, "label": "旅行用コンパクト充電器", "productSlug": "anker-511-charger-30w", "pickSlug": "pick-anker-511-charger" },
-    { "rank": 3, "label": "薄型・軽量バッテリー", "productSlug": "anker-powercore-slim-10000", "pickSlug": "pick-anker-powercore-slim" }
+    {
+      "rank": 1,
+      "label": "充電器＋バッテリー一体型",
+      "productSlug": "anker-733-powerbank-10k",
+      "pickSlug": "pick-anker-733-powerbank"
+    },
+    {
+      "rank": 2,
+      "label": "旅行用コンパクト充電器",
+      "productSlug": "anker-511-charger-30w",
+      "pickSlug": "pick-anker-511-charger"
+    },
+    {
+      "rank": 3,
+      "label": "薄型・軽量バッテリー",
+      "productSlug": "anker-powercore-slim-10000",
+      "pickSlug": "pick-anker-powercore-slim"
+    }
   ],
   "comparison": [
     {
@@ -52,6 +68,13 @@
       "a": "使用は可能ですが充電は機内ルールによります。10000mAh（37Wh）は機内持ち込みOKです。"
     }
   ],
-  "relatedBest": ["best-travel-packing-2026", "best-charging-mobile-battery-2026"],
-  "relatedPicks": ["pick-anker-733-powerbank", "pick-anker-511-charger", "pick-anker-powercore-slim"]
+  "relatedBest": [
+    "best-travel-packing-2026",
+    "best-charging-mobile-battery-2026"
+  ],
+  "relatedPicks": [
+    "pick-anker-733-powerbank",
+    "pick-anker-511-charger",
+    "pick-anker-powercore-slim"
+  ]
 }

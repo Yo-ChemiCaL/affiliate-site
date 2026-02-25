@@ -2,15 +2,30 @@
   "slug": "best-worksetup-usecase-2026",
   "title": "在宅勤務 作業用途別おすすめ 2026",
   "description": "「文章・コーディング・デザイン」の3用途別に最適なデスクガジェットを厳選。用途から1つ選ぶだけで環境が整います。",
-  "category": "デスク・PC環境",
+  "category": "スタンド・周辺機器",
   "categorySlug": "work-setup",
   "publishedAt": "2026-02-22",
   "updatedAt": "2026-02-22",
   "conclusion": "用途が決まれば選択肢は絞れます。**文章・コーディング**はキーボード、**マルチウィンドウ作業**はハブ、**長時間作業**はモニターライトが費用対効果の高い投資です。",
   "topPicks": [
-    { "rank": 1, "label": "文章・コーディング向け", "productSlug": "logicool-mx-keys", "pickSlug": "pick-logicool-mx-keys" },
-    { "rank": 2, "label": "マルチウィンドウ・デュアルモニター向け", "productSlug": "anker-usb-hub-7in1", "pickSlug": "pick-anker-usb-hub-7in1" },
-    { "rank": 3, "label": "長時間作業・眼精疲労対策", "productSlug": "benq-screenbar", "pickSlug": "pick-benq-screenbar" }
+    {
+      "rank": 1,
+      "label": "文章・コーディング向け",
+      "productSlug": "logicool-mx-keys",
+      "pickSlug": "pick-logicool-mx-keys"
+    },
+    {
+      "rank": 2,
+      "label": "マルチウィンドウ・デュアルモニター向け",
+      "productSlug": "anker-usb-hub-7in1",
+      "pickSlug": "pick-anker-usb-hub-7in1"
+    },
+    {
+      "rank": 3,
+      "label": "長時間作業・眼精疲労対策",
+      "productSlug": "benq-screenbar",
+      "pickSlug": "pick-benq-screenbar"
+    }
   ],
   "comparison": [
     {
@@ -52,6 +67,13 @@
       "a": "自動輝度センサーが周囲の明るさに合わせて調光します。夜間の暗い部屋でも手元を適切な明るさで照らします。"
     }
   ],
-  "relatedBest": ["best-worksetup-pc-peripherals-2026", "best-worksetup-desk-environment-2026"],
-  "relatedPicks": ["pick-logicool-mx-keys", "pick-anker-usb-hub-7in1", "pick-benq-screenbar"]
+  "relatedBest": [
+    "best-worksetup-pc-peripherals-2026",
+    "best-worksetup-desk-environment-2026"
+  ],
+  "relatedPicks": [
+    "pick-logicool-mx-keys",
+    "pick-anker-usb-hub-7in1",
+    "pick-benq-screenbar"
+  ]
 }

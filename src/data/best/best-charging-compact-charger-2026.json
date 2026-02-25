@@ -2,18 +2,48 @@
   "slug": "best-charging-compact-charger-2026",
   "title": "おすすめコンパクト充電器 2026 GaN・USB-C対応",
   "description": "GaN採用の小型USB-C充電器をノートPC向け・スマホ専用・コスパで比較。旅行にも使える薄型モデルを厳選。",
-  "category": "充電・電源",
+  "category": "ケーブル・充電",
   "categorySlug": "charging",
   "publishedAt": "2026-02-22",
   "updatedAt": "2026-02-22",
   "conclusion": "MacBook Proなど高出力が必要なら **Anker 736 Charger 100W**、MacBook Air・iPadなら **Anker 521 Charger 40W**、スマホ2台同時充電なら **Anker 735 Charger 65W**、スマホだけなら **PowerPort III Nano 20W** でコスパ最優先が正解です。",
   "topPicks": [
-    { "rank": 1, "label": "MacBook Pro対応・3ポート", "productSlug": "anker-736-charger-100w", "pickSlug": "pick-anker-736-charger" },
-    { "rank": 2, "label": "MacBook Air・iPad急速充電", "productSlug": "anker-521-charger-45w", "pickSlug": "pick-anker-521-charger" },
-    { "rank": 3, "label": "スマホ専用コスパ最強", "productSlug": "anker-powerport-iii-nano-20w", "pickSlug": "pick-anker-powerport-nano-20w" },
-    { "rank": 4, "label": "バッテリー内蔵で1台2役", "productSlug": "anker-733-powerbank-10k", "pickSlug": "pick-anker-733-powerbank" },
-    { "rank": 5, "label": "65W 2ポート・旅行に最適", "productSlug": "anker-735-charger-65w", "pickSlug": "pick-anker-735-charger-65w" },
-    { "rank": 6, "label": "30W・超小型スマホ専用", "productSlug": "anker-511-charger-30w", "pickSlug": "pick-anker-511-charger-30w" }
+    {
+      "rank": 1,
+      "label": "MacBook Pro対応・3ポート",
+      "productSlug": "anker-736-charger-100w",
+      "pickSlug": "pick-anker-736-charger"
+    },
+    {
+      "rank": 2,
+      "label": "MacBook Air・iPad急速充電",
+      "productSlug": "anker-521-charger-45w",
+      "pickSlug": "pick-anker-521-charger"
+    },
+    {
+      "rank": 3,
+      "label": "スマホ専用コスパ最強",
+      "productSlug": "anker-powerport-iii-nano-20w",
+      "pickSlug": "pick-anker-powerport-nano-20w"
+    },
+    {
+      "rank": 4,
+      "label": "バッテリー内蔵で1台2役",
+      "productSlug": "anker-733-powerbank-10k",
+      "pickSlug": "pick-anker-733-powerbank"
+    },
+    {
+      "rank": 5,
+      "label": "65W 2ポート・旅行に最適",
+      "productSlug": "anker-735-charger-65w",
+      "pickSlug": "pick-anker-735-charger-65w"
+    },
+    {
+      "rank": 6,
+      "label": "30W・超小型スマホ専用",
+      "productSlug": "anker-511-charger-30w",
+      "pickSlug": "pick-anker-511-charger-30w"
+    }
   ],
   "comparison": [
     {
@@ -91,6 +121,15 @@
       "a": "自宅・オフィスでの固定使用がメインなら充電器（コンセントが常にある）、外出・通勤が多いならモバイルバッテリーを優先します。両方必要な旅行・出張シーンではAnker 733（一体型）が解決策になります。"
     }
   ],
-  "relatedBest": ["best-charging-mobile-battery-2026", "best-charging-usecase-2026"],
-  "relatedPicks": ["pick-anker-736-charger", "pick-anker-521-charger", "pick-anker-powerport-nano-20w", "pick-anker-735-charger-65w", "pick-anker-511-charger-30w"]
+  "relatedBest": [
+    "best-charging-mobile-battery-2026",
+    "best-charging-usecase-2026"
+  ],
+  "relatedPicks": [
+    "pick-anker-736-charger",
+    "pick-anker-521-charger",
+    "pick-anker-powerport-nano-20w",
+    "pick-anker-735-charger-65w",
+    "pick-anker-511-charger-30w"
+  ]
 }

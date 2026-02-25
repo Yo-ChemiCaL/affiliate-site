@@ -1,4 +1,5 @@
 {
+  "draft": true,
   "slug": "best-travel-packing-2026",
   "title": "旅行 整理・パッキングおすすめ 2026 スーツケース収納効率化",
   "description": "旅行のパッキングを効率化するパッキングキューブ・収納グッズを機能性・軽量さで比較。荷物の出し入れがスムーズになる製品を厳選。",
@@ -8,9 +9,24 @@
   "updatedAt": "2026-02-22",
   "conclusion": "旅行の荷造りを劇的に改善するなら **Eagle Creek パッキングキューブ 3点セット** が衣類整理・中身確認のしやすさで最適解です。",
   "topPicks": [
-    { "rank": 1, "label": "衣類整理・パッキング効率化", "productSlug": "eagle-creek-packing-cube-set", "pickSlug": "pick-eagle-creek-packing-cube" },
-    { "rank": 2, "label": "旅行先での充電対策", "productSlug": "anker-511-charger-30w", "pickSlug": "pick-anker-511-charger" },
-    { "rank": 3, "label": "移動中の充電切れ対策", "productSlug": "anker-733-powerbank-10k", "pickSlug": "pick-anker-733-powerbank" }
+    {
+      "rank": 1,
+      "label": "衣類整理・パッキング効率化",
+      "productSlug": "eagle-creek-packing-cube-set",
+      "pickSlug": "pick-eagle-creek-packing-cube"
+    },
+    {
+      "rank": 2,
+      "label": "旅行先での充電対策",
+      "productSlug": "anker-511-charger-30w",
+      "pickSlug": "pick-anker-511-charger"
+    },
+    {
+      "rank": 3,
+      "label": "移動中の充電切れ対策",
+      "productSlug": "anker-733-powerbank-10k",
+      "pickSlug": "pick-anker-733-powerbank"
+    }
   ],
   "comparison": [
     {
@@ -52,6 +68,12 @@
       "a": "Eagle Creek Specterは防水ではないため、濡れた衣類には防水ポーチや袋を別途使用することをおすすめします。"
     }
   ],
-  "relatedBest": ["best-travel-charging-2026", "best-travel-usecase-2026"],
-  "relatedPicks": ["pick-eagle-creek-packing-cube", "pick-anker-511-charger"]
+  "relatedBest": [
+    "best-travel-charging-2026",
+    "best-travel-usecase-2026"
+  ],
+  "relatedPicks": [
+    "pick-eagle-creek-packing-cube",
+    "pick-anker-511-charger"
+  ]
 }

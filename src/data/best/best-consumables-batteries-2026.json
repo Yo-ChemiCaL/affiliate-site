@@ -2,15 +2,30 @@
   "slug": "best-consumables-batteries-2026",
   "title": "おすすめ充電池 2026 eneloop・繰り返し使える電池比較",
   "description": "ワイヤレスマウス・リモコン・ゲームコントローラーに使える充電池をコスパ・容量・繰り返し回数で比較。使い捨てより賢い選択を。",
-  "category": "日用消耗品",
+  "category": "ケーブル・充電",
   "categorySlug": "consumables",
   "publishedAt": "2026-02-22",
   "updatedAt": "2026-02-22",
   "conclusion": "**ワイヤレスマウス・リモコン**など電池交換頻度が高いデバイスには **eneloop pro** が長期コスパ最優秀です。使い捨て電池より大幅にランニングコストを下げられます。",
   "topPicks": [
-    { "rank": 1, "label": "大容量・長持ち充電池", "productSlug": "panasonic-eneloop-pro-4pack", "pickSlug": "pick-panasonic-eneloop-pro" },
-    { "rank": 2, "label": "充電ケーブルも消耗品", "productSlug": "anker-usbc-cable-180cm", "pickSlug": "pick-anker-usbc-cable" },
-    { "rank": 3, "label": "デバイス電源の補完", "productSlug": "anker-powercore-slim-10000", "pickSlug": "pick-anker-powercore-slim" }
+    {
+      "rank": 1,
+      "label": "大容量・長持ち充電池",
+      "productSlug": "panasonic-eneloop-pro-4pack",
+      "pickSlug": "pick-panasonic-eneloop-pro"
+    },
+    {
+      "rank": 2,
+      "label": "充電ケーブルも消耗品",
+      "productSlug": "anker-usbc-cable-180cm",
+      "pickSlug": "pick-anker-usbc-cable"
+    },
+    {
+      "rank": 3,
+      "label": "デバイス電源の補完",
+      "productSlug": "anker-powercore-slim-10000",
+      "pickSlug": "pick-anker-powercore-slim"
+    }
   ],
   "comparison": [
     {
@@ -52,6 +67,11 @@
       "a": "eneloopは工場で充電済みのため、開封してすぐ使用できます。初回充電は不要です。"
     }
   ],
-  "relatedBest": ["best-consumables-usb-cables-2026", "best-consumables-usecase-2026"],
-  "relatedPicks": ["pick-panasonic-eneloop-pro"]
+  "relatedBest": [
+    "best-consumables-usb-cables-2026",
+    "best-consumables-usecase-2026"
+  ],
+  "relatedPicks": [
+    "pick-panasonic-eneloop-pro"
+  ]
 }

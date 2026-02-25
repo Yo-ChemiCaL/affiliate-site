@@ -1,4 +1,5 @@
 {
+  "draft": true,
   "slug": "pick-anker-733-powerbank",
   "title": "充電器とバッテリーを1つにまとめる旅行の最適解はこれ",
   "productSlug": "anker-733-powerbank-10k",
@@ -9,6 +10,9 @@
     "モバイルバッテリー（¥2,990）＋充電器（¥1,790）を別々に買うより合理的な選択肢"
   ],
   "caution": "¥9,990と高価格です。重量約200gで薄型バッテリー単体より重くなります。荷物を減らすメリットと価格のトレードオフで判断してください。",
-  "alternatives": ["best-travel-charging-2026", "best-charging-mobile-battery-2026"],
+  "alternatives": [
+    "best-travel-charging-2026",
+    "best-charging-mobile-battery-2026"
+  ],
   "publishedAt": "2026-02-22"
 }

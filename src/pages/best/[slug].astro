@@ -12,6 +12,7 @@ export async function getStaticPaths() {
   }));
 }
 
+
 const { article } = Astro.props;
 const allProducts = productsData;
 
@@ -40,6 +41,7 @@ const ogImage = topProducts[0]?.product?.image ?? '/images/og-default.jpg';
   description={article.description}
   ogImage={ogImage}
   ogType="article"
+  noindex={article.draft === true}
 >
   <Fragment slot="head">
     <JsonLd

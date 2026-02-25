@@ -1,4 +1,5 @@
 {
+  "draft": true,
   "slug": "best-travel-usecase-2026",
   "title": "旅行・移動 用途別おすすめ 2026 国内・海外・出張",
   "description": "国内旅行・海外旅行・日帰り出張の3シーン別に最適なグッズを1つずつ厳選。旅行の目的から逆算して最短で選べるガイド。",
@@ -8,9 +9,24 @@
   "updatedAt": "2026-02-22",
   "conclusion": "旅のスタイルで選ぶのが正解。**国内旅行**はパッキングキューブで快適に、**出張**は充電器一体型バッテリーで荷物削減、**移動が長い旅**はコンパクト充電器＋薄型バッテリーで対応。",
   "topPicks": [
-    { "rank": 1, "label": "国内旅行・パッキング効率化", "productSlug": "eagle-creek-packing-cube-set", "pickSlug": "pick-eagle-creek-packing-cube" },
-    { "rank": 2, "label": "ビジネス出張・荷物最小化", "productSlug": "anker-733-powerbank-10k", "pickSlug": "pick-anker-733-powerbank" },
-    { "rank": 3, "label": "日帰り・長時間移動の電欠防止", "productSlug": "anker-511-charger-30w", "pickSlug": "pick-anker-511-charger" }
+    {
+      "rank": 1,
+      "label": "国内旅行・パッキング効率化",
+      "productSlug": "eagle-creek-packing-cube-set",
+      "pickSlug": "pick-eagle-creek-packing-cube"
+    },
+    {
+      "rank": 2,
+      "label": "ビジネス出張・荷物最小化",
+      "productSlug": "anker-733-powerbank-10k",
+      "pickSlug": "pick-anker-733-powerbank"
+    },
+    {
+      "rank": 3,
+      "label": "日帰り・長時間移動の電欠防止",
+      "productSlug": "anker-511-charger-30w",
+      "pickSlug": "pick-anker-511-charger"
+    }
   ],
   "comparison": [
     {
@@ -52,6 +68,13 @@
       "a": "Eagle Creek は軽量さと耐久性のバランスが良く、旅行用品の中では定番ブランドの一つです。圧縮が目的なら別途「圧縮パッキングキューブ」を探すのがおすすめです。"
     }
   ],
-  "relatedBest": ["best-travel-charging-2026", "best-travel-packing-2026"],
-  "relatedPicks": ["pick-eagle-creek-packing-cube", "pick-anker-733-powerbank", "pick-anker-511-charger"]
+  "relatedBest": [
+    "best-travel-charging-2026",
+    "best-travel-packing-2026"
+  ],
+  "relatedPicks": [
+    "pick-eagle-creek-packing-cube",
+    "pick-anker-733-powerbank",
+    "pick-anker-511-charger"
+  ]
 }

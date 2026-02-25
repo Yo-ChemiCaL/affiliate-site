@@ -4,7 +4,7 @@ import type { Product } from '../components/ProductCard.astro';
 import { url } from '../lib/url';
 import productsData from '../data/products.json';
 
-const products = productsData as Product[];
+const products = (productsData as any[]).filter((p) => !p.draft) as Product[];
 
 // ランキングスコア: 評価 × log(レビュー数)
 const ranked = [...products]
@@ -30,8 +30,8 @@ const categoryRankings = Object.values(categoryMap).map(({ name, slug }) => ({
 ---
 
 <BaseLayout
-  title="カテゴリ別ランキング | mono-lab"
-  description="評価・レビュー数をもとに算出したカテゴリ別おすすめランキング。充電・PC環境・消耗品・旅行グッズ別に掲載。"
+  title="デスクガジェット カテゴリ別ランキング | mono-lab"
+  description="評価・レビュー数をもとに算出したデスクガジェットのカテゴリ別おすすめランキング。モニター・入力デバイス・照明・ハブ別に掲載。"
 >
   <div class="container page-content">
     <h1 class="page-title">カテゴリ別ランキング</h1>

@@ -1,4 +1,5 @@
 {
+  "draft": true,
   "slug": "best-commute-essentials-2026",
   "title": "通勤 便利グッズ おすすめ 2026 毎日使えるガジェット厳選",
   "description": "毎日の通勤を快適にするガジェットをイヤホン・モバイルバッテリー・トラッカー・ケーブルの観点で比較。電車・徒歩・新幹線など移動シーン別に厳選したおすすめ完全ガイド。",
@@ -30,12 +31,42 @@
     }
   ],
   "topPicks": [
-    { "rank": 1, "label": "ANC TWS：通勤電車の騒音カット", "productSlug": "anker-soundcore-life-p3", "pickSlug": "pick-anker-soundcore-life-p3" },
-    { "rank": 2, "label": "モバイルバッテリー：薄型・軽量", "productSlug": "anker-powercore-slim-10000", "pickSlug": "pick-anker-powercore-slim" },
-    { "rank": 3, "label": "ヘッドホン：軽量ANC長時間向け", "productSlug": "sony-wh-ch720n", "pickSlug": "pick-sony-wh-ch720n" },
-    { "rank": 4, "label": "トラッカー：忘れ物・紛失防止", "productSlug": "tile-mate-2022", "pickSlug": "pick-tile-mate-2022" },
-    { "rank": 5, "label": "USBケーブル：カバン常備の1本", "productSlug": "anker-usbc-cable", "pickSlug": "pick-anker-usbc-cable" },
-    { "rank": 6, "label": "最高峰ANC・ハイエンド", "productSlug": "sony-wh-1000xm5", "pickSlug": "pick-sony-wh-1000xm5" }
+    {
+      "rank": 1,
+      "label": "ANC TWS：通勤電車の騒音カット",
+      "productSlug": "anker-soundcore-life-p3",
+      "pickSlug": "pick-anker-soundcore-life-p3"
+    },
+    {
+      "rank": 2,
+      "label": "モバイルバッテリー：薄型・軽量",
+      "productSlug": "anker-powercore-slim-10000",
+      "pickSlug": "pick-anker-powercore-slim"
+    },
+    {
+      "rank": 3,
+      "label": "ヘッドホン：軽量ANC長時間向け",
+      "productSlug": "sony-wh-ch720n",
+      "pickSlug": "pick-sony-wh-ch720n"
+    },
+    {
+      "rank": 4,
+      "label": "トラッカー：忘れ物・紛失防止",
+      "productSlug": "tile-mate-2022",
+      "pickSlug": "pick-tile-mate-2022"
+    },
+    {
+      "rank": 5,
+      "label": "USBケーブル：カバン常備の1本",
+      "productSlug": "anker-usbc-cable",
+      "pickSlug": "pick-anker-usbc-cable"
+    },
+    {
+      "rank": 6,
+      "label": "最高峰ANC・ハイエンド",
+      "productSlug": "sony-wh-1000xm5",
+      "pickSlug": "pick-sony-wh-1000xm5"
+    }
   ],
   "comparison": [
     {
@@ -105,6 +136,14 @@
       "a": "Tile Mateはスマホとのペアリングで位置を特定するため、同じ電車内・建物内でも数十メートル以内なら追跡できます。駅構内に置いてきた場合も、近くを通った他のTileアプリユーザーが位置情報を更新する仕組みがあります。"
     }
   ],
-  "relatedBest": ["best-wireless-earphones-2026", "best-charging-mobile-battery-2026"],
-  "relatedPicks": ["pick-anker-soundcore-life-p3", "pick-anker-powercore-slim", "pick-sony-wh-ch720n", "pick-tile-mate-2022"]
+  "relatedBest": [
+    "best-wireless-earphones-2026",
+    "best-charging-mobile-battery-2026"
+  ],
+  "relatedPicks": [
+    "pick-anker-soundcore-life-p3",
+    "pick-anker-powercore-slim",
+    "pick-sony-wh-ch720n",
+    "pick-tile-mate-2022"
+  ]
 }

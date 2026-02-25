@@ -1,4 +1,5 @@
 {
+  "draft": true,
   "slug": "pick-iottie-easy-one-touch-5",
   "title": "車通勤ドライバーのスマホホルダーはこれだけでいい",
   "productSlug": "iottie-easy-one-touch-5",
@@ -9,6 +10,8 @@
     "¥3,280のコスパで国内定番の実績、取り付け後に付け直し不要の安定感"
   ],
   "caution": "夏場の車内高温や直射日光が当たる場所では吸盤部分が緩む場合があります。またCDスロットがない車種・CDデッキ使用中の場合は装着できません。",
-  "alternatives": ["best-mobile-battery-2026"],
+  "alternatives": [
+    "best-mobile-battery-2026"
+  ],
   "publishedAt": "2026-02-22"
 }

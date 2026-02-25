@@ -1,4 +1,5 @@
 {
+  "draft": true,
   "slug": "pick-tile-mate-2022",
   "title": "鍵・財布の置き場所をスマホで即座に見つけるトラッカーを選ぶ",
   "productSlug": "tile-mate-2022",
@@ -9,6 +10,8 @@
     "Alexa連携で「アレクサ、鍵はどこ？」と声で場所を確認できる"
   ],
   "caution": "Bluetoothの届く範囲（約60m）を超えると最後に検出した場所しかわかりません。より広範囲の追跡はApple AirTag（iPhoneユーザー向け）が優位です。",
-  "alternatives": ["best-smart-home-2026"],
+  "alternatives": [
+    "best-smart-home-2026"
+  ],
   "publishedAt": "2026-02-23"
 }

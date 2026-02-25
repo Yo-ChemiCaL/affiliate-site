@@ -6,24 +6,26 @@ import { url } from '../lib/url';
 import { toCategorySlug } from '../lib/category';
 import productsData from '../data/products.json';
 
-const products = productsData as Product[];
+const products = (productsData as any[]).filter((p) => !p.draft) as Product[];
 
 // ── CV速度Tier定義 (注目商品ソート用) ──────────────────────────────────────────
-// S: charging, A: work-setup/commute, B: consumables, C: その他
 const CV_TIER: Record<string, number> = {
-  'charging': 0,
-  'work-setup': 1,
-  'commute': 1,
-  'consumables': 2,
+  'desk-cable': 0,   // 低単価・衝動買い
+  'desk-input': 1,   // 中単価・高意図
+  'desk-hub': 1,
+  'desk-monitor': 2, // 高単価・検討長め
+  'desk-audio': 2,
+  'desk-lighting': 2,
+  'desk-stand': 3,
 };
 const getCvTier = (p: Product): number =>
   CV_TIER[(p as any).categorySlug ?? toCategorySlug(p.category)] ?? 3;
 
-// ── Quick Picks: ユーザータイプ別3選 ──────────────────────────────────────────
+// ── Quick Picks: デスク環境別3選 ──────────────────────────────────────────
 const USER_TYPE_PICKS: Array<{ typeLabel: string; slug: string }> = [
-  { typeLabel: '🏠 在宅メイン',  slug: 'logicool-mx-master-3s' },
-  { typeLabel: '🚃 毎日通勤',    slug: 'anker-soundcore-life-p3' },
-  { typeLabel: '✈️ 出張・旅行',  slug: 'anker-733-powerbank-10k' },
+  { typeLabel: '🖥️ モニター強化',    slug: 'dell-u2722d' },
+  { typeLabel: '⌨️ 入力デバイス',    slug: 'logicool-mx-master-3s' },
+  { typeLabel: '💡 照明・集中環境',  slug: 'benq-screenbar' },
 ];
 const quickPicks = USER_TYPE_PICKS.map(({ typeLabel, slug }) => ({
   ...(products.find((p) => p.slug === slug) as Product),
@@ -49,18 +51,18 @@ const categories = Object.values(categoryMap);
 
 // ── 最新レビュー（比較記事） ─────────────────────────────────────────────────
 const bestFiles = await Astro.glob('../data/best/*.json');
-const bestArticles = bestFiles.map((f) => f.default).slice(0, 3);
+const bestArticles = bestFiles.map((f) => f.default).filter((a) => !a.draft).slice(0, 3);
 ---
 
 <BaseLayout
-  title="mono-lab | 用途別・比較で選ぶ購入ガイド"
-  description="テレワーク・通勤・充電など用途別に商品を比較。購入直前の迷いをゼロにする商品選びガイド。"
+  title="mono-lab | デスクセットアップ比較ガイド"
+  description="モニター・キーボード・ライト・ハブ… 作業に効く一台をすぐ見つけるデスクガジェット比較サイト。"
 >
   <!-- Hero -->
   <section class="hero">
     <div class="container">
-      <h1 class="hero-title">用途から選ぶ。比較して、すぐ買う。</h1>
-      <p class="hero-subtitle">購入直前の迷いをゼロにする商品選びガイド</p>
+      <h1 class="hero-title">デスクを、比較して、すぐ整える。</h1>
+      <p class="hero-subtitle">モニター・キーボード・ライト・ハブ… 作業に効く一台をすぐ見つけるデスクガジェット比較サイト</p>
       <div class="hero-actions">
         <a href={url('/ranking/')} class="btn-hero-primary">比較から探す →</a>
         <a href="#quick-picks" class="btn-hero-secondary">今すぐ選ぶ →</a>
@@ -72,7 +74,7 @@ const bestArticles = bestFiles.map((f) => f.default).slice(0, 3);
   <section class="section section-light" id="quick-picks">
     <div class="container">
       <div class="section-head">
-        <h2 class="section-title">在宅 / 通勤 / 旅行 — 用途別おすすめ1選</h2>
+        <h2 class="section-title">モニター / 入力デバイス / 照明 — 環境別おすすめ1選</h2>
       </div>
       <div class="qp-grid">
         {quickPicks.map((p) => {

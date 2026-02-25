@@ -6,10 +6,12 @@ import { url } from '../../lib/url';
 import productsData from '../../data/products.json';
 
 export async function getStaticPaths() {
-  return (productsData as Product[]).map((product) => ({
-    params: { slug: product.slug },
-    props: { product },
-  }));
+  return (productsData as any[])
+    .filter((product) => !product.draft)
+    .map((product) => ({
+      params: { slug: product.slug },
+      props: { product },
+    }));
 }
 
 interface Props {
@@ -41,6 +43,7 @@ const bestSlug = (product as any).bestSlug as string | undefined;
   description={`${product.title}の詳細レビュー。${product.description}評価${product.rating}点。`}
   ogImage={product.image}
   ogType="product"
+  noindex={(product as any).draft === true}
 >
   <Fragment slot="head">
     <JsonLd

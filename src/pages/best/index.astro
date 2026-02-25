@@ -5,6 +5,7 @@ import { url } from '../../lib/url';
 const bestFiles = await Astro.glob('../../data/best/*.json');
 const articles = bestFiles
   .map((f) => f.default)
+  .filter((a) => !a.draft)
   .sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime());
 
 // カテゴリ別にグループ化（出現順を保持）
@@ -16,14 +17,14 @@ for (const article of articles) {
 }
 
 // CV速度Tier順にカテゴリを並び替え
-// S: charging → A: work-setup/commute → B: consumables → C: travel → smart
 const CATEGORY_CV_ORDER = [
-  '充電・電源',
-  'デスク・PC環境',
-  '通勤・外出',
-  '日用消耗品',
-  '旅行・移動便利',
-  'テレワーク・在宅',
+  'ケーブル・充電',
+  'キーボード・マウス',
+  'モニター・ディスプレイ',
+  'ハブ・拡張',
+  'オーディオ・集中',
+  'ライト・照明',
+  'スタンド・周辺機器',
 ];
 const categories = Object.values(categoryMap).sort((a, b) => {
   const ia = CATEGORY_CV_ORDER.indexOf(a.name);
@@ -41,12 +42,12 @@ function catSlug(name: string) {
 ---
 
 <BaseLayout
-  title="比較・ランキング記事一覧 | mono-lab"
-  description="モバイルバッテリー・スマートホーム・デスクガジェットなど、カテゴリ別おすすめ比較記事の一覧です。"
+  title="デスクセットアップ 比較記事一覧 | mono-lab"
+  description="モニター・キーボード・照明・ハブ・オーディオなど、デスク環境構築に役立つカテゴリ別おすすめ比較記事の一覧です。"
 >
   <div class="container page-content">
-    <h1 class="page-title">比較・ランキング記事</h1>
-    <p class="page-desc">用途・予算から最適な商品を選べる比較記事をカテゴリ別にまとめました。</p>
+    <h1 class="page-title">デスクセットアップ 比較記事</h1>
+    <p class="page-desc">モニター・入力デバイス・照明・ハブなど、デスク環境構築に役立つ比較記事をカテゴリ別にまとめました。</p>
 
     <!-- カテゴリジャンプナビ -->
     <nav class="cat-nav" aria-label="カテゴリ一覧">

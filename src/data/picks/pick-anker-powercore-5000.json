@@ -1,4 +1,5 @@
 {
+  "draft": true,
   "slug": "pick-anker-powercore-5000",
   "title": "スーツの胸ポケットに入るモバイルバッテリーを選ぶ",
   "productSlug": "anker-powercore-5000",
@@ -9,6 +10,9 @@
     "¥2,490のコスパと軽量設計で毎日カバンに入れても負担にならない"
   ],
   "caution": "PD急速充電非対応のためiPhoneの高速充電はできません。1日に複数回充電が必要な場合は10000mAhモデル（Anker PowerCore Slim 10000）を検討してください。",
-  "alternatives": ["best-charging-mobile-battery-2026", "pick-anker-powercore-slim"],
+  "alternatives": [
+    "best-charging-mobile-battery-2026",
+    "pick-anker-powercore-slim"
+  ],
   "publishedAt": "2026-02-23"
 }

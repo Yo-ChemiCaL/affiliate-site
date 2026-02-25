@@ -1,4 +1,5 @@
 {
+  "draft": true,
   "slug": "pick-anker-511-charger",
   "title": "旅行カバンに必ず入れておくべき折りたたみ充電器はこれ",
   "productSlug": "anker-511-charger-30w",
@@ -9,6 +10,8 @@
     "¥2,490で折りたたみ式GaN充電器として十分なコスパ、旅行のたびに活躍する"
   ],
   "caution": "USB-Cポート1口のみです。2台同時充電には対応していません。海外使用時は変換プラグが別途必要です（本体は100-240V対応）。",
-  "alternatives": ["best-travel-charging-2026"],
+  "alternatives": [
+    "best-travel-charging-2026"
+  ],
   "publishedAt": "2026-02-22"
 }

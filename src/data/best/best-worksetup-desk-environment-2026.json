@@ -2,18 +2,48 @@
   "slug": "best-worksetup-desk-environment-2026",
   "title": "デスク環境整備おすすめ 2026 モニターライト・USBハブ",
   "description": "在宅勤務のデスク環境をアップグレードするモニターライト・USBハブを実用性・コスパで比較。目の疲れ軽減・配線整理に効果的な製品を厳選。",
-  "category": "デスク・PC環境",
+  "category": "スタンド・周辺機器",
   "categorySlug": "work-setup",
   "publishedAt": "2026-02-22",
   "updatedAt": "2026-02-22",
   "conclusion": "デスク環境の第一歩は **BenQ ScreenBar** で目の疲れを解消し、**Anker 7-in-1 ハブ** でポート問題を片付けることです。オンライン会議の品質も上げたい場合は **Logicool C920n ウェブカメラ** が即効性の高いアップグレードです。MacBookをUSB-C1本で4K接続したいなら **Dell U2722D** が究極の答えです。",
   "topPicks": [
-    { "rank": 1, "label": "目の疲れを軽減", "productSlug": "benq-screenbar", "pickSlug": "pick-benq-screenbar" },
-    { "rank": 2, "label": "配線・ポート整理", "productSlug": "anker-usb-hub-7in1", "pickSlug": "pick-anker-usb-hub-7in1" },
-    { "rank": 3, "label": "会議映像をFull HDに改善", "productSlug": "logicool-c920n", "pickSlug": "pick-logicool-c920n" },
-    { "rank": 4, "label": "キーボードで入力快適化", "productSlug": "logicool-mx-keys", "pickSlug": "pick-logicool-mx-keys" },
-    { "rank": 5, "label": "ノートPCを目線の高さに", "productSlug": "moft-laptop-stand", "pickSlug": "pick-moft-laptop-stand" },
-    { "rank": 6, "label": "4K USB-C・ケーブル1本完結", "productSlug": "dell-u2722d", "pickSlug": "pick-dell-u2722d" }
+    {
+      "rank": 1,
+      "label": "目の疲れを軽減",
+      "productSlug": "benq-screenbar",
+      "pickSlug": "pick-benq-screenbar"
+    },
+    {
+      "rank": 2,
+      "label": "配線・ポート整理",
+      "productSlug": "anker-usb-hub-7in1",
+      "pickSlug": "pick-anker-usb-hub-7in1"
+    },
+    {
+      "rank": 3,
+      "label": "会議映像をFull HDに改善",
+      "productSlug": "logicool-c920n",
+      "pickSlug": "pick-logicool-c920n"
+    },
+    {
+      "rank": 4,
+      "label": "キーボードで入力快適化",
+      "productSlug": "logicool-mx-keys",
+      "pickSlug": "pick-logicool-mx-keys"
+    },
+    {
+      "rank": 5,
+      "label": "ノートPCを目線の高さに",
+      "productSlug": "moft-laptop-stand",
+      "pickSlug": "pick-moft-laptop-stand"
+    },
+    {
+      "rank": 6,
+      "label": "4K USB-C・ケーブル1本完結",
+      "productSlug": "dell-u2722d",
+      "pickSlug": "pick-dell-u2722d"
+    }
   ],
   "comparison": [
     {
@@ -91,6 +121,16 @@
       "a": "はい、組み合わせて使うとより効果的です。ScreenBarで手元を明るくすると、ウェブカメラの映像も暗くなりにくくなります。ScreenBarはモニター上部に装着するため、その上にウェブカメラを置くことも可能です。"
     }
   ],
-  "relatedBest": ["best-worksetup-pc-peripherals-2026", "best-worksetup-usecase-2026"],
-  "relatedPicks": ["pick-benq-screenbar", "pick-anker-usb-hub-7in1", "pick-logicool-c920n", "pick-logicool-mx-keys", "pick-moft-laptop-stand", "pick-dell-u2722d"]
+  "relatedBest": [
+    "best-worksetup-pc-peripherals-2026",
+    "best-worksetup-usecase-2026"
+  ],
+  "relatedPicks": [
+    "pick-benq-screenbar",
+    "pick-anker-usb-hub-7in1",
+    "pick-logicool-c920n",
+    "pick-logicool-mx-keys",
+    "pick-moft-laptop-stand",
+    "pick-dell-u2722d"
+  ]
 }

@@ -2,7 +2,7 @@
   "slug": "best-wireless-earphones-2026",
   "title": "ワイヤレスイヤホン・ヘッドホンおすすめ 2026 ANC搭載コスパ比較",
   "description": "通勤・在宅ワークで活躍するANCワイヤレスイヤホン・ヘッドホンをバッテリー・装着感・価格で比較。¥6,000〜¥8,000台のコスパ最強モデルを厳選。",
-  "category": "通勤・外出",
+  "category": "オーディオ・集中",
   "categorySlug": "commute",
   "publishedAt": "2026-02-23",
   "updatedAt": "2026-02-23",
@@ -30,11 +30,36 @@
     }
   ],
   "topPicks": [
-    { "rank": 1, "label": "ヘッドホン部門コスパ最強", "productSlug": "anker-soundcore-q45", "pickSlug": "pick-anker-soundcore-q45" },
-    { "rank": 2, "label": "TWS部門コスパ最強", "productSlug": "anker-soundcore-life-p3", "pickSlug": "pick-anker-soundcore-life-p3" },
-    { "rank": 3, "label": "バッテリー重視のTWS", "productSlug": "anker-soundcore-p40i", "pickSlug": "pick-anker-soundcore-p40i" },
-    { "rank": 4, "label": "軽量・長時間の通勤向けANC", "productSlug": "sony-wh-ch720n", "pickSlug": "pick-sony-wh-ch720n" },
-    { "rank": 5, "label": "最高峰ANC・ハイエンド", "productSlug": "sony-wh-1000xm5", "pickSlug": "pick-sony-wh-1000xm5" }
+    {
+      "rank": 1,
+      "label": "ヘッドホン部門コスパ最強",
+      "productSlug": "anker-soundcore-q45",
+      "pickSlug": "pick-anker-soundcore-q45"
+    },
+    {
+      "rank": 2,
+      "label": "TWS部門コスパ最強",
+      "productSlug": "anker-soundcore-life-p3",
+      "pickSlug": "pick-anker-soundcore-life-p3"
+    },
+    {
+      "rank": 3,
+      "label": "バッテリー重視のTWS",
+      "productSlug": "anker-soundcore-p40i",
+      "pickSlug": "pick-anker-soundcore-p40i"
+    },
+    {
+      "rank": 4,
+      "label": "軽量・長時間の通勤向けANC",
+      "productSlug": "sony-wh-ch720n",
+      "pickSlug": "pick-sony-wh-ch720n"
+    },
+    {
+      "rank": 5,
+      "label": "最高峰ANC・ハイエンド",
+      "productSlug": "sony-wh-1000xm5",
+      "pickSlug": "pick-sony-wh-1000xm5"
+    }
   ],
   "comparison": [
     {
@@ -96,6 +121,14 @@
       "a": "Bluetoothイヤホンは多くの航空会社で機内モード中も使用可能です。ANCは機内騒音を大幅に軽減できるため、長距離フライトで特に効果を発揮します。"
     }
   ],
-  "relatedBest": ["best-worksetup-pc-peripherals-2026"],
-  "relatedPicks": ["pick-anker-soundcore-q45", "pick-anker-soundcore-life-p3", "pick-anker-soundcore-p40i", "pick-sony-wh-ch720n", "pick-sony-wh-1000xm5"]
+  "relatedBest": [
+    "best-worksetup-pc-peripherals-2026"
+  ],
+  "relatedPicks": [
+    "pick-anker-soundcore-q45",
+    "pick-anker-soundcore-life-p3",
+    "pick-anker-soundcore-p40i",
+    "pick-sony-wh-ch720n",
+    "pick-sony-wh-1000xm5"
+  ]
 }

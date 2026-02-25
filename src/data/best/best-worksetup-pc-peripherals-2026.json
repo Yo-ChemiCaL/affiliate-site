@@ -2,7 +2,7 @@
   "slug": "best-worksetup-pc-peripherals-2026",
   "title": "テレワーク PC周辺機器おすすめ 2026 マウス・キーボード・ハブ",
   "description": "在宅勤務の作業効率を上げるPC周辺機器を使いやすさ・コスパで比較。マウス・キーボード・USB-Cハブの3本柱を厳選。",
-  "category": "デスク・PC環境",
+  "category": "キーボード・マウス",
   "categorySlug": "work-setup",
   "publishedAt": "2026-02-22",
   "updatedAt": "2026-02-22",
@@ -30,12 +30,42 @@
     }
   ],
   "topPicks": [
-    { "rank": 1, "label": "デスク固定・生産性最高峰", "productSlug": "logicool-mx-master-3s", "pickSlug": "pick-logicool-mx-master-3s" },
-    { "rank": 2, "label": "外出・狭いデスクのコンパクト版", "productSlug": "logicool-mx-anywhere-3s", "pickSlug": "pick-logicool-mx-anywhere-3s" },
-    { "rank": 3, "label": "タイピング品質向上", "productSlug": "logicool-mx-keys", "pickSlug": "pick-logicool-mx-keys" },
-    { "rank": 4, "label": "ポート不足を一括解決", "productSlug": "anker-usb-hub-7in1", "pickSlug": "pick-anker-usb-hub-7in1" },
-    { "rank": 5, "label": "エルゴノミクス・腱鞘炎対策", "productSlug": "logicool-lift-ergo", "pickSlug": "pick-logicool-lift-ergo" },
-    { "rank": 6, "label": "USB-C対応8-in-1ハブ", "productSlug": "anker-655-usbc-hub", "pickSlug": "pick-anker-655-usbc-hub" }
+    {
+      "rank": 1,
+      "label": "デスク固定・生産性最高峰",
+      "productSlug": "logicool-mx-master-3s",
+      "pickSlug": "pick-logicool-mx-master-3s"
+    },
+    {
+      "rank": 2,
+      "label": "外出・狭いデスクのコンパクト版",
+      "productSlug": "logicool-mx-anywhere-3s",
+      "pickSlug": "pick-logicool-mx-anywhere-3s"
+    },
+    {
+      "rank": 3,
+      "label": "タイピング品質向上",
+      "productSlug": "logicool-mx-keys",
+      "pickSlug": "pick-logicool-mx-keys"
+    },
+    {
+      "rank": 4,
+      "label": "ポート不足を一括解決",
+      "productSlug": "anker-usb-hub-7in1",
+      "pickSlug": "pick-anker-usb-hub-7in1"
+    },
+    {
+      "rank": 5,
+      "label": "エルゴノミクス・腱鞘炎対策",
+      "productSlug": "logicool-lift-ergo",
+      "pickSlug": "pick-logicool-lift-ergo"
+    },
+    {
+      "rank": 6,
+      "label": "USB-C対応8-in-1ハブ",
+      "productSlug": "anker-655-usbc-hub",
+      "pickSlug": "pick-anker-655-usbc-hub"
+    }
   ],
   "comparison": [
     {
@@ -113,6 +143,16 @@
       "a": "4K30fpsまで対応しています。4K60fpsが必要な場合は上位モデルのハブを検討してください。一般的なOffice作業・動画視聴であれば4K30fpsで十分です。"
     }
   ],
-  "relatedBest": ["best-worksetup-desk-environment-2026", "best-worksetup-usecase-2026"],
-  "relatedPicks": ["pick-logicool-mx-master-3s", "pick-logicool-mx-anywhere-3s", "pick-logicool-mx-keys", "pick-anker-usb-hub-7in1", "pick-logicool-lift-ergo", "pick-anker-655-usbc-hub"]
+  "relatedBest": [
+    "best-worksetup-desk-environment-2026",
+    "best-worksetup-usecase-2026"
+  ],
+  "relatedPicks": [
+    "pick-logicool-mx-master-3s",
+    "pick-logicool-mx-anywhere-3s",
+    "pick-logicool-mx-keys",
+    "pick-anker-usb-hub-7in1",
+    "pick-logicool-lift-ergo",
+    "pick-anker-655-usbc-hub"
+  ]
 }

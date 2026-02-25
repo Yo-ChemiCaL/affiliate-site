@@ -1,21 +1,23 @@
 /**
- * 購買行動シーン別カテゴリ マッピング（Phase1）
+ * デスクセットアップ特化カテゴリ マッピング（Phase2）
  *
- * 分類軸: 商品種類ではなく「利用シーン（いつ・どこで使うか）」
- *   work-from-home : 在宅ワーク・デスク環境・照明・集中
- *   commute        : 通勤・外出・車内
- *   travel         : 旅行・長距離移動
- *   charging       : 充電・バッテリー補充
- *   consumables    : 低単価の日用消耗品
+ * 分類軸: デスク環境構築シーン
+ *   desk-monitor  : モニター・ディスプレイ
+ *   desk-input    : キーボード・マウス
+ *   desk-lighting : ライト・照明
+ *   desk-cable    : ケーブル・充電
+ *   desk-audio    : オーディオ・集中
+ *   desk-hub      : ハブ・拡張
+ *   desk-stand    : スタンド・周辺機器
  */
 export const CATEGORY_SLUG_MAP: Record<string, string> = {
-  'テレワーク・在宅': 'work-from-home',
-  '通勤・外出':       'commute',
-  '旅行・移動':       'travel',
-  '充電・電源':       'charging',
-  '日用消耗品':       'consumables',
-  'デスク・PC環境':   'work-setup',
-  '旅行・移動便利':   'travel-utility',
+  'モニター・ディスプレイ': 'desk-monitor',
+  'キーボード・マウス':     'desk-input',
+  'ライト・照明':           'desk-lighting',
+  'ケーブル・充電':         'desk-cable',
+  'オーディオ・集中':       'desk-audio',
+  'ハブ・拡張':             'desk-hub',
+  'スタンド・周辺機器':     'desk-stand',
 };
 
 /** 英語スラッグ → 日本語カテゴリ名 逆引き */

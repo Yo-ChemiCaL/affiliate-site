@@ -12,6 +12,7 @@ export async function getStaticPaths() {
   }));
 }
 
+
 const { pick } = Astro.props;
 const product = productsData.find((p) => p.slug === pick.productSlug);
 if (!product) throw new Error(`Product not found: ${pick.productSlug}`);
@@ -31,6 +32,7 @@ const pickListUrl = `${siteUrl}/pick/`;
   description={`${pick.targetUser}向け。${pick.reasons[0]}`}
   ogImage={product.image}
   ogType="article"
+  noindex={pick.draft === true}
 >
   <Fragment slot="head">
     <JsonLd
